@@ -1,0 +1,1047 @@
+{
+  "id": "grade4-down",
+  "grade": "四年级",
+  "term": "下册",
+  "edition": "人教PEP 2024新版（三年级起点，2026春）",
+  "verified": "verified",
+  "units": [
+    {
+      "unit": "Unit 1",
+      "title": "Class rules",
+      "words": [
+        {
+          "word": "class",
+          "syllables": ["class"],
+          "ipa": "/klɑːs/",
+          "pos": "n.",
+          "cn": "课；班级",
+          "letters": [["c", "/k/"], ["l", "/l/"], ["a", "/ɑː/"], ["ss", "/s/"] ],
+          "example": "Don't be late for class.",
+          "exampleCn": "上课不要迟到。",
+          "phonics": [
+            {"t": "cl", "ipa": "/kl/", "type": "blend", "note": "辅音组合 c + l 连读 /kl/", "say": "cluh", "tag": "辅音组合"},
+            {"t": "a", "ipa": "/ɑː/", "type": "vowel", "note": "a 在这里读 /ɑː/（英式发音：a 在 s、th、n、f 等前面常读 /ɑː/）", "say": "ah, as in car", "tag": "元音"},
+            {"t": "ss", "ipa": "/s/", "type": "cons", "note": "双写辅音 ss 只读一个 /s/", "say": "sss", "tag": "双写辅音"}
+          ]
+        },
+        {
+          "word": "classroom",
+          "syllables": ["class", "room"],
+          "ipa": "/ˈklɑːsruːm/",
+          "pos": "n.",
+          "cn": "教室",
+          "letters": [["c", "/k/"], ["l", "/l/"], ["a", "/ɑː/"], ["ss", "/s/"], ["r", "/r/"], ["oo", "/uː/"], ["m", "/m/"] ],
+          "example": "Keep the classroom clean.",
+          "exampleCn": "保持教室干净。",
+          "say": ["class", "room"],
+          "phonics": [
+            {"t": "cl", "ipa": "/kl/", "type": "blend", "note": "辅音组合 c + l 连读 /kl/", "say": "cluh", "tag": "辅音组合"},
+            {"t": "a", "ipa": "/ɑː/", "type": "vowel", "note": "a 在这里读 /ɑː/（英式发音：a 在 s、th、n、f 等前面常读 /ɑː/）", "say": "ah, as in car", "tag": "元音"},
+            {"t": "ss", "ipa": "/s/", "type": "cons", "note": "双写辅音 ss 只读一个 /s/", "say": "sss", "tag": "双写辅音"},
+            {"t": "r", "ipa": "/r/", "type": "cons", "note": "辅音 r 读 /r/", "say": "ruh", "tag": "辅音"},
+            {"t": "oo", "ipa": "/uː/", "type": "team", "note": "oo 读长音 /uː/", "say": "oo, as in zoo", "tag": "元音组合"},
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "rule",
+          "syllables": ["rule"],
+          "ipa": "/ruːl/",
+          "pos": "n.",
+          "cn": "规则",
+          "letters": [["r", "/r/"], ["u", "/uː/"], ["l", "/l/"], ["e", ""] ],
+          "example": "We follow the class rules.",
+          "exampleCn": "我们遵守班规。",
+          "phonics": [
+            {"t": "r", "ipa": "/r/", "type": "cons", "note": "辅音 r 读 /r/", "say": "ruh", "tag": "辅音"},
+            {"t": "u", "ipa": "/uː/", "type": "magic", "note": "u_e：magic e（不发音的 e），u 读字母 U 的音 /uː/", "link": true, "say": "oo, as in zoo", "tag": "magic e"},
+            {"t": "l", "ipa": "/l/", "type": "cons", "note": "辅音 l 读 /l/", "say": "lll", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "magic e 不发音，让前面的 u 读长音", "link": true, "say": "", "tag": "magic e"}
+          ]
+        },
+        {
+          "word": "light",
+          "syllables": ["light"],
+          "ipa": "/laɪt/",
+          "pos": "n.",
+          "cn": "灯；光",
+          "letters": [["l", "/l/"], ["igh", "/aɪ/"], ["t", "/t/"] ],
+          "example": "Turn off the light.",
+          "exampleCn": "把灯关掉。",
+          "phonics": [
+            {"t": "l", "ipa": "/l/", "type": "cons", "note": "辅音 l 读 /l/", "say": "lll", "tag": "辅音"},
+            {"t": "igh", "ipa": "/aɪ/", "type": "team", "note": "igh 读 /aɪ/，gh 不发音", "say": "eye, as in bike", "tag": "元音组合"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "blackboard",
+          "syllables": ["black", "board"],
+          "ipa": "/ˈblækbɔːd/",
+          "pos": "n.",
+          "cn": "黑板",
+          "letters": [["b", "/b/"], ["l", "/l/"], ["a", "/æ/"], ["ck", "/k/"], ["b", "/b/"], ["oar", "/ɔː/"], ["d", "/d/"] ],
+          "example": "Look at the blackboard.",
+          "exampleCn": "看黑板。",
+          "say": ["black", "bord"],
+          "phonics": [
+            {"t": "bl", "ipa": "/bl/", "type": "blend", "note": "辅音组合 b + l 连读 /bl/", "say": "bluh", "tag": "辅音组合"},
+            {"t": "a", "ipa": "/æ/", "type": "vowel", "note": "a 在闭音节里读短音 /æ/", "say": "a, as in cat", "tag": "短元音"},
+            {"t": "ck", "ipa": "/k/", "type": "digraph", "note": "ck 读 /k/（短元音后用 ck）", "say": "kuh", "tag": "字母组合"},
+            {"t": "b", "ipa": "/b/", "type": "cons", "note": "辅音 b 读 /b/", "say": "buh", "tag": "辅音"},
+            {"t": "oar", "ipa": "/ɔː/", "type": "r", "note": "oar 读 /ɔː/", "say": "aw, as in ball", "tag": "r 控制元音"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "desk",
+          "syllables": ["desk"],
+          "ipa": "/desk/",
+          "pos": "n.",
+          "cn": "书桌",
+          "letters": [["d", "/d/"], ["e", "/e/"], ["s", "/s/"], ["k", "/k/"] ],
+          "example": "Keep your desk tidy.",
+          "exampleCn": "保持你的书桌整洁。",
+          "phonics": [
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "e", "ipa": "/e/", "type": "vowel", "note": "e 在闭音节里读短音 /e/", "say": "e, as in bed", "tag": "短元音"},
+            {"t": "sk", "ipa": "/sk/", "type": "blend", "note": "词尾辅音组合 sk 连读 /sk/", "say": "skuh", "tag": "辅音组合"}
+          ]
+        },
+        {
+          "word": "chair",
+          "syllables": ["chair"],
+          "ipa": "/tʃeə(r)/",
+          "pos": "n.",
+          "cn": "椅子",
+          "letters": [["ch", "/tʃ/"], ["air", "/eə/"] ],
+          "example": "Sit on your chair.",
+          "exampleCn": "坐在你的椅子上。",
+          "phonics": [
+            {"t": "ch", "ipa": "/tʃ/", "type": "digraph", "note": "ch 读 /tʃ/", "say": "ch", "tag": "字母组合"},
+            {"t": "air", "ipa": "/eə/", "type": "r", "note": "air 读 /eə/", "say": "air", "tag": "r 控制元音"}
+          ]
+        },
+        {
+          "word": "tidy",
+          "syllables": ["ti", "dy"],
+          "ipa": "/ˈtaɪdi/",
+          "pos": "adj./v.",
+          "cn": "整洁的；整理",
+          "letters": [["t", "/t/"], ["i", "/aɪ/"], ["d", "/d/"], ["y", "/i/"] ],
+          "example": "My desk is tidy.",
+          "exampleCn": "我的书桌很整洁。",
+          "say": ["tie", "dee"],
+          "phonics": [
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "i", "ipa": "/aɪ/", "type": "vowel", "note": "开音节（音节以元音结尾），i 读长音 /aɪ/", "say": "eye, as in bike", "tag": "长元音"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "y", "ipa": "/i/", "type": "vowel", "note": "词尾 y 读 /i/", "say": "ee, as in happy", "tag": "词尾 y"}
+          ]
+        },
+        {
+          "word": "wall",
+          "syllables": ["wall"],
+          "ipa": "/wɔːl/",
+          "pos": "n.",
+          "cn": "墙",
+          "letters": [["w", "/w/"], ["a", "/ɔː/"], ["ll", "/l/"] ],
+          "example": "The picture is on the wall.",
+          "exampleCn": "画在墙上。",
+          "phonics": [
+            {"t": "w", "ipa": "/w/", "type": "cons", "note": "辅音 w 读 /w/", "say": "wuh", "tag": "辅音"},
+            {"t": "a", "ipa": "/ɔː/", "type": "vowel", "note": "a 在 l / ll 前或 w 后常读 /ɔː/（如 ball、water）", "say": "aw, as in ball", "tag": "元音"},
+            {"t": "ll", "ipa": "/l/", "type": "cons", "note": "双写辅音 ll 只读一个 /l/", "say": "lll", "tag": "双写辅音"}
+          ]
+        },
+        {
+          "word": "door",
+          "syllables": ["door"],
+          "ipa": "/dɔː(r)/",
+          "pos": "n.",
+          "cn": "门",
+          "letters": [["d", "/d/"], ["oor", "/ɔː/"] ],
+          "example": "Close the door, please.",
+          "exampleCn": "请关门。",
+          "phonics": [
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "oor", "ipa": "/ɔː/", "type": "r", "note": "oor 在这里读 /ɔː/（如 door、floor）", "say": "aw, as in ball", "tag": "r 控制元音"}
+          ]
+        },
+        {
+          "word": "window",
+          "syllables": ["win", "dow"],
+          "ipa": "/ˈwɪndəʊ/",
+          "pos": "n.",
+          "cn": "窗户",
+          "letters": [["w", "/w/"], ["i", "/ɪ/"], ["n", "/n/"], ["d", "/d/"], ["ow", "/əʊ/"] ],
+          "example": "Open the window, please.",
+          "exampleCn": "请打开窗户。",
+          "say": ["win", "doe"],
+          "phonics": [
+            {"t": "w", "ipa": "/w/", "type": "cons", "note": "辅音 w 读 /w/", "say": "wuh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "ow", "ipa": "/əʊ/", "type": "team", "note": "ow 读 /əʊ/（ow 的第一种读法）", "say": "oh, as in nose", "tag": "元音组合"}
+          ]
+        },
+        {
+          "word": "fan",
+          "syllables": ["fan"],
+          "ipa": "/fæn/",
+          "pos": "n.",
+          "cn": "风扇",
+          "letters": [["f", "/f/"], ["a", "/æ/"], ["n", "/n/"] ],
+          "example": "Turn on the fan.",
+          "exampleCn": "打开风扇。",
+          "phonics": [
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "a", "ipa": "/æ/", "type": "vowel", "note": "a 在闭音节里读短音 /æ/", "say": "a, as in cat", "tag": "短元音"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"}
+          ]
+        }
+      ]
+    },
+    {
+      "unit": "Unit 2",
+      "title": "Family rules",
+      "words": [
+        {
+          "word": "watch",
+          "syllables": ["watch"],
+          "ipa": "/wɒtʃ/",
+          "pos": "v.",
+          "cn": "观看",
+          "letters": [["w", "/w/"], ["a", "/ɒ/"], ["tch", "/tʃ/"] ],
+          "example": "Can I watch TV?",
+          "exampleCn": "我能看电视吗？",
+          "phonics": [
+            {"t": "w", "ipa": "/w/", "type": "cons", "note": "辅音 w 读 /w/", "say": "wuh", "tag": "辅音"},
+            {"t": "a", "ipa": "/ɒ/", "type": "vowel", "note": "w 后面的 a 常读 /ɒ/（如 watch、wash）", "say": "o, as in dog", "tag": "元音"},
+            {"t": "tch", "ipa": "/tʃ/", "type": "digraph", "note": "tch 读 /tʃ/（短元音后常用 tch）", "say": "ch", "tag": "字母组合"}
+          ]
+        },
+        {
+          "word": "homework",
+          "syllables": ["home", "work"],
+          "ipa": "/ˈhəʊmwɜːk/",
+          "pos": "n.",
+          "cn": "家庭作业",
+          "letters": [["h", "/h/"], ["o", "/əʊ/"], ["m", "/m/"], ["e", ""], ["w", "/w/"], ["or", "/ɜː/"], ["k", "/k/"] ],
+          "example": "Do your homework first.",
+          "exampleCn": "先做你的作业。",
+          "say": ["home", "work"],
+          "phonics": [
+            {"t": "h", "ipa": "/h/", "type": "cons", "note": "辅音 h 读 /h/", "say": "huh", "tag": "辅音"},
+            {"t": "o", "ipa": "/əʊ/", "type": "magic", "note": "o_e：magic e（不发音的 e），o 读字母 O 的音 /əʊ/", "link": true, "say": "oh, as in nose", "tag": "magic e"},
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "magic e 不发音，让前面的 o 读长音", "link": true, "say": "", "tag": "magic e"},
+            {"t": "w", "ipa": "/w/", "type": "cons", "note": "辅音 w 读 /w/", "say": "wuh", "tag": "辅音"},
+            {"t": "or", "ipa": "/ɜː/", "type": "r", "note": "w 后面的 or 读 /ɜː/（如 work、worker）", "say": "er, as in bird", "tag": "r 控制元音"},
+            {"t": "k", "ipa": "/k/", "type": "cons", "note": "辅音 k 读 /k/", "say": "kuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "house",
+          "syllables": ["house"],
+          "ipa": "/haʊs/",
+          "pos": "n.",
+          "cn": "房子",
+          "letters": [["h", "/h/"], ["ou", "/aʊ/"], ["s", "/s/"], ["e", ""] ],
+          "example": "Don't run in the house.",
+          "exampleCn": "不要在房子里跑。",
+          "phonics": [
+            {"t": "h", "ipa": "/h/", "type": "cons", "note": "辅音 h 读 /h/", "say": "huh", "tag": "辅音"},
+            {"t": "ou", "ipa": "/aʊ/", "type": "team", "note": "ou 读 /aʊ/", "say": "ow, as in cow", "tag": "元音组合"},
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "末尾的 e 不发音", "say": "", "tag": "不发音"}
+          ]
+        },
+        {
+          "word": "safe",
+          "syllables": ["safe"],
+          "ipa": "/seɪf/",
+          "pos": "adj.",
+          "cn": "安全的",
+          "letters": [["s", "/s/"], ["a", "/eɪ/"], ["f", "/f/"], ["e", ""] ],
+          "example": "Keep safe!",
+          "exampleCn": "注意安全！",
+          "phonics": [
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"},
+            {"t": "a", "ipa": "/eɪ/", "type": "magic", "note": "a_e：magic e（不发音的 e），a 读字母 A 的音 /eɪ/", "link": true, "say": "ay, as in cake", "tag": "magic e"},
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "magic e 不发音，让前面的 a 读长音", "link": true, "say": "", "tag": "magic e"}
+          ]
+        },
+        {
+          "word": "wash",
+          "syllables": ["wash"],
+          "ipa": "/wɒʃ/",
+          "pos": "v.",
+          "cn": "洗",
+          "letters": [["w", "/w/"], ["a", "/ɒ/"], ["sh", "/ʃ/"] ],
+          "example": "Wash your hands.",
+          "exampleCn": "洗洗你的手。",
+          "phonics": [
+            {"t": "w", "ipa": "/w/", "type": "cons", "note": "辅音 w 读 /w/", "say": "wuh", "tag": "辅音"},
+            {"t": "a", "ipa": "/ɒ/", "type": "vowel", "note": "w 后面的 a 常读 /ɒ/（如 watch、wash）", "say": "o, as in dog", "tag": "元音"},
+            {"t": "sh", "ipa": "/ʃ/", "type": "digraph", "note": "sh 读 /ʃ/", "say": "shh", "tag": "字母组合"}
+          ]
+        },
+        {
+          "word": "sleep",
+          "syllables": ["sleep"],
+          "ipa": "/sliːp/",
+          "pos": "v.",
+          "cn": "睡觉",
+          "letters": [["s", "/s/"], ["l", "/l/"], ["ee", "/iː/"], ["p", "/p/"] ],
+          "example": "Dad is sleeping.",
+          "exampleCn": "爸爸在睡觉。",
+          "phonics": [
+            {"t": "sl", "ipa": "/sl/", "type": "blend", "note": "辅音组合 s + l 连读 /sl/", "say": "sluh", "tag": "辅音组合"},
+            {"t": "ee", "ipa": "/iː/", "type": "team", "note": "ee 读长音 /iː/", "say": "ee, as in tree", "tag": "元音组合"},
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "bedroom",
+          "syllables": ["bed", "room"],
+          "ipa": "/ˈbedruːm/",
+          "pos": "n.",
+          "cn": "卧室",
+          "letters": [["b", "/b/"], ["e", "/e/"], ["d", "/d/"], ["r", "/r/"], ["oo", "/uː/"], ["m", "/m/"] ],
+          "example": "He is in the bedroom.",
+          "exampleCn": "他在卧室里。",
+          "say": ["bed", "room"],
+          "phonics": [
+            {"t": "b", "ipa": "/b/", "type": "cons", "note": "辅音 b 读 /b/", "say": "buh", "tag": "辅音"},
+            {"t": "e", "ipa": "/e/", "type": "vowel", "note": "e 在闭音节里读短音 /e/", "say": "e, as in bed", "tag": "短元音"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "r", "ipa": "/r/", "type": "cons", "note": "辅音 r 读 /r/", "say": "ruh", "tag": "辅音"},
+            {"t": "oo", "ipa": "/uː/", "type": "team", "note": "oo 读长音 /uː/", "say": "oo, as in zoo", "tag": "元音组合"},
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "kitchen",
+          "syllables": ["kit", "chen"],
+          "ipa": "/ˈkɪtʃɪn/",
+          "pos": "n.",
+          "cn": "厨房",
+          "letters": [["k", "/k/"], ["i", "/ɪ/"], ["tch", "/tʃ/"], ["e", "/ɪ/"], ["n", "/n/"] ],
+          "example": "Be careful in the kitchen.",
+          "exampleCn": "在厨房要小心。",
+          "say": ["kit", "chin"],
+          "phonics": [
+            {"t": "k", "ipa": "/k/", "type": "cons", "note": "辅音 k 读 /k/", "say": "kuh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "tch", "ipa": "/tʃ/", "type": "digraph", "note": "tch 读 /tʃ/（短元音后常用 tch）", "say": "ch", "tag": "字母组合"},
+            {"t": "e", "ipa": "/ɪ/", "type": "vowel", "note": "e 在非重读音节弱读 /ɪ/", "say": "i, as in pig", "tag": "弱读"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "study",
+          "syllables": ["stu", "dy"],
+          "ipa": "/ˈstʌdi/",
+          "pos": "n.",
+          "cn": "书房",
+          "letters": [["s", "/s/"], ["t", "/t/"], ["u", "/ʌ/"], ["d", "/d/"], ["y", "/i/"] ],
+          "example": "I read books in the study.",
+          "exampleCn": "我在书房看书。",
+          "say": ["stuh", "dee"],
+          "phonics": [
+            {"t": "st", "ipa": "/st/", "type": "blend", "note": "辅音组合 s + t 连读 /st/", "say": "stuh", "tag": "辅音组合"},
+            {"t": "u", "ipa": "/ʌ/", "type": "vowel", "note": "u 在闭音节里读短音 /ʌ/", "say": "u, as in bus", "tag": "短元音"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "y", "ipa": "/i/", "type": "vowel", "note": "词尾 y 读 /i/", "say": "ee, as in happy", "tag": "词尾 y"}
+          ]
+        },
+        {
+          "word": "bathroom",
+          "syllables": ["bath", "room"],
+          "ipa": "/ˈbɑːθruːm/",
+          "pos": "n.",
+          "cn": "浴室；洗手间",
+          "letters": [["b", "/b/"], ["a", "/ɑː/"], ["th", "/θ/"], ["r", "/r/"], ["oo", "/uː/"], ["m", "/m/"] ],
+          "example": "The bathroom is clean.",
+          "exampleCn": "浴室很干净。",
+          "say": ["bahth", "room"],
+          "phonics": [
+            {"t": "b", "ipa": "/b/", "type": "cons", "note": "辅音 b 读 /b/", "say": "buh", "tag": "辅音"},
+            {"t": "a", "ipa": "/ɑː/", "type": "vowel", "note": "a 在这里读 /ɑː/（英式发音：a 在 s、th、n、f 等前面常读 /ɑː/）", "say": "ah, as in car", "tag": "元音"},
+            {"t": "th", "ipa": "/θ/", "type": "digraph", "note": "th 读清音 /θ/（舌尖轻咬，送气）", "say": "th", "tag": "字母组合"},
+            {"t": "r", "ipa": "/r/", "type": "cons", "note": "辅音 r 读 /r/", "say": "ruh", "tag": "辅音"},
+            {"t": "oo", "ipa": "/uː/", "type": "team", "note": "oo 读长音 /uː/", "say": "oo, as in zoo", "tag": "元音组合"},
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "think",
+          "syllables": ["think"],
+          "ipa": "/θɪŋk/",
+          "pos": "v.",
+          "cn": "想；思考",
+          "letters": [["th", "/θ/"], ["i", "/ɪ/"], ["n", "/ŋ/"], ["k", "/k/"] ],
+          "example": "Think about others.",
+          "exampleCn": "为别人着想。",
+          "phonics": [
+            {"t": "th", "ipa": "/θ/", "type": "digraph", "note": "th 读清音 /θ/（舌尖轻咬，送气）", "say": "th", "tag": "字母组合"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "nk", "ipa": "/ŋk/", "type": "blend", "note": "nk 读 /ŋk/（n 在 k 前读 /ŋ/）", "say": "unk", "tag": "辅音组合"}
+          ]
+        }
+      ]
+    },
+    {
+      "unit": "Unit 3",
+      "title": "Time for school",
+      "words": [
+        {
+          "word": "dinner",
+          "syllables": ["din", "ner"],
+          "ipa": "/ˈdɪnə(r)/",
+          "pos": "n.",
+          "cn": "正餐；晚饭",
+          "letters": [["d", "/d/"], ["i", "/ɪ/"], ["nn", "/n/"], ["er", "/ə/"] ],
+          "example": "It's time for dinner.",
+          "exampleCn": "该吃晚饭了。",
+          "say": ["din", "nuh"],
+          "phonics": [
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "nn", "ipa": "/n/", "type": "cons", "note": "双写辅音 nn 只读一个 /n/", "say": "nnn", "tag": "双写辅音"},
+            {"t": "er", "ipa": "/ə/", "type": "r", "note": "er 在非重读音节弱读 /ə/", "say": "uh", "tag": "r 控制元音"}
+          ]
+        },
+        {
+          "word": "lunch",
+          "syllables": ["lunch"],
+          "ipa": "/lʌntʃ/",
+          "pos": "n.",
+          "cn": "午餐",
+          "letters": [["l", "/l/"], ["u", "/ʌ/"], ["n", "/n/"], ["ch", "/tʃ/"] ],
+          "example": "It's time for lunch.",
+          "exampleCn": "该吃午饭了。",
+          "phonics": [
+            {"t": "l", "ipa": "/l/", "type": "cons", "note": "辅音 l 读 /l/", "say": "lll", "tag": "辅音"},
+            {"t": "u", "ipa": "/ʌ/", "type": "vowel", "note": "u 在闭音节里读短音 /ʌ/", "say": "u, as in bus", "tag": "短元音"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"},
+            {"t": "ch", "ipa": "/tʃ/", "type": "digraph", "note": "ch 读 /tʃ/", "say": "ch", "tag": "字母组合"}
+          ]
+        },
+        {
+          "word": "art",
+          "syllables": ["art"],
+          "ipa": "/ɑːt/",
+          "pos": "n.",
+          "cn": "美术",
+          "letters": [["ar", "/ɑː/"], ["t", "/t/"] ],
+          "example": "I like art class.",
+          "exampleCn": "我喜欢美术课。",
+          "phonics": [
+            {"t": "ar", "ipa": "/ɑː/", "type": "r", "note": "ar 读 /ɑː/（r 控制元音）", "say": "ah, as in car", "tag": "r 控制元音"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "maths",
+          "syllables": ["maths"],
+          "ipa": "/mæθs/",
+          "pos": "n.",
+          "cn": "数学",
+          "letters": [["m", "/m/"], ["a", "/æ/"], ["th", "/θ/"], ["s", "/s/"] ],
+          "example": "We have maths at nine.",
+          "exampleCn": "我们九点上数学课。",
+          "phonics": [
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"},
+            {"t": "a", "ipa": "/æ/", "type": "vowel", "note": "a 在闭音节里读短音 /æ/", "say": "a, as in cat", "tag": "短元音"},
+            {"t": "th", "ipa": "/θ/", "type": "digraph", "note": "th 读清音 /θ/（舌尖轻咬，送气）", "say": "th", "tag": "字母组合"},
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "clock",
+          "syllables": ["clock"],
+          "ipa": "/klɒk/",
+          "pos": "n.",
+          "cn": "时钟",
+          "letters": [["c", "/k/"], ["l", "/l/"], ["o", "/ɒ/"], ["ck", "/k/"] ],
+          "example": "Look at the clock.",
+          "exampleCn": "看看钟。",
+          "phonics": [
+            {"t": "cl", "ipa": "/kl/", "type": "blend", "note": "辅音组合 c + l 连读 /kl/", "say": "cluh", "tag": "辅音组合"},
+            {"t": "o", "ipa": "/ɒ/", "type": "vowel", "note": "o 在闭音节里读短音 /ɒ/", "say": "o, as in dog", "tag": "短元音"},
+            {"t": "ck", "ipa": "/k/", "type": "digraph", "note": "ck 读 /k/（短元音后用 ck）", "say": "kuh", "tag": "字母组合"}
+          ]
+        },
+        {
+          "word": "minute",
+          "syllables": ["mi", "nute"],
+          "ipa": "/ˈmɪnɪt/",
+          "pos": "n.",
+          "cn": "分钟",
+          "letters": [["m", "/m/"], ["i", "/ɪ/"], ["n", "/n/"], ["u", "/ɪ/"], ["t", "/t/"], ["e", ""] ],
+          "example": "Just a minute!",
+          "exampleCn": "稍等一下！",
+          "say": ["min", "it"],
+          "phonics": [
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"},
+            {"t": "u", "ipa": "/ɪ/", "type": "vowel", "note": "u 在这里读 /ɪ/，是例外，要特别记", "ex": true, "say": "i, as in pig", "tag": "例外"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "末尾的 e 不发音", "say": "", "tag": "不发音"}
+          ]
+        },
+        {
+          "word": "kid",
+          "syllables": ["kid"],
+          "ipa": "/kɪd/",
+          "pos": "n.",
+          "cn": "小孩",
+          "letters": [["k", "/k/"], ["i", "/ɪ/"], ["d", "/d/"] ],
+          "example": "Hurry up, kids!",
+          "exampleCn": "孩子们，快点！",
+          "phonics": [
+            {"t": "k", "ipa": "/k/", "type": "cons", "note": "辅音 k 读 /k/", "say": "kuh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "want",
+          "syllables": ["want"],
+          "ipa": "/wɒnt/",
+          "pos": "v.",
+          "cn": "想要",
+          "letters": [["w", "/w/"], ["a", "/ɒ/"], ["n", "/n/"], ["t", "/t/"] ],
+          "example": "I want to play.",
+          "exampleCn": "我想去玩。",
+          "phonics": [
+            {"t": "w", "ipa": "/w/", "type": "cons", "note": "辅音 w 读 /w/", "say": "wuh", "tag": "辅音"},
+            {"t": "a", "ipa": "/ɒ/", "type": "vowel", "note": "w 后面的 a 常读 /ɒ/（如 watch、wash）", "say": "o, as in dog", "tag": "元音"},
+            {"t": "nt", "ipa": "/nt/", "type": "blend", "note": "词尾辅音组合 nt 连读 /nt/", "say": "unt", "tag": "辅音组合"}
+          ]
+        }
+      ]
+    },
+    {
+      "unit": "Unit 4",
+      "title": "Going shopping",
+      "words": [
+        {
+          "word": "trousers",
+          "syllables": ["trou", "sers"],
+          "ipa": "/ˈtraʊzəz/",
+          "pos": "n.",
+          "cn": "裤子",
+          "letters": [["t", "/t/"], ["r", "/r/"], ["ou", "/aʊ/"], ["s", "/z/"], ["er", "/ə/"], ["s", "/z/"] ],
+          "example": "I like this pair of trousers.",
+          "exampleCn": "我喜欢这条裤子。",
+          "say": ["trow", "zuz"],
+          "phonics": [
+            {"t": "tr", "ipa": "/tr/", "type": "blend", "note": "辅音组合 t + r 连读 /tr/", "say": "truh", "tag": "辅音组合"},
+            {"t": "ou", "ipa": "/aʊ/", "type": "team", "note": "ou 读 /aʊ/", "say": "ow, as in cow", "tag": "元音组合"},
+            {"t": "s", "ipa": "/z/", "type": "cons", "note": "s 在这里读浊音 /z/", "say": "zzz", "tag": "辅音"},
+            {"t": "er", "ipa": "/ə/", "type": "r", "note": "er 在非重读音节弱读 /ə/", "say": "uh", "tag": "r 控制元音"},
+            {"t": "s", "ipa": "/z/", "type": "cons", "note": "s 在这里读浊音 /z/", "say": "zzz", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "clothes",
+          "syllables": ["clothes"],
+          "ipa": "/kləʊðz/",
+          "pos": "n.",
+          "cn": "衣服",
+          "letters": [["c", "/k/"], ["l", "/l/"], ["o", "/əʊ/"], ["th", "/ð/"], ["e", ""], ["s", "/z/"] ],
+          "example": "Let's buy new clothes.",
+          "exampleCn": "我们去买新衣服吧。",
+          "phonics": [
+            {"t": "cl", "ipa": "/kl/", "type": "blend", "note": "辅音组合 c + l 连读 /kl/", "say": "cluh", "tag": "辅音组合"},
+            {"t": "o", "ipa": "/əʊ/", "type": "magic", "note": "o_e：magic e（不发音的 e），o 读字母 O 的音 /əʊ/", "link": true, "say": "oh, as in nose", "tag": "magic e"},
+            {"t": "th", "ipa": "/ð/", "type": "digraph", "note": "th 读浊音 /ð/（舌尖轻咬，声带振动）", "say": "the", "tag": "字母组合"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "magic e 不发音，让前面的 o 读长音", "link": true, "say": "", "tag": "magic e"},
+            {"t": "s", "ipa": "/z/", "type": "cons", "note": "s 在这里读浊音 /z/", "say": "zzz", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "shorts",
+          "syllables": ["shorts"],
+          "ipa": "/ʃɔːts/",
+          "pos": "n.",
+          "cn": "短裤",
+          "letters": [["sh", "/ʃ/"], ["or", "/ɔː/"], ["t", "/t/"], ["s", "/s/"] ],
+          "example": "These shorts are nice.",
+          "exampleCn": "这条短裤很好看。",
+          "phonics": [
+            {"t": "sh", "ipa": "/ʃ/", "type": "digraph", "note": "sh 读 /ʃ/", "say": "shh", "tag": "字母组合"},
+            {"t": "or", "ipa": "/ɔː/", "type": "r", "note": "or 读 /ɔː/（r 控制元音）", "say": "aw, as in ball", "tag": "r 控制元音"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "jacket",
+          "syllables": ["jack", "et"],
+          "ipa": "/ˈdʒækɪt/",
+          "pos": "n.",
+          "cn": "夹克衫",
+          "letters": [["j", "/dʒ/"], ["a", "/æ/"], ["ck", "/k/"], ["e", "/ɪ/"], ["t", "/t/"] ],
+          "example": "The jacket is cheap.",
+          "exampleCn": "这件夹克很便宜。",
+          "say": ["jack", "it"],
+          "phonics": [
+            {"t": "j", "ipa": "/dʒ/", "type": "cons", "note": "j 读 /dʒ/", "say": "juh", "tag": "辅音"},
+            {"t": "a", "ipa": "/æ/", "type": "vowel", "note": "a 在闭音节里读短音 /æ/", "say": "a, as in cat", "tag": "短元音"},
+            {"t": "ck", "ipa": "/k/", "type": "digraph", "note": "ck 读 /k/（短元音后用 ck）", "say": "kuh", "tag": "字母组合"},
+            {"t": "e", "ipa": "/ɪ/", "type": "vowel", "note": "e 在非重读音节弱读 /ɪ/", "say": "i, as in pig", "tag": "弱读"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "skirt",
+          "syllables": ["skirt"],
+          "ipa": "/skɜːt/",
+          "pos": "n.",
+          "cn": "裙子",
+          "letters": [["s", "/s/"], ["k", "/k/"], ["ir", "/ɜː/"], ["t", "/t/"] ],
+          "example": "Her skirt is blue.",
+          "exampleCn": "她的裙子是蓝色的。",
+          "phonics": [
+            {"t": "sk", "ipa": "/sk/", "type": "blend", "note": "辅音组合 s + k 连读 /sk/", "say": "skuh", "tag": "辅音组合"},
+            {"t": "ir", "ipa": "/ɜː/", "type": "r", "note": "ir 读 /ɜː/（r 控制元音）", "say": "er, as in bird", "tag": "r 控制元音"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "shoe",
+          "syllables": ["shoe"],
+          "ipa": "/ʃuː/",
+          "pos": "n.",
+          "cn": "鞋",
+          "letters": [["sh", "/ʃ/"], ["oe", "/uː/"] ],
+          "example": "Try on the shoes.",
+          "exampleCn": "试穿一下这双鞋。",
+          "phonics": [
+            {"t": "sh", "ipa": "/ʃ/", "type": "digraph", "note": "sh 读 /ʃ/", "say": "shh", "tag": "字母组合"},
+            {"t": "oe", "ipa": "/uː/", "type": "team", "note": "oe 在 shoe 里读 /uː/，是例外，要特别记", "ex": true, "say": "oo, as in zoo", "tag": "例外"}
+          ]
+        },
+        {
+          "word": "hat",
+          "syllables": ["hat"],
+          "ipa": "/hæt/",
+          "pos": "n.",
+          "cn": "帽子",
+          "letters": [["h", "/h/"], ["a", "/æ/"], ["t", "/t/"] ],
+          "example": "The hat is beautiful.",
+          "exampleCn": "这顶帽子很漂亮。",
+          "phonics": [
+            {"t": "h", "ipa": "/h/", "type": "cons", "note": "辅音 h 读 /h/", "say": "huh", "tag": "辅音"},
+            {"t": "a", "ipa": "/æ/", "type": "vowel", "note": "a 在闭音节里读短音 /æ/", "say": "a, as in cat", "tag": "短元音"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "cheap",
+          "syllables": ["cheap"],
+          "ipa": "/tʃiːp/",
+          "pos": "adj.",
+          "cn": "便宜的",
+          "letters": [["ch", "/tʃ/"], ["ea", "/iː/"], ["p", "/p/"] ],
+          "example": "It's cheap.",
+          "exampleCn": "它很便宜。",
+          "phonics": [
+            {"t": "ch", "ipa": "/tʃ/", "type": "digraph", "note": "ch 读 /tʃ/", "say": "ch", "tag": "字母组合"},
+            {"t": "ea", "ipa": "/iː/", "type": "team", "note": "ea 读长音 /iː/", "say": "ee, as in tree", "tag": "元音组合"},
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "expensive",
+          "syllables": ["ex", "pen", "sive"],
+          "ipa": "/ɪkˈspensɪv/",
+          "pos": "adj.",
+          "cn": "昂贵的",
+          "letters": [["e", "/ɪ/"], ["x", "/ks/"], ["p", "/p/"], ["e", "/e/"], ["n", "/n/"], ["s", "/s/"], ["i", "/ɪ/"], ["v", "/v/"], ["e", ""] ],
+          "example": "Oh dear! It's expensive.",
+          "exampleCn": "天哪！太贵了。",
+          "say": ["ix", "spen", "siv"],
+          "phonics": [
+            {"t": "e", "ipa": "/ɪ/", "type": "vowel", "note": "e 在非重读音节弱读 /ɪ/", "say": "i, as in pig", "tag": "弱读"},
+            {"t": "x", "ipa": "/ks/", "type": "cons", "note": "x 读 /ks/", "say": "ks", "tag": "辅音"},
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"},
+            {"t": "e", "ipa": "/e/", "type": "vowel", "note": "e 在闭音节里读短音 /e/", "say": "e, as in bed", "tag": "短元音"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"},
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "v", "ipa": "/v/", "type": "cons", "note": "辅音 v 读 /v/", "say": "vvv", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "末尾的 e 不发音", "say": "", "tag": "不发音"}
+          ]
+        },
+        {
+          "word": "beautiful",
+          "syllables": ["beau", "ti", "ful"],
+          "ipa": "/ˈbjuːtɪfl/",
+          "pos": "adj.",
+          "cn": "美丽的",
+          "letters": [["b", "/b/"], ["eau", "/juː/"], ["t", "/t/"], ["i", "/ɪ/"], ["f", "/f/"], ["u", ""], ["l", "/l/"] ],
+          "example": "What a beautiful dress!",
+          "exampleCn": "多漂亮的连衣裙啊！",
+          "say": ["byoo", "tuh", "ful"],
+          "phonics": [
+            {"t": "b", "ipa": "/b/", "type": "cons", "note": "辅音 b 读 /b/", "say": "buh", "tag": "辅音"},
+            {"t": "eau", "ipa": "/juː/", "type": "team", "note": "eau 在 beautiful 里读 /juː/，是例外，要特别记", "ex": true, "say": "you", "tag": "例外"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "u", "ipa": "", "type": "silent", "note": "u 在弱读音节里几乎不发音（读得很轻）", "say": "", "tag": "不发音"},
+            {"t": "l", "ipa": "/l/", "type": "cons", "note": "辅音 l 读 /l/", "say": "lll", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "sunglasses",
+          "syllables": ["sun", "glass", "es"],
+          "ipa": "/ˈsʌnɡlɑːsɪz/",
+          "pos": "n.",
+          "cn": "太阳镜",
+          "letters": [["s", "/s/"], ["u", "/ʌ/"], ["n", "/n/"], ["g", "/ɡ/"], ["l", "/l/"], ["a", "/ɑː/"], ["ss", "/s/"], ["e", "/ɪ/"], ["s", "/z/"] ],
+          "example": "I wear sunglasses in summer.",
+          "exampleCn": "夏天我戴太阳镜。",
+          "say": ["sun", "glahs", "iz"],
+          "phonics": [
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"},
+            {"t": "u", "ipa": "/ʌ/", "type": "vowel", "note": "u 在闭音节里读短音 /ʌ/", "say": "u, as in bus", "tag": "短元音"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"},
+            {"t": "gl", "ipa": "/ɡl/", "type": "blend", "note": "辅音组合 g + l 连读 /ɡl/", "say": "gluh", "tag": "辅音组合"},
+            {"t": "a", "ipa": "/ɑː/", "type": "vowel", "note": "a 在这里读 /ɑː/（英式发音：a 在 s、th、n、f 等前面常读 /ɑː/）", "say": "ah, as in car", "tag": "元音"},
+            {"t": "ss", "ipa": "/s/", "type": "cons", "note": "双写辅音 ss 只读一个 /s/", "say": "sss", "tag": "双写辅音"},
+            {"t": "e", "ipa": "/ɪ/", "type": "vowel", "note": "e 在非重读音节弱读 /ɪ/", "say": "i, as in pig", "tag": "弱读"},
+            {"t": "s", "ipa": "/z/", "type": "cons", "note": "s 在这里读浊音 /z/", "say": "zzz", "tag": "辅音"}
+          ]
+        }
+      ]
+    },
+    {
+      "unit": "Unit 5",
+      "title": "Farms and us",
+      "words": [
+        {
+          "word": "cow",
+          "syllables": ["cow"],
+          "ipa": "/kaʊ/",
+          "pos": "n.",
+          "cn": "奶牛",
+          "letters": [["c", "/k/"], ["ow", "/aʊ/"] ],
+          "example": "The cow gives us milk.",
+          "exampleCn": "奶牛给我们牛奶。",
+          "phonics": [
+            {"t": "c", "ipa": "/k/", "type": "cons", "note": "c 读 /k/（硬 c）", "say": "kuh", "tag": "辅音"},
+            {"t": "ow", "ipa": "/aʊ/", "type": "team", "note": "ow 读 /aʊ/（ow 的第二种读法，如 cow）", "say": "ow, as in cow", "tag": "元音组合"}
+          ]
+        },
+        {
+          "word": "horse",
+          "syllables": ["horse"],
+          "ipa": "/hɔːs/",
+          "pos": "n.",
+          "cn": "马",
+          "letters": [["h", "/h/"], ["or", "/ɔː/"], ["s", "/s/"], ["e", ""] ],
+          "example": "The horse is fast.",
+          "exampleCn": "马跑得很快。",
+          "phonics": [
+            {"t": "h", "ipa": "/h/", "type": "cons", "note": "辅音 h 读 /h/", "say": "huh", "tag": "辅音"},
+            {"t": "or", "ipa": "/ɔː/", "type": "r", "note": "or 读 /ɔː/（r 控制元音）", "say": "aw, as in ball", "tag": "r 控制元音"},
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "末尾的 e 不发音", "say": "", "tag": "不发音"}
+          ]
+        },
+        {
+          "word": "sheep",
+          "syllables": ["sheep"],
+          "ipa": "/ʃiːp/",
+          "pos": "n.",
+          "cn": "绵羊",
+          "letters": [["sh", "/ʃ/"], ["ee", "/iː/"], ["p", "/p/"] ],
+          "example": "Look at the sheep.",
+          "exampleCn": "看那些绵羊。",
+          "phonics": [
+            {"t": "sh", "ipa": "/ʃ/", "type": "digraph", "note": "sh 读 /ʃ/", "say": "shh", "tag": "字母组合"},
+            {"t": "ee", "ipa": "/iː/", "type": "team", "note": "ee 读长音 /iː/", "say": "ee, as in tree", "tag": "元音组合"},
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "pig",
+          "syllables": ["pig"],
+          "ipa": "/pɪɡ/",
+          "pos": "n.",
+          "cn": "猪",
+          "letters": [["p", "/p/"], ["i", "/ɪ/"], ["g", "/ɡ/"] ],
+          "example": "The pig is fat.",
+          "exampleCn": "这头猪很胖。",
+          "phonics": [
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "g", "ipa": "/ɡ/", "type": "cons", "note": "g 读 /ɡ/（硬 g）", "say": "guh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "chicken",
+          "syllables": ["chick", "en"],
+          "ipa": "/ˈtʃɪkɪn/",
+          "pos": "n.",
+          "cn": "鸡；鸡肉",
+          "letters": [["ch", "/tʃ/"], ["i", "/ɪ/"], ["ck", "/k/"], ["e", "/ɪ/"], ["n", "/n/"] ],
+          "example": "There are chickens on the farm.",
+          "exampleCn": "农场里有鸡。",
+          "say": ["chick", "in"],
+          "phonics": [
+            {"t": "ch", "ipa": "/tʃ/", "type": "digraph", "note": "ch 读 /tʃ/", "say": "ch", "tag": "字母组合"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "ck", "ipa": "/k/", "type": "digraph", "note": "ck 读 /k/（短元音后用 ck）", "say": "kuh", "tag": "字母组合"},
+            {"t": "e", "ipa": "/ɪ/", "type": "vowel", "note": "e 在非重读音节弱读 /ɪ/", "say": "i, as in pig", "tag": "弱读"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "tomato",
+          "syllables": ["to", "ma", "to"],
+          "ipa": "/təˈmɑːtəʊ/",
+          "pos": "n.",
+          "cn": "西红柿",
+          "letters": [["t", "/t/"], ["o", "/ə/"], ["m", "/m/"], ["a", "/ɑː/"], ["t", "/t/"], ["o", "/əʊ/"] ],
+          "example": "These tomatoes are red.",
+          "exampleCn": "这些西红柿是红的。",
+          "say": ["tuh", "mah", "toe"],
+          "phonics": [
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "o", "ipa": "/ə/", "type": "vowel", "note": "o 在非重读音节弱读 /ə/", "say": "uh", "tag": "弱读"},
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"},
+            {"t": "a", "ipa": "/ɑː/", "type": "vowel", "note": "a 在这里读 /ɑː/（英式发音：a 在 s、th、n、f 等前面常读 /ɑː/）", "say": "ah, as in car", "tag": "元音"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "o", "ipa": "/əʊ/", "type": "vowel", "note": "开音节（音节以元音结尾），o 读长音 /əʊ/", "say": "oh, as in nose", "tag": "长元音"}
+          ]
+        },
+        {
+          "word": "bee",
+          "syllables": ["bee"],
+          "ipa": "/biː/",
+          "pos": "n.",
+          "cn": "蜜蜂",
+          "letters": [["b", "/b/"], ["ee", "/iː/"] ],
+          "example": "The bee is busy.",
+          "exampleCn": "蜜蜂很忙碌。",
+          "phonics": [
+            {"t": "b", "ipa": "/b/", "type": "cons", "note": "辅音 b 读 /b/", "say": "buh", "tag": "辅音"},
+            {"t": "ee", "ipa": "/iː/", "type": "team", "note": "ee 读长音 /iː/", "say": "ee, as in tree", "tag": "元音组合"}
+          ]
+        },
+        {
+          "word": "mouse",
+          "syllables": ["mouse"],
+          "ipa": "/maʊs/",
+          "pos": "n.",
+          "cn": "老鼠",
+          "letters": [["m", "/m/"], ["ou", "/aʊ/"], ["s", "/s/"], ["e", ""] ],
+          "example": "The mouse is small.",
+          "exampleCn": "老鼠很小。",
+          "phonics": [
+            {"t": "m", "ipa": "/m/", "type": "cons", "note": "辅音 m 读 /m/", "say": "mmm", "tag": "辅音"},
+            {"t": "ou", "ipa": "/aʊ/", "type": "team", "note": "ou 读 /aʊ/", "say": "ow, as in cow", "tag": "元音组合"},
+            {"t": "s", "ipa": "/s/", "type": "cons", "note": "辅音 s 读 /s/", "say": "sss", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "末尾的 e 不发音", "say": "", "tag": "不发音"}
+          ]
+        },
+        {
+          "word": "carrot",
+          "syllables": ["car", "rot"],
+          "ipa": "/ˈkærət/",
+          "pos": "n.",
+          "cn": "胡萝卜",
+          "letters": [["c", "/k/"], ["a", "/æ/"], ["rr", "/r/"], ["o", "/ə/"], ["t", "/t/"] ],
+          "example": "Rabbits like carrots.",
+          "exampleCn": "兔子喜欢胡萝卜。",
+          "say": ["care", "ut"],
+          "phonics": [
+            {"t": "c", "ipa": "/k/", "type": "cons", "note": "c 读 /k/（硬 c）", "say": "kuh", "tag": "辅音"},
+            {"t": "a", "ipa": "/æ/", "type": "vowel", "note": "a 在闭音节里读短音 /æ/", "say": "a, as in cat", "tag": "短元音"},
+            {"t": "rr", "ipa": "/r/", "type": "cons", "note": "双写辅音 rr 只读一个 /r/", "say": "ruh", "tag": "双写辅音"},
+            {"t": "o", "ipa": "/ə/", "type": "vowel", "note": "o 在非重读音节弱读 /ə/", "say": "uh", "tag": "弱读"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "potato",
+          "syllables": ["po", "ta", "to"],
+          "ipa": "/pəˈteɪtəʊ/",
+          "pos": "n.",
+          "cn": "土豆",
+          "letters": [["p", "/p/"], ["o", "/ə/"], ["t", "/t/"], ["a", "/eɪ/"], ["t", "/t/"], ["o", "/əʊ/"] ],
+          "example": "He likes to eat potatoes.",
+          "exampleCn": "他喜欢吃土豆。",
+          "say": ["puh", "tay", "toe"],
+          "phonics": [
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"},
+            {"t": "o", "ipa": "/ə/", "type": "vowel", "note": "o 在非重读音节弱读 /ə/", "say": "uh", "tag": "弱读"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "a", "ipa": "/eɪ/", "type": "vowel", "note": "开音节（音节以元音结尾），a 读长音 /eɪ/", "say": "ay, as in cake", "tag": "长元音"},
+            {"t": "t", "ipa": "/t/", "type": "cons", "note": "辅音 t 读 /t/", "say": "tuh", "tag": "辅音"},
+            {"t": "o", "ipa": "/əʊ/", "type": "vowel", "note": "开音节（音节以元音结尾），o 读长音 /əʊ/", "say": "oh, as in nose", "tag": "长元音"}
+          ]
+        }
+      ]
+    },
+    {
+      "unit": "Unit 6",
+      "title": "On the farm",
+      "words": [
+        {
+          "word": "feed",
+          "syllables": ["feed"],
+          "ipa": "/fiːd/",
+          "pos": "v.",
+          "cn": "喂；饲养",
+          "letters": [["f", "/f/"], ["ee", "/iː/"], ["d", "/d/"] ],
+          "example": "Let's feed the hens.",
+          "exampleCn": "我们去喂母鸡吧。",
+          "phonics": [
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "ee", "ipa": "/iː/", "type": "team", "note": "ee 读长音 /iː/", "say": "ee, as in tree", "tag": "元音组合"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "pick",
+          "syllables": ["pick"],
+          "ipa": "/pɪk/",
+          "pos": "v.",
+          "cn": "采；摘",
+          "letters": [["p", "/p/"], ["i", "/ɪ/"], ["ck", "/k/"] ],
+          "example": "We pick apples.",
+          "exampleCn": "我们摘苹果。",
+          "phonics": [
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "ck", "ipa": "/k/", "type": "digraph", "note": "ck 读 /k/（短元音后用 ck）", "say": "kuh", "tag": "字母组合"}
+          ]
+        },
+        {
+          "word": "knife",
+          "syllables": ["knife"],
+          "ipa": "/naɪf/",
+          "pos": "n.",
+          "cn": "刀",
+          "letters": [["k", ""], ["n", "/n/"], ["i", "/aɪ/"], ["f", "/f/"], ["e", ""] ],
+          "example": "Use a knife and fork.",
+          "exampleCn": "用刀和叉。",
+          "phonics": [
+            {"t": "kn", "ipa": "/n/", "type": "digraph", "note": "kn 读 /n/，开头的 k 不发音", "say": "nnn", "tag": "字母组合"},
+            {"t": "i", "ipa": "/aɪ/", "type": "magic", "note": "i_e：magic e（不发音的 e），i 读字母 I 的音 /aɪ/", "link": true, "say": "eye, as in bike", "tag": "magic e"},
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "e", "ipa": "", "type": "silent", "note": "magic e 不发音，让前面的 i 读长音", "link": true, "say": "", "tag": "magic e"}
+          ]
+        },
+        {
+          "word": "fork",
+          "syllables": ["fork"],
+          "ipa": "/fɔːk/",
+          "pos": "n.",
+          "cn": "餐叉",
+          "letters": [["f", "/f/"], ["or", "/ɔː/"], ["k", "/k/"] ],
+          "example": "Pass me a fork, please.",
+          "exampleCn": "请递给我一把叉子。",
+          "phonics": [
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "or", "ipa": "/ɔː/", "type": "r", "note": "or 读 /ɔː/（r 控制元音）", "say": "aw, as in ball", "tag": "r 控制元音"},
+            {"t": "k", "ipa": "/k/", "type": "cons", "note": "辅音 k 读 /k/", "say": "kuh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "chopstick",
+          "syllables": ["chop", "stick"],
+          "ipa": "/ˈtʃɒpstɪk/",
+          "pos": "n.",
+          "cn": "筷子",
+          "letters": [["ch", "/tʃ/"], ["o", "/ɒ/"], ["p", "/p/"], ["s", "/s/"], ["t", "/t/"], ["i", "/ɪ/"], ["ck", "/k/"] ],
+          "example": "I eat with chopsticks.",
+          "exampleCn": "我用筷子吃饭。",
+          "say": ["chop", "stick"],
+          "phonics": [
+            {"t": "ch", "ipa": "/tʃ/", "type": "digraph", "note": "ch 读 /tʃ/", "say": "ch", "tag": "字母组合"},
+            {"t": "o", "ipa": "/ɒ/", "type": "vowel", "note": "o 在闭音节里读短音 /ɒ/", "say": "o, as in dog", "tag": "短元音"},
+            {"t": "p", "ipa": "/p/", "type": "cons", "note": "辅音 p 读 /p/", "say": "puh", "tag": "辅音"},
+            {"t": "st", "ipa": "/st/", "type": "blend", "note": "辅音组合 s + t 连读 /st/", "say": "stuh", "tag": "辅音组合"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "ck", "ipa": "/k/", "type": "digraph", "note": "ck 读 /k/（短元音后用 ck）", "say": "kuh", "tag": "字母组合"}
+          ]
+        },
+        {
+          "word": "bowl",
+          "syllables": ["bowl"],
+          "ipa": "/bəʊl/",
+          "pos": "n.",
+          "cn": "碗",
+          "letters": [["b", "/b/"], ["ow", "/əʊ/"], ["l", "/l/"] ],
+          "example": "A bowl of rice, please.",
+          "exampleCn": "请来一碗米饭。",
+          "phonics": [
+            {"t": "b", "ipa": "/b/", "type": "cons", "note": "辅音 b 读 /b/", "say": "buh", "tag": "辅音"},
+            {"t": "ow", "ipa": "/əʊ/", "type": "team", "note": "ow 读 /əʊ/（ow 的第一种读法）", "say": "oh, as in nose", "tag": "元音组合"},
+            {"t": "l", "ipa": "/l/", "type": "cons", "note": "辅音 l 读 /l/", "say": "lll", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "spoon",
+          "syllables": ["spoon"],
+          "ipa": "/spuːn/",
+          "pos": "n.",
+          "cn": "勺子",
+          "letters": [["s", "/s/"], ["p", "/p/"], ["oo", "/uː/"], ["n", "/n/"] ],
+          "example": "Eat soup with a spoon.",
+          "exampleCn": "用勺子喝汤。",
+          "phonics": [
+            {"t": "sp", "ipa": "/sp/", "type": "blend", "note": "辅音组合 s + p 连读 /sp/", "say": "spuh", "tag": "辅音组合"},
+            {"t": "oo", "ipa": "/uː/", "type": "team", "note": "oo 读长音 /uː/", "say": "oo, as in zoo", "tag": "元音组合"},
+            {"t": "n", "ipa": "/n/", "type": "cons", "note": "辅音 n 读 /n/", "say": "nnn", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "food",
+          "syllables": ["food"],
+          "ipa": "/fuːd/",
+          "pos": "n.",
+          "cn": "食物",
+          "letters": [["f", "/f/"], ["oo", "/uː/"], ["d", "/d/"] ],
+          "example": "Don't waste food.",
+          "exampleCn": "不要浪费食物。",
+          "phonics": [
+            {"t": "f", "ipa": "/f/", "type": "cons", "note": "辅音 f 读 /f/", "say": "fff", "tag": "辅音"},
+            {"t": "oo", "ipa": "/uː/", "type": "team", "note": "oo 读长音 /uː/", "say": "oo, as in zoo", "tag": "元音组合"},
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"}
+          ]
+        },
+        {
+          "word": "delicious",
+          "syllables": ["de", "li", "cious"],
+          "ipa": "/dɪˈlɪʃəs/",
+          "pos": "adj.",
+          "cn": "美味的",
+          "letters": [["d", "/d/"], ["e", "/ɪ/"], ["l", "/l/"], ["i", "/ɪ/"], ["c", "/ʃ/"], ["iou", "/ə/"], ["s", "/s/"] ],
+          "example": "The food is delicious.",
+          "exampleCn": "饭菜很好吃。",
+          "say": ["dih", "lish", "us"],
+          "phonics": [
+            {"t": "d", "ipa": "/d/", "type": "cons", "note": "辅音 d 读 /d/", "say": "duh", "tag": "辅音"},
+            {"t": "e", "ipa": "/ɪ/", "type": "vowel", "note": "e 在非重读音节弱读 /ɪ/", "say": "i, as in pig", "tag": "弱读"},
+            {"t": "l", "ipa": "/l/", "type": "cons", "note": "辅音 l 读 /l/", "say": "lll", "tag": "辅音"},
+            {"t": "i", "ipa": "/ɪ/", "type": "vowel", "note": "i 在闭音节里读短音 /ɪ/", "say": "i, as in pig", "tag": "短元音"},
+            {"t": "cious", "ipa": "/ʃəs/", "type": "suffix", "note": "-cious 读 /ʃəs/（常见词尾）", "say": "shus", "tag": "词尾 cious"}
+          ]
+        }
+      ]
+    }
+  ]
+}

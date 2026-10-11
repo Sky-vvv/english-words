@@ -1,0 +1,46 @@
+{
+ "books": [
+  {
+   "id": "grade3-up",
+   "grade": "三年级",
+   "term": "上册",
+   "edition": "人教PEP 2024新版（三年级起点）",
+   "file": "data/grade3-up.json"
+  },
+  {
+   "id": "grade3-down",
+   "grade": "三年级",
+   "term": "下册",
+   "edition": "人教PEP 2024新版（三年级起点）",
+   "file": "data/grade3-down.json"
+  },
+  {
+   "id": "grade4-up",
+   "grade": "四年级",
+   "term": "上册",
+   "edition": "人教PEP 2024新版（三年级起点，2025秋）",
+   "file": "data/grade4-up.json"
+  },
+  {
+   "id": "grade4-down",
+   "grade": "四年级",
+   "term": "下册",
+   "edition": "人教PEP 2024新版（三年级起点，2026春）",
+   "file": "data/grade4-down.json"
+  },
+  {
+   "id": "grade6-up",
+   "grade": "六年级",
+   "term": "上册",
+   "edition": "人教PEP 2014版（三年级起点）",
+   "file": "data/grade6-up.json"
+  },
+  {
+   "id": "grade6-down",
+   "grade": "六年级",
+   "term": "下册",
+   "edition": "人教PEP 2014版（三年级起点）",
+   "file": "data/grade6-down.json"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#2bb3a3">
+<title>小学英语背单词</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%93%97%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="backBtn" class="icon-btn hidden" aria-label="返回">‹</button>
+  <h1 id="title">小学英语背单词</h1>
+  <button id="slowBtn" class="pill" title="切换朗读速度">🐢 慢速</button>
+  <button id="profileBtn" class="pill profile-pill">👤 <span id="profileName"></span></button>
+</header>
+<div id="speechWarn" class="warn hidden">这个浏览器不支持朗读，或没有英语语音。建议用 iPad / iPhone 的 Safari，或电脑上的 Chrome、Safari。</div>
+<main id="app"><div class="loading">加载中…</div></main>
+<div id="toast" class="toast hidden"></div>
+<div id="modal" class="modal hidden"><div class="modal-box" id="modalBox"></div></div>
+<script src="js/app.js"></script>
+</body>
+</html>
