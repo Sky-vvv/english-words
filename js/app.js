@@ -7,18 +7,7 @@
   var CHUNK_COLORS = ['#2d3436', '#27a35a', '#e07a2f', '#3b82c4'];
   var MODES = { study: '学习', spell: '拼写', listen: '听选', review: '复习' };
 
-  // 音素 → 朗读提示（用 "发音, as in 例词" 读给孩子听）
-  var PH = {
-    'p': ['puh', 'pig'], 'b': ['buh', 'bag'], 't': ['tuh', 'ten'], 'd': ['duh', 'dog'], 'k': ['kuh', 'cat'], 'ɡ': ['guh', 'go'],
-    'f': ['fff', 'fish'], 'v': ['vvv', 'van'], 's': ['sss', 'sun'], 'z': ['zzz', 'zoo'], 'θ': ['th', 'three'], 'ð': ['th', 'mother'],
-    'ʃ': ['shh', 'ship'], 'ʒ': ['zh', 'television'], 'tʃ': ['ch', 'chair'], 'dʒ': ['juh', 'juice'], 'h': ['huh', 'hat'],
-    'm': ['mmm', 'map'], 'n': ['nnn', 'nose'], 'ŋ': ['ng', 'sing'], 'l': ['lll', 'leg'], 'r': ['ruh', 'red'], 'w': ['wuh', 'wet'], 'j': ['yuh', 'yes'],
-    'ks': ['ks', 'box'], 'kw': ['kw', 'queen'], 'wʌ': ['wuh', 'one'],
-    'æ': ['a', 'cat'], 'e': ['e', 'bed'], 'ɪ': ['i', 'pig'], 'ɒ': ['o', 'dog'], 'ʌ': ['u', 'bus'], 'ʊ': ['oo', 'book'], 'ə': ['uh', 'about'],
-    'iː': ['ee', 'tree'], 'i': ['ee', 'happy'], 'ɑː': ['ah', 'car'], 'ɔː': ['aw', 'ball'], 'uː': ['oo', 'zoo'], 'ɜː': ['er', 'bird'],
-    'eɪ': ['ay', 'cake'], 'aɪ': ['eye', 'bike'], 'ɔɪ': ['oy', 'boy'], 'əʊ': ['oh', 'nose'], 'aʊ': ['ow', 'cow'],
-    'ɪə': ['ear', 'ear'], 'eə': ['air', 'chair'], 'juː': ['you', 'student'], 'ju': ['you', 'music']
-  };
+
 
   var $ = function (s, el) { return (el || document).querySelector(s); };
   var app = $('#app');
@@ -78,11 +67,13 @@
   }
   if (synth) { pickVoice(); if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', pickVoice); else synth.onvoiceschanged = pickVoice; }
   function speechOK() { return !!(synth && window.SpeechSynthesisUtterance); }
+  var SAYLOG = []; // 只用于自动测试：记录读了什么
+  function sayLog(t, ev) { SAYLOG.push({ text: t, ev: ev || 'queue', at: Date.now() }); if (SAYLOG.length > 200) SAYLOG.shift(); }
   function speak(text, rate) {
     if (!speechOK()) { toast('这个浏览器不能朗读'); return; }
     try {
-      stopPh(); synth.cancel();
-      paLog({ type: 'tts', text: text, at: Date.now() });
+      synth.cancel();
+      sayLog(text);
       var u = new SpeechSynthesisUtterance(text);
       u.lang = 'en-US'; if (voice) u.voice = voice;
       u.rate = rate || (db.slow ? 0.55 : 0.9);
@@ -93,88 +84,6 @@
     var warn = $('#speechWarn');
     if (!speechOK()) { warn.classList.remove('hidden'); return; }
     setTimeout(function () { pickVoice(); if (!voice && synth.getVoices().length === 0) warn.classList.remove('hidden'); }, 1500);
-  }
-
-  // ---------------- 音素音频（音标拼读） ----------------
-  // audio/phonemes/phonemes.json：音标 → mp3 文件。用 Web Audio 播放（可无缝连续播放）；
-  // iOS 要在第一次点屏幕时“解锁”声音，见 unlockAudio。
-  var PA = { map: null, keys: [], ctx: null, buf: {}, loading: {}, srcs: [], token: 0, log: [] };
-  var AC = window.AudioContext || window.webkitAudioContext;
-  function paLog(e) { PA.log.push(e); if (PA.log.length > 300) PA.log.shift(); }
-  fetch('audio/phonemes/phonemes.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
-    .then(function (d) { PA.map = d.phonemes || {}; PA.keys = Object.keys(PA.map).sort(function (a, b) { return b.length - a.length; }); })
-    .catch(function () { PA.map = {}; });
-  function unlockAudio() {
-    if (!AC) return;
-    try {
-      if (navigator.audioSession) navigator.audioSession.type = 'playback'; // iOS 16.4+：静音键打开时也能出声
-      if (!PA.ctx) PA.ctx = new AC();
-      if (PA.ctx.state === 'suspended') PA.ctx.resume();
-      var s = PA.ctx.createBufferSource(); s.buffer = PA.ctx.createBuffer(1, 1, 22050); s.connect(PA.ctx.destination); s.start(0); // 播一段静音解锁
-    } catch (e) { }
-  }
-  ['touchend', 'click', 'keydown'].forEach(function (ev) { document.addEventListener(ev, unlockAudio, true); });
-  // 把 "/str/" 拆成 ['s','t','r']；拆不出来（缺音频）返回 null
-  function ipaSplit(ipa) {
-    var s = String(ipa || '').replace(/[\/\[\]ˈˌ.\s]/g, '').replace(/g/g, 'ɡ'), out = [];
-    if (!s || !PA.map) return s ? null : [];
-    while (s) {
-      var k = null;
-      for (var i = 0; i < PA.keys.length; i++) if (s.indexOf(PA.keys[i]) === 0) { k = PA.keys[i]; break; }
-      if (!k) return null;
-      out.push(k); s = s.slice(k.length);
-    }
-    return out;
-  }
-  function loadPh(p) {
-    if (PA.buf[p]) return Promise.resolve(PA.buf[p]);
-    if (PA.loading[p]) return PA.loading[p];
-    var url = 'audio/phonemes/' + PA.map[p];
-    PA.loading[p] = fetch(url).then(function (r) { if (!r.ok) throw new Error(url); return r.arrayBuffer(); })
-      .then(function (ab) {
-        if (!PA.ctx) PA.ctx = new AC();
-        return new Promise(function (ok, bad) { PA.ctx.decodeAudioData(ab, ok, bad); }); // 老 Safari 只认回调写法
-      })
-      .then(function (b) { PA.buf[p] = b; return b; })
-      .catch(function (e) { delete PA.loading[p]; throw e; });
-    return PA.loading[p];
-  }
-  function stopPh() {
-    PA.token++;
-    PA.srcs.forEach(function (s) { try { s.stop(); } catch (e) { } }); PA.srcs = [];
-  }
-  function stopAll() { stopPh(); if (speechOK()) synth.cancel(); }
-  // 依次播放一串音素，播完 resolve(true)；被打断 resolve(false)
-  function playPhonemes(list, tok) {
-    if (!AC) return Promise.reject(new Error('no WebAudio'));
-    if (!PA.ctx) PA.ctx = new AC();
-    if (PA.ctx.state === 'suspended') PA.ctx.resume();
-    var gap = db.slow ? 0.12 : 0.04;
-    return Promise.all(list.map(loadPh)).then(function (bufs) {
-      if (tok !== PA.token) return false;
-      var t = PA.ctx.currentTime + 0.03;
-      bufs.forEach(function (b, i) {
-        var s = PA.ctx.createBufferSource(); s.buffer = b; s.connect(PA.ctx.destination); s.start(t);
-        PA.srcs.push(s); paLog({ type: 'ph', ipa: list[i], file: PA.map[list[i]], at: Date.now() });
-        t += b.duration + gap;
-      });
-      return new Promise(function (ok) { setTimeout(function () { ok(tok === PA.token); }, (t - PA.ctx.currentTime) * 1000); });
-    });
-  }
-  function wait(ms, tok) { return new Promise(function (ok) { setTimeout(function () { ok(tok === PA.token); }, ms); }); }
-  // 朗读并等它读完（拼读最后读整个单词用）
-  function speakWait(text, rate, tok) {
-    return new Promise(function (ok) {
-      if (!speechOK()) { toast('这个浏览器不能朗读'); return ok(false); }
-      paLog({ type: 'tts', text: text, at: Date.now() });
-      try {
-        synth.cancel();
-        var u = new SpeechSynthesisUtterance(text); u.lang = 'en-US'; if (voice) u.voice = voice; u.rate = rate;
-        var done = false, fin = function () { if (!done) { done = true; ok(tok === PA.token); } };
-        u.onend = fin; u.onerror = fin; setTimeout(fin, 4000 + text.length * 300);
-        synth.speak(u);
-      } catch (e) { ok(false); }
-    });
   }
 
   // ---------------- 工具 ----------------
@@ -198,7 +107,8 @@
         if (!w.syllables || !w.syllables.length) w.syllables = [w.word];
         if (!w.letters || !w.letters.length) w.letters = w.word.replace(/[^A-Za-z]/g, '').split('').map(function (c) { return [c, '']; });
         w.cn = w.cn || ''; w.pos = w.pos || ''; w.ipa = w.ipa || '';
-        if (w.phonics && w.phonics.map(function (c) { return c.t; }).join('').toLowerCase() !== w.word.toLowerCase()) w.phonics = null; // 拼不回原词就不用
+        if (w.syllables.join('').toLowerCase() !== w.word.toLowerCase()) w.syllables = [w.word]; // 音节拼不回原词就不拆
+        if (w.sylIpa && w.sylIpa.length !== w.syllables.length) w.sylIpa = null;
       });
     });
   }
@@ -222,7 +132,7 @@
 
   function render() {
     updateTop();
-    stopAll();
+    if (speechOK()) synth.cancel();
     $('#title').textContent = '小学英语背单词';
     var bb = $('.bottombar'); if (bb) bb.remove();
     if (S.view === 'home') return renderHome();
@@ -307,41 +217,33 @@
     return shuffle(due).concat(shuffle(fresh), shuffle(later)).slice(0, 15);
   }
 
-  // ----- 学习卡片（自然拼读） -----
-  var TYPE_NAME = { cons: '辅音', blend: '辅音组合', digraph: '字母组合', vowel: '元音', team: '元音组合', r: 'r 控制元音', magic: 'magic e', silent: '不发音', suffix: '词尾' };
-  function phonicsOf(w) {
-    if (w.phonics && w.phonics.length) return w.phonics;
-    return w.letters.map(function (l) { return { t: l[0], ipa: l[1], type: l[1] ? 'cons' : 'silent', note: l[1] ? (l[0] + ' 读 ' + l[1]) : (l[0] + ' 不发音'), tag: '' }; });
-  }
-  function chunkSay(c) {
-    if (c.say !== undefined) return c.say;
-    var p = PH[(c.ipa || '').replace(/\//g, '')];
-    return p ? p[0] + ', as in ' + p[1] : '';
+  // ----- 学习卡片（音节拆分 + 每个音节的音标） -----
+  function sylsOf(w) { // [{t: 字母, ipa: 音标, say: 点它时读的英文}]
+    var n = w.syllables.length;
+    return w.syllables.map(function (t, i) {
+      return { t: t, ipa: n > 1 ? ((w.sylIpa && w.sylIpa[i]) || '') : w.ipa, say: n > 1 ? ((w.say && w.say[i]) || t) : w.word };
+    });
   }
   function renderStudy(b, u, body) {
     if (S.wordIdx >= u.words.length) S.wordIdx = 0;
-    var w = u.words[S.wordIdx], s = peek(b.id, w), mastered = isMastered(s), ph = phonicsOf(w);
+    var w = u.words[S.wordIdx], s = peek(b.id, w), mastered = isMastered(s), sy = sylsOf(w), multi = sy.length > 1;
     var strip = '<div class="unit-head"><span class="badge">' + esc(u.unit) + '</span><span class="t">' + esc(u.title) + '</span></div><div class="wordstrip" id="strip">' +
       u.words.map(function (x, i) { return '<button data-i="' + i + '" class="' + (i === S.wordIdx ? 'on ' : '') + (isMastered(peek(b.id, x)) ? 'done' : '') + '">' + esc(x.word) + '</button>'; }).join('') + '</div>';
-    var k = Math.min(1, 8.5 / (w.word.length + ph.length * 0.35)); // 长单词自动缩小，保证一行放得下
-    var fs = 'font-size:calc(clamp(44px,14vw,84px) * ' + k.toFixed(2) + ');';
-    var big = ph.map(function (c, i) {
-      return '<button class="pc t-' + esc(c.type) + (c.link ? ' link' : '') + (c.ex ? ' ex' : '') + '" data-c="' + i + '" style="' + fs + '">' + esc(c.t) + '</button>';
+    var k = Math.min(1, 7.5 / (w.word.length + (sy.length - 1) * 0.6)); // 长单词自动缩小，保证一行放得下
+    var fs = 'font-size:calc(clamp(46px,15vw,88px) * ' + k.toFixed(2) + ');';
+    var big = sy.map(function (c, i) {
+      return '<button class="sy" data-c="' + i + '" style="--c:' + (multi ? CHUNK_COLORS[i % CHUNK_COLORS.length] : '#2d3436') + '">' +
+        '<span class="w" style="' + fs + '">' + esc(c.t) + '</span>' + (multi ? '<span class="i">' + esc(c.ipa) + '</span>' : '') + '</button>';
     }).join('');
-    var tiles = ph.map(function (c, i) {
-      return '<button class="ptile t-' + esc(c.type) + (c.link ? ' link' : '') + (c.ex ? ' ex' : '') + '" data-c="' + i + '"><span class="l">' + esc(c.t) + '</span>' +
-        '<span class="p">' + (c.ipa ? esc(c.ipa) : '不发音') + '</span><span class="g">' + esc(c.tag || TYPE_NAME[c.type] || '') + '</span></button>';
-    }).join('');
-    var syl = w.syllables.length > 1 ? '<div class="syl">音节：' + w.syllables.map(function (x, i) { return '<button data-s="' + i + '">' + esc(x) + '</button>'; }).join('<i>·</i>') + '</div>' : '';
-    var hasMagic = ph.some(function (c) { return c.type === 'magic'; });
-    var legend = '<div class="legend"><span class="lg t-cons">辅音</span><span class="lg t-vowel">元音</span><span class="lg t-team">元音组合 / r 控制</span>' +
-      (hasMagic ? '<span class="lg t-magic">magic e</span>' : '') + '<span class="lg t-silent">不发音</span><span class="lg ex">⚠ 例外</span></div>';
+    var letters = '<details class="letters"><summary>看看每个字母怎么读</summary><div class="tiles">' + w.letters.map(function (l) {
+      return '<span class="tile' + (l[1] ? '' : ' mute') + '"><span class="l">' + esc(l[0]) + '</span><span class="p">' + (l[1] ? esc(l[1]) : '不读') + '</span></span>';
+    }).join('') + '</div></details>';
     body.innerHTML = strip + '<div class="card wordcard">' +
-      '<div class="pchunks" id="pchunks">' + big + '</div>' +
-      '<div class="ipa-row"><span>' + esc(w.ipa) + '</span><button class="spk" id="spkWord" aria-label="朗读">🔊</button><button class="blendbtn" id="blendBtn">🔤 拼读</button></div>' + syl +
-      '<div class="meaning"><span class="pos">' + esc(w.pos) + '</span>' + esc(w.cn) + '</div>' +
-      '<div class="rule" id="rule"><div class="rule-hint">👆 点上面的彩色字母块，听发音、看拼读规则</div></div>' +
-      '<div class="ptiles" id="ptiles">' + tiles + '</div>' + legend +
+      '<div class="sychunks' + (multi ? '' : ' one') + '" id="sychunks">' + big + '</div>' +
+      '<div class="ipa-row"><span>' + esc(w.ipa) + '</span><button class="spk" id="spkWord" aria-label="朗读">🔊</button>' +
+      (multi ? '<button class="blendbtn" id="blendBtn">🔤 拼读</button>' : '') + '</div>' +
+      (multi ? '<div class="hint">👆 点一个音节，听它怎么读</div>' : '') +
+      '<div class="meaning"><span class="pos">' + esc(w.pos) + '</span>' + esc(w.cn) + '</div>' + letters +
       (w.example ? '<div class="example"><div><div class="en">' + esc(w.example) + '</div><div class="zh">' + esc(w.exampleCn || '') + '</div></div><button class="spk" id="spkEx" aria-label="朗读例句">🔊</button></div>' : '') +
       '</div><div class="qprog" style="text-align:center">' + (S.wordIdx + 1) + ' / ' + u.words.length + (s && s.hits.length && !mastered ? ' · 已答对 ' + Math.min(uniq(s.hits), MASTER_NEED) + '/' + MASTER_NEED + ' 次' : '') + '</div>';
     var bar = document.createElement('div'); bar.className = 'bottombar';
@@ -351,52 +253,31 @@
     var sb = $('#strip .on'); if (sb) sb.scrollIntoView({ inline: 'center', block: 'nearest' });
     app.querySelectorAll('#strip button').forEach(function (x) { x.onclick = function () { S.wordIdx = +x.getAttribute('data-i'); render(); }; });
 
-    function highlight(i) {
-      app.querySelectorAll('.pc, .ptile').forEach(function (el) { el.classList.toggle('hl', i === 'all' || +el.getAttribute('data-c') === i); });
-    }
-    function showRule(i) {
-      var c = ph[i];
-      $('#rule').innerHTML = '<div class="rule-head"><span class="rule-l t-' + esc(c.type) + '">' + esc(c.t) + '</span><span class="rule-ipa">' + (c.ipa ? esc(c.ipa) : '不发音') + '</span>' +
-        '<span class="rule-tag' + (c.ex ? ' ex' : '') + '">' + (c.ex ? '⚠ 例外' : esc(c.tag || TYPE_NAME[c.type] || '')) + '</span></div><div class="rule-note">' + esc(c.note || '') + '</div>';
-      $('#rule').classList.toggle('ex', !!c.ex);
-    }
-    function chunkPh(c) { return c.ipa ? ipaSplit(c.ipa) : []; } // null = 有音素缺音频
-    function ttsChunk(c, tok) { // 缺音频时的后备：旧的朗读提示
-      var say = chunkSay(c); if (!say) return Promise.resolve(tok === PA.token);
-      paLog({ type: 'tts-fallback', ipa: c.ipa });
-      return speakWait(say.split(',')[0], db.slow ? 0.45 : 0.6, tok);
-    }
-    function playChunk(c, tok) {
-      var list = chunkPh(c);
-      if (list && !list.length) return Promise.resolve(tok === PA.token); // 不发音
-      if (!list || !AC) return ttsChunk(c, tok);
-      return playPhonemes(list, tok).catch(function () { return ttsChunk(c, tok); });
-    }
-    function tapChunk(i) {
-      highlight(i); showRule(i);
-      stopAll(); var tok = PA.token;
-      playChunk(ph[i], tok);
-    }
-    app.querySelectorAll('.pc, .ptile').forEach(function (el) { el.onclick = function () { tapChunk(+el.getAttribute('data-c')); }; });
-    function blend() { // 一块一块按音标读（高亮），停一下，再读整个单词
-      stopAll(); var tok = PA.token, btn = $('#blendBtn');
-      var idx = []; ph.forEach(function (c, i) { if (c.ipa) idx.push(i); });
-      btn.classList.add('busy');
-      var p = Promise.resolve(true);
-      idx.forEach(function (i) {
-        p = p.then(function (go) {
-          if (!go) return false;
-          highlight(i); showRule(i); paLog({ type: 'chunk', i: i, t: ph[i].t, at: Date.now() });
-          return playChunk(ph[i], tok).then(function (g) { return g && wait(db.slow ? 450 : 280, tok); });
-        });
+    function highlight(i) { app.querySelectorAll('.sy').forEach(function (el) { el.classList.toggle('hl', i === 'all' || +el.getAttribute('data-c') === i); }); }
+    var hlT;
+    function flash(i, ms) { clearTimeout(hlT); highlight(i); hlT = setTimeout(function () { highlight(-1); }, ms || 900); }
+    app.querySelectorAll('.sy').forEach(function (el) {
+      el.onclick = function () {
+        var i = +el.getAttribute('data-c');
+        if (!multi) { flash('all'); speak(w.word); return; }
+        flash(i); speak(sy[i].say, db.slow ? 0.5 : 0.7);
+      };
+    });
+    function blend() { // 一个音节一个音节读（高亮），最后读整个单词。一次性放进朗读队列，iPad 上最稳
+      if (!speechOK()) { toast('这个浏览器不能朗读'); return; }
+      synth.cancel(); clearTimeout(hlT);
+      var parts = sy.map(function (c, i) { return { i: i, text: c.say, rate: db.slow ? 0.5 : 0.7 }; });
+      parts.push({ i: 'all', text: w.word, rate: db.slow ? 0.55 : 0.85 });
+      parts.forEach(function (p, n) {
+        var ut = new SpeechSynthesisUtterance(p.text);
+        ut.lang = 'en-US'; if (voice) ut.voice = voice; ut.rate = p.rate;
+        ut.onstart = function () { highlight(p.i); sayLog(p.text, 'start'); };
+        if (n === parts.length - 1) ut.onend = function () { hlT = setTimeout(function () { highlight(-1); }, 600); };
+        sayLog(p.text); synth.speak(ut);
       });
-      p.then(function (go) { if (!go) return false; return wait(250, tok); })
-        .then(function (go) { if (!go) return false; highlight('all'); return speakWait(w.word, db.slow ? 0.55 : 0.85, tok); })
-        .then(function () { btn.classList.remove('busy'); });
     }
-    $('#blendBtn').onclick = blend;
-    $('#spkWord').onclick = function () { highlight('all'); speak(w.word); };
-    app.querySelectorAll('.syl button').forEach(function (x) { x.onclick = function () { var i = +x.getAttribute('data-s'); speak((w.say && w.say[i]) || w.syllables[i], db.slow ? 0.5 : 0.7); }; });
+    if ($('#blendBtn')) $('#blendBtn').onclick = blend;
+    $('#spkWord').onclick = function () { flash('all'); speak(w.word); };
     if ($('#spkEx')) $('#spkEx').onclick = function () { speak(w.example); };
     $('#prev').onclick = function () { S.wordIdx = (S.wordIdx - 1 + u.words.length) % u.words.length; render(); };
     $('#next').onclick = function () { S.wordIdx = (S.wordIdx + 1) % u.words.length; render(); };
@@ -537,5 +418,5 @@
     .then(function (d) { S.books = d.books || []; if (!S.books.length) throw new Error('books.json 里没有教材'); render(); })
     .catch(function (e) { updateTop(); showErr(e); });
   checkVoices();
-  window.__app = { S: S, db: function () { return db; }, audioLog: PA.log, ipaSplit: ipaSplit, pa: PA }; // 方便调试
+  window.__app = { S: S, db: function () { return db; }, sayLog: SAYLOG }; // 方便调试
 })();
