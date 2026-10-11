@@ -109,6 +109,7 @@
         w.cn = w.cn || ''; w.pos = w.pos || ''; w.ipa = w.ipa || '';
         if (w.syllables.join('').toLowerCase() !== w.word.toLowerCase()) w.syllables = [w.word]; // 音节拼不回原词就不拆
         if (w.sylIpa && w.sylIpa.length !== w.syllables.length) w.sylIpa = null;
+        if (w.parts && (!w.parts.t || w.parts.t.join('').toLowerCase() !== w.word.toLowerCase())) w.parts = null; // 拼不回原词就不拆
       });
     });
   }
@@ -220,9 +221,10 @@
   // ----- 学习卡片（音节拆分 + 每个音节的音标） -----
   function sylsOf(w) { // [{t: 字母, ipa: 音标, say: 点它时读的英文}]
     var n = w.syllables.length;
-    return w.syllables.map(function (t, i) {
-      return { t: t, ipa: n > 1 ? ((w.sylIpa && w.sylIpa[i]) || '') : w.ipa, say: n > 1 ? ((w.say && w.say[i]) || t) : w.word };
-    });
+    if (n > 1) return w.syllables.map(function (t, i) { return { t: t, ipa: (w.sylIpa && w.sylIpa[i]) || '', say: (w.say && w.say[i]) || t }; });
+    var p = w.parts; // 单音节词：首辅音 + 韵，如 fr|iend
+    if (p && p.t && p.t.length > 1) return p.t.map(function (t, i) { return { t: t, ipa: (p.ipa && p.ipa[i]) || '', say: (p.say && p.say[i]) || t }; });
+    return [{ t: w.word, ipa: w.ipa, say: w.word }];
   }
   function renderStudy(b, u, body) {
     if (S.wordIdx >= u.words.length) S.wordIdx = 0;
@@ -241,8 +243,8 @@
     body.innerHTML = strip + '<div class="card wordcard">' +
       '<div class="sychunks' + (multi ? '' : ' one') + '" id="sychunks">' + big + '</div>' +
       '<div class="ipa-row"><span>' + esc(w.ipa) + '</span><button class="spk" id="spkWord" aria-label="朗读">🔊</button>' +
-      (multi ? '<button class="blendbtn" id="blendBtn">🔤 拼读</button>' : '') + '</div>' +
-      (multi ? '<div class="hint">👆 点一个音节，听它怎么读</div>' : '') +
+      '<button class="blendbtn" id="blendBtn">🔤 拼读</button></div>' +
+      (multi ? '<div class="hint">👆 点一块，听它怎么读</div>' : '') +
       '<div class="meaning"><span class="pos">' + esc(w.pos) + '</span>' + esc(w.cn) + '</div>' + letters +
       (w.example ? '<div class="example"><div><div class="en">' + esc(w.example) + '</div><div class="zh">' + esc(w.exampleCn || '') + '</div></div><button class="spk" id="spkEx" aria-label="朗读例句">🔊</button></div>' : '') +
       '</div><div class="qprog" style="text-align:center">' + (S.wordIdx + 1) + ' / ' + u.words.length + (s && s.hits.length && !mastered ? ' · 已答对 ' + Math.min(uniq(s.hits), MASTER_NEED) + '/' + MASTER_NEED + ' 次' : '') + '</div>';
@@ -266,7 +268,8 @@
     function blend() { // 一个音节一个音节读（高亮），最后读整个单词。一次性放进朗读队列，iPad 上最稳
       if (!speechOK()) { toast('这个浏览器不能朗读'); return; }
       synth.cancel(); clearTimeout(hlT);
-      var parts = sy.map(function (c, i) { return { i: i, text: c.say, rate: db.slow ? 0.5 : 0.7 }; });
+      var parts = multi ? sy.map(function (c, i) { return { i: i, text: c.say, rate: db.slow ? 0.5 : 0.7 }; })
+        : [{ i: 'all', text: w.word, rate: db.slow ? 0.45 : 0.6 }]; // 不能拆的词（ear、egg）：先慢读一遍
       parts.push({ i: 'all', text: w.word, rate: db.slow ? 0.55 : 0.85 });
       parts.forEach(function (p, n) {
         var ut = new SpeechSynthesisUtterance(p.text);
@@ -276,7 +279,7 @@
         sayLog(p.text); synth.speak(ut);
       });
     }
-    if ($('#blendBtn')) $('#blendBtn').onclick = blend;
+    $('#blendBtn').onclick = blend;
     $('#spkWord').onclick = function () { flash('all'); speak(w.word); };
     if ($('#spkEx')) $('#spkEx').onclick = function () { speak(w.example); };
     $('#prev').onclick = function () { S.wordIdx = (S.wordIdx - 1 + u.words.length) % u.words.length; render(); };

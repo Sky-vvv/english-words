@@ -41,7 +41,8 @@
           "cn": "护士",
           "letters": [["n", "/n/"], ["ur", "/ɜː/"], ["s", "/s/"], ["e", ""] ],
           "example": "The nurse is kind.",
-          "exampleCn": "这位护士很和善。"
+          "exampleCn": "这位护士很和善。",
+          "parts": {"t": ["n", "urse"], "ipa": ["/n/", "/ɜːs/"], "say": ["nuh", "urse"]}
         },
         {
           "word": "worker",
@@ -75,7 +76,8 @@
           "cn": "疲倦的",
           "letters": [["t", "/t/"], ["i", "/aɪ/"], ["r", ""], ["e", "/ə/"], ["d", "/d/"] ],
           "example": "Mum is tired.",
-          "exampleCn": "妈妈累了。"
+          "exampleCn": "妈妈累了。",
+          "parts": {"t": ["t", "ired"], "ipa": ["/t/", "/aɪəd/"], "say": ["tuh", "ired"]}
         },
         {
           "word": "cook",
@@ -85,7 +87,8 @@
           "cn": "做饭；厨师",
           "letters": [["c", "/k/"], ["oo", "/ʊ/"], ["k", "/k/"] ],
           "example": "I can cook noodles.",
-          "exampleCn": "我会煮面条。"
+          "exampleCn": "我会煮面条。",
+          "parts": {"t": ["c", "ook"], "ipa": ["/k/", "/ʊk/"], "say": ["kuh", "ook"]}
         },
         {
           "word": "clean",
@@ -95,7 +98,8 @@
           "cn": "打扫；干净的",
           "letters": [["c", "/k/"], ["l", "/l/"], ["ea", "/iː/"], ["n", "/n/"] ],
           "example": "I clean my room.",
-          "exampleCn": "我打扫我的房间。"
+          "exampleCn": "我打扫我的房间。",
+          "parts": {"t": ["cl", "ean"], "ipa": ["/kl/", "/iːn/"], "say": ["kluh", "een"]}
         },
         {
           "word": "room",
@@ -105,7 +109,8 @@
           "cn": "房间",
           "letters": [["r", "/r/"], ["oo", "/uː/"], ["m", "/m/"] ],
           "example": "My room is small.",
-          "exampleCn": "我的房间很小。"
+          "exampleCn": "我的房间很小。",
+          "parts": {"t": ["r", "oom"], "ipa": ["/r/", "/uːm/"], "say": ["ruh", "oom"]}
         },
         {
           "word": "sweep",
@@ -115,7 +120,8 @@
           "cn": "扫",
           "letters": [["s", "/s/"], ["w", "/w/"], ["ee", "/iː/"], ["p", "/p/"] ],
           "example": "I sweep the floor.",
-          "exampleCn": "我扫地。"
+          "exampleCn": "我扫地。",
+          "parts": {"t": ["sw", "eep"], "ipa": ["/sw/", "/iːp/"], "say": ["swuh", "eep"]}
         },
         {
           "word": "floor",
@@ -125,7 +131,8 @@
           "cn": "地板",
           "letters": [["f", "/f/"], ["l", "/l/"], ["oor", "/ɔː/"] ],
           "example": "The floor is clean.",
-          "exampleCn": "地板很干净。"
+          "exampleCn": "地板很干净。",
+          "parts": {"t": ["fl", "oor"], "ipa": ["/fl/", "/ɔː(r)/"], "say": ["fluh", "or"]}
         }
       ]
     },
@@ -141,7 +148,8 @@
           "cn": "强壮的",
           "letters": [["s", "/s/"], ["t", "/t/"], ["r", "/r/"], ["o", "/ɒ/"], ["ng", "/ŋ/"] ],
           "example": "He is tall and strong.",
-          "exampleCn": "他又高又壮。"
+          "exampleCn": "他又高又壮。",
+          "parts": {"t": ["str", "ong"], "ipa": ["/str/", "/ɒŋ/"], "say": ["struh", "ong"]}
         },
         {
           "word": "hair",
@@ -151,7 +159,8 @@
           "cn": "头发",
           "letters": [["h", "/h/"], ["air", "/eə/"] ],
           "example": "She has long hair.",
-          "exampleCn": "她留着长发。"
+          "exampleCn": "她留着长发。",
+          "parts": {"t": ["h", "air"], "ipa": ["/h/", "/eə(r)/"], "say": ["huh", "air"]}
         },
         {
           "word": "kind",
@@ -161,7 +170,8 @@
           "cn": "友好的；和善的",
           "letters": [["k", "/k/"], ["i", "/aɪ/"], ["n", "/n/"], ["d", "/d/"] ],
           "example": "My friend is kind.",
-          "exampleCn": "我的朋友很友好。"
+          "exampleCn": "我的朋友很友好。",
+          "parts": {"t": ["k", "ind"], "ipa": ["/k/", "/aɪnd/"], "say": ["kuh", "ined"]}
         },
         {
           "word": "quiet",
@@ -183,7 +193,8 @@
           "cn": "最好的",
           "letters": [["b", "/b/"], ["e", "/e/"], ["s", "/s/"], ["t", "/t/"] ],
           "example": "He is my best friend.",
-          "exampleCn": "他是我最好的朋友。"
+          "exampleCn": "他是我最好的朋友。",
+          "parts": {"t": ["b", "est"], "ipa": ["/b/", "/est/"], "say": ["buh", "est"]}
         },
         {
           "word": "read",
@@ -193,7 +204,8 @@
           "cn": "阅读",
           "letters": [["r", "/r/"], ["ea", "/iː/"], ["d", "/d/"] ],
           "example": "We read books together.",
-          "exampleCn": "我们一起读书。"
+          "exampleCn": "我们一起读书。",
+          "parts": {"t": ["r", "ead"], "ipa": ["/r/", "/iːd/"], "say": ["ruh", "eed"]}
         },
         {
           "word": "game",
@@ -203,7 +215,8 @@
           "cn": "游戏",
           "letters": [["g", "/ɡ/"], ["a", "/eɪ/"], ["m", "/m/"], ["e", ""] ],
           "example": "Let's play a game.",
-          "exampleCn": "我们来玩个游戏吧。"
+          "exampleCn": "我们来玩个游戏吧。",
+          "parts": {"t": ["g", "ame"], "ipa": ["/ɡ/", "/eɪm/"], "say": ["guh", "aim"]}
         },
         {
           "word": "football",
@@ -255,7 +268,8 @@
           "cn": "公园",
           "letters": [["p", "/p/"], ["ar", "/ɑː/"], ["k", "/k/"] ],
           "example": "Let's go to the park.",
-          "exampleCn": "我们去公园吧。"
+          "exampleCn": "我们去公园吧。",
+          "parts": {"t": ["p", "ark"], "ipa": ["/p/", "/ɑːk/"], "say": ["puh", "ark"]}
         },
         {
           "word": "hospital",
@@ -277,7 +291,8 @@
           "cn": "商店",
           "letters": [["sh", "/ʃ/"], ["o", "/ɒ/"], ["p", "/p/"] ],
           "example": "I buy a book at the shop.",
-          "exampleCn": "我在商店买了一本书。"
+          "exampleCn": "我在商店买了一本书。",
+          "parts": {"t": ["sh", "op"], "ipa": ["/ʃ/", "/ɒp/"], "say": ["shuh", "op"]}
         },
         {
           "word": "library",
@@ -323,7 +338,8 @@
           "cn": "公共汽车",
           "letters": [["b", "/b/"], ["u", "/ʌ/"], ["s", "/s/"] ],
           "example": "I go by bus.",
-          "exampleCn": "我坐公交车去。"
+          "exampleCn": "我坐公交车去。",
+          "parts": {"t": ["b", "us"], "ipa": ["/b/", "/ʌs/"], "say": ["buh", "us"]}
         },
         {
           "word": "photo",
@@ -423,7 +439,8 @@
           "cn": "告诉；讲述",
           "letters": [["t", "/t/"], ["e", "/e/"], ["ll", "/l/"] ],
           "example": "Tell me about your job.",
-          "exampleCn": "跟我说说你的工作。"
+          "exampleCn": "跟我说说你的工作。",
+          "parts": {"t": ["t", "ell"], "ipa": ["/t/", "/el/"], "say": ["tuh", "el"]}
         },
         {
           "word": "everyone",
@@ -475,7 +492,8 @@
           "cn": "热的",
           "letters": [["h", "/h/"], ["o", "/ɒ/"], ["t", "/t/"] ],
           "example": "It's hot in summer.",
-          "exampleCn": "夏天很热。"
+          "exampleCn": "夏天很热。",
+          "parts": {"t": ["h", "ot"], "ipa": ["/h/", "/ɒt/"], "say": ["huh", "ot"]}
         },
         {
           "word": "cold",
@@ -485,7 +503,8 @@
           "cn": "冷的",
           "letters": [["c", "/k/"], ["o", "/əʊ/"], ["l", "/l/"], ["d", "/d/"] ],
           "example": "It's cold outside.",
-          "exampleCn": "外面很冷。"
+          "exampleCn": "外面很冷。",
+          "parts": {"t": ["c", "old"], "ipa": ["/k/", "/əʊld/"], "say": ["kuh", "old"]}
         },
         {
           "word": "windy",
@@ -543,7 +562,8 @@
           "cn": "凉爽的",
           "letters": [["c", "/k/"], ["oo", "/uː/"], ["l", "/l/"] ],
           "example": "It's cool in autumn.",
-          "exampleCn": "秋天很凉爽。"
+          "exampleCn": "秋天很凉爽。",
+          "parts": {"t": ["c", "ool"], "ipa": ["/k/", "/uːl/"], "say": ["kuh", "ool"]}
         },
         {
           "word": "warm",
@@ -553,7 +573,8 @@
           "cn": "温暖的",
           "letters": [["w", "/w/"], ["ar", "/ɔː/"], ["m", "/m/"] ],
           "example": "It's warm in spring.",
-          "exampleCn": "春天很暖和。"
+          "exampleCn": "春天很暖和。",
+          "parts": {"t": ["w", "arm"], "ipa": ["/w/", "/ɔːm/"], "say": ["wuh", "orm"]}
         },
         {
           "word": "kite",
@@ -563,7 +584,8 @@
           "cn": "风筝",
           "letters": [["k", "/k/"], ["i", "/aɪ/"], ["t", "/t/"], ["e", ""] ],
           "example": "I can fly a kite.",
-          "exampleCn": "我会放风筝。"
+          "exampleCn": "我会放风筝。",
+          "parts": {"t": ["k", "ite"], "ipa": ["/k/", "/aɪt/"], "say": ["kuh", "ite"]}
         },
         {
           "word": "snowman",
@@ -603,7 +625,8 @@
           "cn": "短袜",
           "letters": [["s", "/s/"], ["o", "/ɒ/"], ["ck", "/k/"] ],
           "example": "My socks are red.",
-          "exampleCn": "我的袜子是红色的。"
+          "exampleCn": "我的袜子是红色的。",
+          "parts": {"t": ["s", "ock"], "ipa": ["/s/", "/ɒk/"], "say": ["suh", "ock"]}
         },
         {
           "word": "shirt",
@@ -613,7 +636,8 @@
           "cn": "衬衫",
           "letters": [["sh", "/ʃ/"], ["ir", "/ɜː/"], ["t", "/t/"] ],
           "example": "I wear a shirt in summer.",
-          "exampleCn": "夏天我穿衬衫。"
+          "exampleCn": "夏天我穿衬衫。",
+          "parts": {"t": ["sh", "irt"], "ipa": ["/ʃ/", "/ɜːt/"], "say": ["shuh", "urt"]}
         },
         {
           "word": "coat",
@@ -623,7 +647,8 @@
           "cn": "大衣；外套",
           "letters": [["c", "/k/"], ["oa", "/əʊ/"], ["t", "/t/"] ],
           "example": "Wear your coat. It's cold.",
-          "exampleCn": "穿上外套，天冷。"
+          "exampleCn": "穿上外套，天冷。",
+          "parts": {"t": ["c", "oat"], "ipa": ["/k/", "/əʊt/"], "say": ["kuh", "oat"]}
         },
         {
           "word": "dress",
@@ -633,7 +658,8 @@
           "cn": "连衣裙",
           "letters": [["d", "/d/"], ["r", "/r/"], ["e", "/e/"], ["ss", "/s/"] ],
           "example": "Her dress is pretty.",
-          "exampleCn": "她的连衣裙很漂亮。"
+          "exampleCn": "她的连衣裙很漂亮。",
+          "parts": {"t": ["dr", "ess"], "ipa": ["/dr/", "/es/"], "say": ["druh", "ess"]}
         },
         {
           "word": "wear",
@@ -643,7 +669,8 @@
           "cn": "穿；戴",
           "letters": [["w", "/w/"], ["ear", "/eə/"] ],
           "example": "What do you wear in winter?",
-          "exampleCn": "冬天你穿什么？"
+          "exampleCn": "冬天你穿什么？",
+          "parts": {"t": ["w", "ear"], "ipa": ["/w/", "/eə(r)/"], "say": ["wuh", "air"]}
         },
         {
           "word": "mine",
@@ -653,7 +680,8 @@
           "cn": "我的（东西）",
           "letters": [["m", "/m/"], ["i", "/aɪ/"], ["n", "/n/"], ["e", ""] ],
           "example": "This sweater is mine.",
-          "exampleCn": "这件毛衣是我的。"
+          "exampleCn": "这件毛衣是我的。",
+          "parts": {"t": ["m", "ine"], "ipa": ["/m/", "/aɪn/"], "say": ["muh", "ine"]}
         }
       ]
     }

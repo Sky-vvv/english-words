@@ -89,7 +89,8 @@
           "cn": "左；向左",
           "letters": [["l", "/l/"], ["e", "/e/"], ["f", "/f/"], ["t", "/t/"] ],
           "example": "Turn left here.",
-          "exampleCn": "在这里左转。"
+          "exampleCn": "在这里左转。",
+          "parts": {"t": ["l", "eft"], "ipa": ["/l/", "/eft/"], "say": ["luh", "eft"]}
         },
         {
           "word": "right",
@@ -99,7 +100,8 @@
           "cn": "右；向右",
           "letters": [["r", "/r/"], ["igh", "/aɪ/"], ["t", "/t/"] ],
           "example": "Then turn right.",
-          "exampleCn": "然后右转。"
+          "exampleCn": "然后右转。",
+          "parts": {"t": ["r", "ight"], "ipa": ["/r/", "/aɪt/"], "say": ["ruh", "ite"]}
         },
         {
           "word": "straight",
@@ -109,7 +111,8 @@
           "cn": "笔直地",
           "letters": [["s", "/s/"], ["t", "/t/"], ["r", "/r/"], ["aigh", "/eɪ/"], ["t", "/t/"] ],
           "example": "Go straight.",
-          "exampleCn": "直走。"
+          "exampleCn": "直走。",
+          "parts": {"t": ["str", "aight"], "ipa": ["/str/", "/eɪt/"], "say": ["struh", "eight"]}
         },
         {
           "word": "restaurant",
@@ -131,7 +134,8 @@
           "cn": "街道",
           "letters": [["s", "/s/"], ["t", "/t/"], ["r", "/r/"], ["ee", "/iː/"], ["t", "/t/"] ],
           "example": "Go along this street.",
-          "exampleCn": "沿着这条街走。"
+          "exampleCn": "沿着这条街走。",
+          "parts": {"t": ["str", "eet"], "ipa": ["/str/", "/iːt/"], "say": ["struh", "eat"]}
         }
       ]
     },
@@ -147,7 +151,8 @@
           "cn": "脚",
           "letters": [["f", "/f/"], ["oo", "/ʊ/"], ["t", "/t/"] ],
           "example": "I go to school on foot.",
-          "exampleCn": "我走路上学。"
+          "exampleCn": "我走路上学。",
+          "parts": {"t": ["f", "oot"], "ipa": ["/f/", "/ʊt/"], "say": ["fuh", "oot"]}
         },
         {
           "word": "bus",
@@ -157,7 +162,8 @@
           "cn": "公共汽车",
           "letters": [["b", "/b/"], ["u", "/ʌ/"], ["s", "/s/"] ],
           "example": "I go by bus.",
-          "exampleCn": "我坐公交车。"
+          "exampleCn": "我坐公交车。",
+          "parts": {"t": ["b", "us"], "ipa": ["/b/", "/ʌs/"], "say": ["buh", "us"]}
         },
         {
           "word": "plane",
@@ -167,7 +173,8 @@
           "cn": "飞机",
           "letters": [["p", "/p/"], ["l", "/l/"], ["a", "/eɪ/"], ["n", "/n/"], ["e", ""] ],
           "example": "We go to Beijing by plane.",
-          "exampleCn": "我们坐飞机去北京。"
+          "exampleCn": "我们坐飞机去北京。",
+          "parts": {"t": ["pl", "ane"], "ipa": ["/pl/", "/eɪn/"], "say": ["pluh", "ain"]}
         },
         {
           "word": "taxi",
@@ -189,7 +196,8 @@
           "cn": "（大）船",
           "letters": [["sh", "/ʃ/"], ["i", "/ɪ/"], ["p", "/p/"] ],
           "example": "They go by ship.",
-          "exampleCn": "他们坐船去。"
+          "exampleCn": "他们坐船去。",
+          "parts": {"t": ["sh", "ip"], "ipa": ["/ʃ/", "/ɪp/"], "say": ["shuh", "ip"]}
         },
         {
           "word": "subway",
@@ -211,7 +219,8 @@
           "cn": "火车",
           "letters": [["t", "/t/"], ["r", "/r/"], ["ai", "/eɪ/"], ["n", "/n/"] ],
           "example": "The train is fast.",
-          "exampleCn": "火车很快。"
+          "exampleCn": "火车很快。",
+          "parts": {"t": ["tr", "ain"], "ipa": ["/tr/", "/eɪn/"], "say": ["truh", "ain"]}
         },
         {
           "word": "slow",
@@ -221,7 +230,8 @@
           "cn": "慢的",
           "letters": [["s", "/s/"], ["l", "/l/"], ["ow", "/əʊ/"] ],
           "example": "Slow down and stop!",
-          "exampleCn": "慢下来，停住！"
+          "exampleCn": "慢下来，停住！",
+          "parts": {"t": ["sl", "ow"], "ipa": ["/sl/", "/əʊ/"], "say": ["sluh", "oh"]}
         },
         {
           "word": "stop",
@@ -231,7 +241,8 @@
           "cn": "停下",
           "letters": [["s", "/s/"], ["t", "/t/"], ["o", "/ɒ/"], ["p", "/p/"] ],
           "example": "Stop at a red light.",
-          "exampleCn": "红灯停。"
+          "exampleCn": "红灯停。",
+          "parts": {"t": ["st", "op"], "ipa": ["/st/", "/ɒp/"], "say": ["stuh", "op"]}
         }
       ]
     },
@@ -259,7 +270,8 @@
           "cn": "电影",
           "letters": [["f", "/f/"], ["i", "/ɪ/"], ["l", "/l/"], ["m", "/m/"] ],
           "example": "Let's see a film.",
-          "exampleCn": "我们去看电影吧。"
+          "exampleCn": "我们去看电影吧。",
+          "parts": {"t": ["f", "ilm"], "ipa": ["/f/", "/ɪlm/"], "say": ["fuh", "ilm"]}
         },
         {
           "word": "trip",
@@ -269,7 +281,8 @@
           "cn": "旅行",
           "letters": [["t", "/t/"], ["r", "/r/"], ["i", "/ɪ/"], ["p", "/p/"] ],
           "example": "We are going to take a trip.",
-          "exampleCn": "我们打算去旅行。"
+          "exampleCn": "我们打算去旅行。",
+          "parts": {"t": ["tr", "ip"], "ipa": ["/tr/", "/ɪp/"], "say": ["truh", "ip"]}
         },
         {
           "word": "supermarket",
@@ -405,7 +418,8 @@
           "cn": "跳舞",
           "letters": [["d", "/d/"], ["a", "/ɑː/"], ["n", "/n/"], ["c", "/s/"], ["e", ""] ],
           "example": "She likes dancing.",
-          "exampleCn": "她喜欢跳舞。"
+          "exampleCn": "她喜欢跳舞。",
+          "parts": {"t": ["d", "ance"], "ipa": ["/d/", "/ɑːns/"], "say": ["duh", "ahns"]}
         },
         {
           "word": "sing",
@@ -415,7 +429,8 @@
           "cn": "唱歌",
           "letters": [["s", "/s/"], ["i", "/ɪ/"], ["ng", "/ŋ/"] ],
           "example": "He likes singing.",
-          "exampleCn": "他喜欢唱歌。"
+          "exampleCn": "他喜欢唱歌。",
+          "parts": {"t": ["s", "ing"], "ipa": ["/s/", "/ɪŋ/"], "say": ["suh", "ing"]}
         },
         {
           "word": "jasmine",
@@ -539,7 +554,8 @@
           "cn": "教练",
           "letters": [["c", "/k/"], ["oa", "/əʊ/"], ["ch", "/tʃ/"] ],
           "example": "He is a football coach.",
-          "exampleCn": "他是一名足球教练。"
+          "exampleCn": "他是一名足球教练。",
+          "parts": {"t": ["c", "oach"], "ipa": ["/k/", "/əʊtʃ/"], "say": ["kuh", "oach"]}
         }
       ]
     },
@@ -579,7 +595,8 @@
           "cn": "难过的",
           "letters": [["s", "/s/"], ["a", "/æ/"], ["d", "/d/"] ],
           "example": "Why are you sad?",
-          "exampleCn": "你为什么难过？"
+          "exampleCn": "你为什么难过？",
+          "parts": {"t": ["s", "ad"], "ipa": ["/s/", "/æd/"], "say": ["suh", "ad"]}
         },
         {
           "word": "worried",
@@ -613,7 +630,8 @@
           "cn": "呼吸",
           "letters": [["b", "/b/"], ["r", "/r/"], ["ea", "/e/"], ["th", "/θ/"] ],
           "example": "Take a deep breath.",
-          "exampleCn": "深呼吸。"
+          "exampleCn": "深呼吸。",
+          "parts": {"t": ["br", "eath"], "ipa": ["/br/", "/eθ/"], "say": ["bruh", "eth"]}
         },
         {
           "word": "ill",

@@ -41,7 +41,8 @@
           "cn": "女孩",
           "letters": [["g", "/ɡ/"], ["ir", "/ɜː/"], ["l", "/l/"] ],
           "example": "Who's that girl?",
-          "exampleCn": "那个女孩是谁？"
+          "exampleCn": "那个女孩是谁？",
+          "parts": {"t": ["g", "irl"], "ipa": ["/ɡ/", "/ɜːl/"], "say": ["guh", "earl"]}
         },
         {
           "word": "boy",
@@ -51,7 +52,8 @@
           "cn": "男孩",
           "letters": [["b", "/b/"], ["oy", "/ɔɪ/"] ],
           "example": "The boy is from China.",
-          "exampleCn": "这个男孩来自中国。"
+          "exampleCn": "这个男孩来自中国。",
+          "parts": {"t": ["b", "oy"], "ipa": ["/b/", "/ɔɪ/"], "say": ["buh", "oy"]}
         },
         {
           "word": "woman",
@@ -73,7 +75,8 @@
           "cn": "成年男子；男人",
           "letters": [["m", "/m/"], ["a", "/æ/"], ["n", "/n/"] ],
           "example": "Who's that man?",
-          "exampleCn": "那个男人是谁？"
+          "exampleCn": "那个男人是谁？",
+          "parts": {"t": ["m", "an"], "ipa": ["/m/", "/æn/"], "say": ["muh", "an"]}
         },
         {
           "word": "neighbour",
@@ -161,7 +164,8 @@
           "cn": "腿",
           "letters": [["l", "/l/"], ["e", "/e/"], ["g", "/ɡ/"] ],
           "example": "It has short legs.",
-          "exampleCn": "它的腿很短。"
+          "exampleCn": "它的腿很短。",
+          "parts": {"t": ["l", "eg"], "ipa": ["/l/", "/eɡ/"], "say": ["luh", "egg"]}
         },
         {
           "word": "long",
@@ -171,7 +175,8 @@
           "cn": "长的",
           "letters": [["l", "/l/"], ["o", "/ɒ/"], ["ng", "/ŋ/"] ],
           "example": "The rabbit has long ears.",
-          "exampleCn": "兔子的耳朵很长。"
+          "exampleCn": "兔子的耳朵很长。",
+          "parts": {"t": ["l", "ong"], "ipa": ["/l/", "/ɒŋ/"], "say": ["luh", "ong"]}
         },
         {
           "word": "short",
@@ -181,7 +186,8 @@
           "cn": "短的；矮的",
           "letters": [["sh", "/ʃ/"], ["or", "/ɔː/"], ["t", "/t/"] ],
           "example": "The tail is short.",
-          "exampleCn": "尾巴很短。"
+          "exampleCn": "尾巴很短。",
+          "parts": {"t": ["sh", "ort"], "ipa": ["/ʃ/", "/ɔːt/"], "say": ["shuh", "ought"]}
         },
         {
           "word": "fat",
@@ -191,7 +197,8 @@
           "cn": "胖的",
           "letters": [["f", "/f/"], ["a", "/æ/"], ["t", "/t/"] ],
           "example": "My cat is fat.",
-          "exampleCn": "我的猫很胖。"
+          "exampleCn": "我的猫很胖。",
+          "parts": {"t": ["f", "at"], "ipa": ["/f/", "/æt/"], "say": ["fuh", "at"]}
         },
         {
           "word": "thin",
@@ -201,7 +208,8 @@
           "cn": "瘦的",
           "letters": [["th", "/θ/"], ["i", "/ɪ/"], ["n", "/n/"] ],
           "example": "The dog is thin.",
-          "exampleCn": "这只狗很瘦。"
+          "exampleCn": "这只狗很瘦。",
+          "parts": {"t": ["th", "in"], "ipa": ["/θ/", "/ɪn/"], "say": ["thuh", "in"]}
         },
         {
           "word": "slow",
@@ -211,7 +219,8 @@
           "cn": "慢的",
           "letters": [["s", "/s/"], ["l", "/l/"], ["ow", "/əʊ/"] ],
           "example": "He is old and slow.",
-          "exampleCn": "它又老又慢。"
+          "exampleCn": "它又老又慢。",
+          "parts": {"t": ["sl", "ow"], "ipa": ["/sl/", "/əʊ/"], "say": ["sluh", "oh"]}
         },
         {
           "word": "tail",
@@ -221,7 +230,8 @@
           "cn": "尾巴",
           "letters": [["t", "/t/"], ["ai", "/eɪ/"], ["l", "/l/"] ],
           "example": "His tail is long.",
-          "exampleCn": "它的尾巴很长。"
+          "exampleCn": "它的尾巴很长。",
+          "parts": {"t": ["t", "ail"], "ipa": ["/t/", "/eɪl/"], "say": ["tuh", "ale"]}
         },
         {
           "word": "face",
@@ -231,7 +241,8 @@
           "cn": "脸",
           "letters": [["f", "/f/"], ["a", "/eɪ/"], ["c", "/s/"], ["e", ""] ],
           "example": "Wash your face.",
-          "exampleCn": "洗洗你的脸。"
+          "exampleCn": "洗洗你的脸。",
+          "parts": {"t": ["f", "ace"], "ipa": ["/f/", "/eɪs/"], "say": ["fuh", "ace"]}
         },
         {
           "word": "sing",
@@ -241,7 +252,8 @@
           "cn": "唱歌",
           "letters": [["s", "/s/"], ["i", "/ɪ/"], ["ng", "/ŋ/"] ],
           "example": "Let's sing and dance.",
-          "exampleCn": "我们来唱歌跳舞吧。"
+          "exampleCn": "我们来唱歌跳舞吧。",
+          "parts": {"t": ["s", "ing"], "ipa": ["/s/", "/ɪŋ/"], "say": ["suh", "ing"]}
         },
         {
           "word": "dance",
@@ -251,7 +263,8 @@
           "cn": "跳舞",
           "letters": [["d", "/d/"], ["a", "/ɑː/"], ["n", "/n/"], ["c", "/s/"], ["e", ""] ],
           "example": "I like to dance.",
-          "exampleCn": "我喜欢跳舞。"
+          "exampleCn": "我喜欢跳舞。",
+          "parts": {"t": ["d", "ance"], "ipa": ["/d/", "/ɑːns/"], "say": ["duh", "ahns"]}
         },
         {
           "word": "picture",
@@ -273,7 +286,8 @@
           "cn": "卡片；贺卡",
           "letters": [["c", "/k/"], ["ar", "/ɑː/"], ["d", "/d/"] ],
           "example": "Let's make a card.",
-          "exampleCn": "我们来做一张卡片吧。"
+          "exampleCn": "我们来做一张卡片吧。",
+          "parts": {"t": ["c", "ard"], "ipa": ["/k/", "/ɑːd/"], "say": ["kuh", "ard"]}
         }
       ]
     },
@@ -289,7 +303,8 @@
           "cn": "钢笔",
           "letters": [["p", "/p/"], ["e", "/e/"], ["n", "/n/"] ],
           "example": "Can I use your pen?",
-          "exampleCn": "我能用一下你的钢笔吗？"
+          "exampleCn": "我能用一下你的钢笔吗？",
+          "parts": {"t": ["p", "en"], "ipa": ["/p/", "/en/"], "say": ["puh", "en"]}
         },
         {
           "word": "pencil",
@@ -311,7 +326,8 @@
           "cn": "书",
           "letters": [["b", "/b/"], ["oo", "/ʊ/"], ["k", "/k/"] ],
           "example": "Read your book.",
-          "exampleCn": "读你的书。"
+          "exampleCn": "读你的书。",
+          "parts": {"t": ["b", "ook"], "ipa": ["/b/", "/ʊk/"], "say": ["buh", "ook"]}
         },
         {
           "word": "bag",
@@ -321,7 +337,8 @@
           "cn": "包；书包",
           "letters": [["b", "/b/"], ["a", "/æ/"], ["g", "/ɡ/"] ],
           "example": "Put it in your bag.",
-          "exampleCn": "把它放进你的书包。"
+          "exampleCn": "把它放进你的书包。",
+          "parts": {"t": ["b", "ag"], "ipa": ["/b/", "/æɡ/"], "say": ["buh", "ag"]}
         },
         {
           "word": "ruler",
@@ -367,7 +384,8 @@
           "cn": "鼻子",
           "letters": [["n", "/n/"], ["o", "/əʊ/"], ["s", "/z/"], ["e", ""] ],
           "example": "I smell with my nose.",
-          "exampleCn": "我用鼻子闻。"
+          "exampleCn": "我用鼻子闻。",
+          "parts": {"t": ["n", "ose"], "ipa": ["/n/", "/əʊz/"], "say": ["nuh", "owes"]}
         },
         {
           "word": "see",
@@ -377,7 +395,8 @@
           "cn": "看见",
           "letters": [["s", "/s/"], ["ee", "/iː/"] ],
           "example": "I see with my eyes.",
-          "exampleCn": "我用眼睛看。"
+          "exampleCn": "我用眼睛看。",
+          "parts": {"t": ["s", "ee"], "ipa": ["/s/", "/iː/"], "say": ["suh", "ee"]}
         },
         {
           "word": "smell",
@@ -387,7 +406,8 @@
           "cn": "闻",
           "letters": [["s", "/s/"], ["m", "/m/"], ["e", "/e/"], ["ll", "/l/"] ],
           "example": "Smell the flowers.",
-          "exampleCn": "闻一闻花。"
+          "exampleCn": "闻一闻花。",
+          "parts": {"t": ["sm", "ell"], "ipa": ["/sm/", "/el/"], "say": ["smuh", "el"]}
         },
         {
           "word": "touch",
@@ -397,7 +417,8 @@
           "cn": "触摸",
           "letters": [["t", "/t/"], ["ou", "/ʌ/"], ["ch", "/tʃ/"] ],
           "example": "Touch the grass.",
-          "exampleCn": "摸一摸草地。"
+          "exampleCn": "摸一摸草地。",
+          "parts": {"t": ["t", "ouch"], "ipa": ["/t/", "/ʌtʃ/"], "say": ["tuh", "utch"]}
         },
         {
           "word": "computer",
@@ -425,7 +446,8 @@
           "cn": "面包",
           "letters": [["b", "/b/"], ["r", "/r/"], ["ea", "/e/"], ["d", "/d/"] ],
           "example": "I'd like some bread.",
-          "exampleCn": "我想要些面包。"
+          "exampleCn": "我想要些面包。",
+          "parts": {"t": ["br", "ead"], "ipa": ["/br/", "/ed/"], "say": ["bruh", "ed"]}
         },
         {
           "word": "egg",
@@ -445,7 +467,8 @@
           "cn": "牛奶",
           "letters": [["m", "/m/"], ["i", "/ɪ/"], ["l", "/l/"], ["k", "/k/"] ],
           "example": "Have some milk too.",
-          "exampleCn": "也喝点牛奶吧。"
+          "exampleCn": "也喝点牛奶吧。",
+          "parts": {"t": ["m", "ilk"], "ipa": ["/m/", "/ɪlk/"], "say": ["muh", "ilk"]}
         },
         {
           "word": "noodle",
@@ -467,7 +490,8 @@
           "cn": "果汁",
           "letters": [["j", "/dʒ/"], ["ui", "/uː/"], ["c", "/s/"], ["e", ""] ],
           "example": "Drink your juice.",
-          "exampleCn": "喝你的果汁。"
+          "exampleCn": "喝你的果汁。",
+          "parts": {"t": ["j", "uice"], "ipa": ["/dʒ/", "/uːs/"], "say": ["juh", "oose"]}
         },
         {
           "word": "rice",
@@ -477,7 +501,8 @@
           "cn": "米饭；大米",
           "letters": [["r", "/r/"], ["i", "/aɪ/"], ["c", "/s/"], ["e", ""] ],
           "example": "Would you like some rice?",
-          "exampleCn": "你想要些米饭吗？"
+          "exampleCn": "你想要些米饭吗？",
+          "parts": {"t": ["r", "ice"], "ipa": ["/r/", "/aɪs/"], "say": ["ruh", "ice"]}
         },
         {
           "word": "meat",
@@ -487,7 +512,8 @@
           "cn": "肉",
           "letters": [["m", "/m/"], ["ea", "/iː/"], ["t", "/t/"] ],
           "example": "I like rice and meat.",
-          "exampleCn": "我喜欢米饭和肉。"
+          "exampleCn": "我喜欢米饭和肉。",
+          "parts": {"t": ["m", "eat"], "ipa": ["/m/", "/iːt/"], "say": ["muh", "eat"]}
         },
         {
           "word": "soup",
@@ -497,7 +523,8 @@
           "cn": "汤",
           "letters": [["s", "/s/"], ["ou", "/uː/"], ["p", "/p/"] ],
           "example": "The soup is hot.",
-          "exampleCn": "汤很烫。"
+          "exampleCn": "汤很烫。",
+          "parts": {"t": ["s", "oup"], "ipa": ["/s/", "/uːp/"], "say": ["suh", "oop"]}
         },
         {
           "word": "fruit",
@@ -507,7 +534,8 @@
           "cn": "水果",
           "letters": [["f", "/f/"], ["r", "/r/"], ["ui", "/uː/"], ["t", "/t/"] ],
           "example": "Eat some fruit every day.",
-          "exampleCn": "每天吃些水果。"
+          "exampleCn": "每天吃些水果。",
+          "parts": {"t": ["fr", "uit"], "ipa": ["/fr/", "/uːt/"], "say": ["fruh", "oot"]}
         },
         {
           "word": "vegetable",
@@ -559,7 +587,8 @@
           "cn": "球",
           "letters": [["b", "/b/"], ["a", "/ɔː/"], ["ll", "/l/"] ],
           "example": "I have a ball.",
-          "exampleCn": "我有一个球。"
+          "exampleCn": "我有一个球。",
+          "parts": {"t": ["b", "all"], "ipa": ["/b/", "/ɔːl/"], "say": ["buh", "all"]}
         },
         {
           "word": "doll",
@@ -569,7 +598,8 @@
           "cn": "玩偶；娃娃",
           "letters": [["d", "/d/"], ["o", "/ɒ/"], ["ll", "/l/"] ],
           "example": "I have an old doll.",
-          "exampleCn": "我有一个旧娃娃。"
+          "exampleCn": "我有一个旧娃娃。",
+          "parts": {"t": ["d", "oll"], "ipa": ["/d/", "/ɒl/"], "say": ["duh", "oll"]}
         },
         {
           "word": "car",
@@ -579,7 +609,8 @@
           "cn": "小汽车",
           "letters": [["c", "/k/"], ["ar", "/ɑː/"] ],
           "example": "This toy car is cool.",
-          "exampleCn": "这辆玩具车很酷。"
+          "exampleCn": "这辆玩具车很酷。",
+          "parts": {"t": ["c", "ar"], "ipa": ["/k/", "/ɑː(r)/"], "say": ["kuh", "ar"]}
         },
         {
           "word": "boat",
@@ -589,7 +620,8 @@
           "cn": "小船",
           "letters": [["b", "/b/"], ["oa", "/əʊ/"], ["t", "/t/"] ],
           "example": "You can keep the boat.",
-          "exampleCn": "你可以留着这只船。"
+          "exampleCn": "你可以留着这只船。",
+          "parts": {"t": ["b", "oat"], "ipa": ["/b/", "/əʊt/"], "say": ["buh", "oat"]}
         },
         {
           "word": "cap",
@@ -599,7 +631,8 @@
           "cn": "帽子",
           "letters": [["c", "/k/"], ["a", "/æ/"], ["p", "/p/"] ],
           "example": "Where is my cap?",
-          "exampleCn": "我的帽子在哪儿？"
+          "exampleCn": "我的帽子在哪儿？",
+          "parts": {"t": ["c", "ap"], "ipa": ["/k/", "/æp/"], "say": ["kuh", "ap"]}
         },
         {
           "word": "map",
@@ -609,7 +642,8 @@
           "cn": "地图",
           "letters": [["m", "/m/"], ["a", "/æ/"], ["p", "/p/"] ],
           "example": "The map is on the wall.",
-          "exampleCn": "地图在墙上。"
+          "exampleCn": "地图在墙上。",
+          "parts": {"t": ["m", "ap"], "ipa": ["/m/", "/æp/"], "say": ["muh", "ap"]}
         },
         {
           "word": "box",
@@ -619,7 +653,8 @@
           "cn": "盒子",
           "letters": [["b", "/b/"], ["o", "/ɒ/"], ["x", "/ks/"] ],
           "example": "It's in the box.",
-          "exampleCn": "它在盒子里。"
+          "exampleCn": "它在盒子里。",
+          "parts": {"t": ["b", "ox"], "ipa": ["/b/", "/ɒks/"], "say": ["buh", "ox"]}
         },
         {
           "word": "shelf",
@@ -629,7 +664,8 @@
           "cn": "架子",
           "letters": [["sh", "/ʃ/"], ["e", "/e/"], ["l", "/l/"], ["f", "/f/"] ],
           "example": "Is it on the shelf?",
-          "exampleCn": "它在架子上吗？"
+          "exampleCn": "它在架子上吗？",
+          "parts": {"t": ["sh", "elf"], "ipa": ["/ʃ/", "/elf/"], "say": ["shuh", "elf"]}
         },
         {
           "word": "home",
@@ -639,7 +675,8 @@
           "cn": "家",
           "letters": [["h", "/h/"], ["o", "/əʊ/"], ["m", "/m/"], ["e", ""] ],
           "example": "I have old toys at home.",
-          "exampleCn": "我家里有旧玩具。"
+          "exampleCn": "我家里有旧玩具。",
+          "parts": {"t": ["h", "ome"], "ipa": ["/h/", "/əʊm/"], "say": ["huh", "ohm"]}
         }
       ]
     },
@@ -667,7 +704,8 @@
           "cn": "十二",
           "letters": [["t", "/t/"], ["w", "/w/"], ["e", "/e/"], ["l", "/l/"], ["v", "/v/"], ["e", ""] ],
           "example": "We have twelve pencils.",
-          "exampleCn": "我们有十二支铅笔。"
+          "exampleCn": "我们有十二支铅笔。",
+          "parts": {"t": ["tw", "elve"], "ipa": ["/tw/", "/elv/"], "say": ["twuh", "elv"]}
         },
         {
           "word": "thirteen",

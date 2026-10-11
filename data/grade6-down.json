@@ -143,7 +143,8 @@
           "cn": "打扫（过去式）",
           "letters": [["c", "/k/"], ["l", "/l/"], ["ea", "/iː/"], ["n", "/n/"], ["e", ""], ["d", "/d/"] ],
           "example": "I cleaned my room.",
-          "exampleCn": "我打扫了我的房间。"
+          "exampleCn": "我打扫了我的房间。",
+          "parts": {"t": ["cl", "eaned"], "ipa": ["/kl/", "/iːnd/"], "say": ["kluh", "eaned"]}
         },
         {
           "word": "stayed",
@@ -153,7 +154,8 @@
           "cn": "停留（过去式）",
           "letters": [["s", "/s/"], ["t", "/t/"], ["ay", "/eɪ/"], ["e", ""], ["d", "/d/"] ],
           "example": "I stayed at home.",
-          "exampleCn": "我待在家里。"
+          "exampleCn": "我待在家里。",
+          "parts": {"t": ["st", "ayed"], "ipa": ["/st/", "/eɪd/"], "say": ["stuh", "ade"]}
         },
         {
           "word": "washed",
@@ -163,7 +165,8 @@
           "cn": "洗（过去式）",
           "letters": [["w", "/w/"], ["a", "/ɒ/"], ["sh", "/ʃ/"], ["e", ""], ["d", "/t/"] ],
           "example": "I washed my clothes.",
-          "exampleCn": "我洗了我的衣服。"
+          "exampleCn": "我洗了我的衣服。",
+          "parts": {"t": ["w", "ashed"], "ipa": ["/w/", "/ɒʃt/"], "say": ["wuh", "osht"]}
         },
         {
           "word": "watched",
@@ -173,7 +176,8 @@
           "cn": "观看（过去式）",
           "letters": [["w", "/w/"], ["a", "/ɒ/"], ["tch", "/tʃ/"], ["e", ""], ["d", "/t/"] ],
           "example": "I watched TV.",
-          "exampleCn": "我看了电视。"
+          "exampleCn": "我看了电视。",
+          "parts": {"t": ["w", "atched"], "ipa": ["/w/", "/ɒtʃt/"], "say": ["wuh", "otched"]}
         },
         {
           "word": "slept",
@@ -183,7 +187,8 @@
           "cn": "睡觉（过去式）",
           "letters": [["s", "/s/"], ["l", "/l/"], ["e", "/e/"], ["p", "/p/"], ["t", "/t/"] ],
           "example": "I slept late.",
-          "exampleCn": "我睡得很晚。"
+          "exampleCn": "我睡得很晚。",
+          "parts": {"t": ["sl", "ept"], "ipa": ["/sl/", "/ept/"], "say": ["sluh", "ept"]}
         },
         {
           "word": "saw",
@@ -193,7 +198,8 @@
           "cn": "看见（过去式）",
           "letters": [["s", "/s/"], ["aw", "/ɔː/"] ],
           "example": "I saw a film.",
-          "exampleCn": "我看了一场电影。"
+          "exampleCn": "我看了一场电影。",
+          "parts": {"t": ["s", "aw"], "ipa": ["/s/", "/ɔː/"], "say": ["suh", "or"]}
         },
         {
           "word": "last",
@@ -203,7 +209,8 @@
           "cn": "上一个的",
           "letters": [["l", "/l/"], ["a", "/ɑː/"], ["s", "/s/"], ["t", "/t/"] ],
           "example": "What did you do last weekend?",
-          "exampleCn": "你上周末做了什么？"
+          "exampleCn": "你上周末做了什么？",
+          "parts": {"t": ["l", "ast"], "ipa": ["/l/", "/ɑːst/"], "say": ["luh", "ahst"]}
         },
         {
           "word": "yesterday",
@@ -253,7 +260,8 @@
           "cn": "拿；拍（过去式）",
           "letters": [["t", "/t/"], ["oo", "/ʊ/"], ["k", "/k/"] ],
           "example": "I took pictures.",
-          "exampleCn": "我拍了照片。"
+          "exampleCn": "我拍了照片。",
+          "parts": {"t": ["t", "ook"], "ipa": ["/t/", "/ʊk/"], "say": ["tuh", "ook"]}
         },
         {
           "word": "went",
@@ -263,7 +271,8 @@
           "cn": "去（过去式）",
           "letters": [["w", "/w/"], ["e", "/e/"], ["n", "/n/"], ["t", "/t/"] ],
           "example": "I went camping.",
-          "exampleCn": "我去露营了。"
+          "exampleCn": "我去露营了。",
+          "parts": {"t": ["w", "ent"], "ipa": ["/w/", "/ent/"], "say": ["wuh", "ent"]}
         },
         {
           "word": "camping",
@@ -297,7 +306,8 @@
           "cn": "骑（过去式）",
           "letters": [["r", "/r/"], ["o", "/əʊ/"], ["d", "/d/"], ["e", ""] ],
           "example": "I rode a horse.",
-          "exampleCn": "我骑了马。"
+          "exampleCn": "我骑了马。",
+          "parts": {"t": ["r", "ode"], "ipa": ["/r/", "/əʊd/"], "say": ["ruh", "ode"]}
         },
         {
           "word": "hurt",
@@ -307,7 +317,8 @@
           "cn": "受伤",
           "letters": [["h", "/h/"], ["ur", "/ɜː/"], ["t", "/t/"] ],
           "example": "I hurt my foot.",
-          "exampleCn": "我弄伤了我的脚。"
+          "exampleCn": "我弄伤了我的脚。",
+          "parts": {"t": ["h", "urt"], "ipa": ["/h/", "/ɜːt/"], "say": ["huh", "urt"]}
         },
         {
           "word": "bike",
@@ -317,7 +328,8 @@
           "cn": "自行车",
           "letters": [["b", "/b/"], ["i", "/aɪ/"], ["k", "/k/"], ["e", ""] ],
           "example": "I rode a bike.",
-          "exampleCn": "我骑了自行车。"
+          "exampleCn": "我骑了自行车。",
+          "parts": {"t": ["b", "ike"], "ipa": ["/b/", "/aɪk/"], "say": ["buh", "ike"]}
         }
       ]
     },
@@ -333,7 +345,8 @@
           "cn": "草坪；草",
           "letters": [["g", "/ɡ/"], ["r", "/r/"], ["a", "/ɑː/"], ["ss", "/s/"] ],
           "example": "There was no grass then.",
-          "exampleCn": "那时没有草坪。"
+          "exampleCn": "那时没有草坪。",
+          "parts": {"t": ["gr", "ass"], "ipa": ["/ɡr/", "/ɑːs/"], "say": ["gruh", "ahss"]}
         },
         {
           "word": "gym",
@@ -343,7 +356,8 @@
           "cn": "体育馆",
           "letters": [["g", "/dʒ/"], ["y", "/ɪ/"], ["m", "/m/"] ],
           "example": "There is a new gym.",
-          "exampleCn": "有一个新的体育馆。"
+          "exampleCn": "有一个新的体育馆。",
+          "parts": {"t": ["g", "ym"], "ipa": ["/dʒ/", "/ɪm/"], "say": ["juh", "im"]}
         },
         {
           "word": "ago",

@@ -17,7 +17,8 @@
           "cn": "朋友",
           "letters": [["f", "/f/"], ["r", "/r/"], ["ie", "/e/"], ["n", "/n/"], ["d", "/d/"] ],
           "example": "She is my friend.",
-          "exampleCn": "她是我的朋友。"
+          "exampleCn": "她是我的朋友。",
+          "parts": {"t": ["fr", "iend"], "ipa": ["/fr/", "/end/"], "say": ["fruh", "end"]}
         },
         {
           "word": "nice",
@@ -27,7 +28,8 @@
           "cn": "令人愉快的；友好的",
           "letters": [["n", "/n/"], ["i", "/aɪ/"], ["c", "/s/"], ["e", ""] ],
           "example": "Nice to meet you.",
-          "exampleCn": "见到你很高兴。"
+          "exampleCn": "见到你很高兴。",
+          "parts": {"t": ["n", "ice"], "ipa": ["/n/", "/aɪs/"], "say": ["nuh", "ice"]}
         },
         {
           "word": "ear",
@@ -57,7 +59,8 @@
           "cn": "手",
           "letters": [["h", "/h/"], ["a", "/æ/"], ["n", "/n/"], ["d", "/d/"] ],
           "example": "Wave your hand.",
-          "exampleCn": "挥挥你的手。"
+          "exampleCn": "挥挥你的手。",
+          "parts": {"t": ["h", "and"], "ipa": ["/h/", "/ænd/"], "say": ["huh", "and"]}
         },
         {
           "word": "mouth",
@@ -67,7 +70,8 @@
           "cn": "嘴",
           "letters": [["m", "/m/"], ["ou", "/aʊ/"], ["th", "/θ/"] ],
           "example": "Open your mouth.",
-          "exampleCn": "张开你的嘴。"
+          "exampleCn": "张开你的嘴。",
+          "parts": {"t": ["m", "outh"], "ipa": ["/m/", "/aʊθ/"], "say": ["muh", "owth"]}
         },
         {
           "word": "arm",
@@ -87,7 +91,8 @@
           "cn": "微笑",
           "letters": [["s", "/s/"], ["m", "/m/"], ["i", "/aɪ/"], ["l", "/l/"], ["e", ""] ],
           "example": "Smile at your friend.",
-          "exampleCn": "对你的朋友笑一笑。"
+          "exampleCn": "对你的朋友笑一笑。",
+          "parts": {"t": ["sm", "ile"], "ipa": ["/sm/", "/aɪl/"], "say": ["smuh", "aisle"]}
         },
         {
           "word": "share",
@@ -97,7 +102,8 @@
           "cn": "分享",
           "letters": [["sh", "/ʃ/"], ["are", "/eə/"] ],
           "example": "We can share.",
-          "exampleCn": "我们可以分享。"
+          "exampleCn": "我们可以分享。",
+          "parts": {"t": ["sh", "are"], "ipa": ["/ʃ/", "/eə(r)/"], "say": ["shuh", "air"]}
         },
         {
           "word": "listen",
@@ -119,7 +125,8 @@
           "cn": "玩具",
           "letters": [["t", "/t/"], ["oy", "/ɔɪ/"] ],
           "example": "This is my toy.",
-          "exampleCn": "这是我的玩具。"
+          "exampleCn": "这是我的玩具。",
+          "parts": {"t": ["t", "oy"], "ipa": ["/t/", "/ɔɪ/"], "say": ["tuh", "oy"]}
         }
       ]
     },
@@ -271,7 +278,8 @@
           "cn": "狗",
           "letters": [["d", "/d/"], ["o", "/ɒ/"], ["g", "/ɡ/"] ],
           "example": "I have a dog.",
-          "exampleCn": "我有一只狗。"
+          "exampleCn": "我有一只狗。",
+          "parts": {"t": ["d", "og"], "ipa": ["/d/", "/ɒɡ/"], "say": ["duh", "og"]}
         },
         {
           "word": "cat",
@@ -281,7 +289,8 @@
           "cn": "猫",
           "letters": [["c", "/k/"], ["a", "/æ/"], ["t", "/t/"] ],
           "example": "The cat is cute.",
-          "exampleCn": "这只猫很可爱。"
+          "exampleCn": "这只猫很可爱。",
+          "parts": {"t": ["c", "at"], "ipa": ["/k/", "/æt/"], "say": ["kuh", "at"]}
         },
         {
           "word": "rabbit",
@@ -303,7 +312,8 @@
           "cn": "鸟",
           "letters": [["b", "/b/"], ["ir", "/ɜː/"], ["d", "/d/"] ],
           "example": "The bird can fly.",
-          "exampleCn": "鸟会飞。"
+          "exampleCn": "鸟会飞。",
+          "parts": {"t": ["b", "ird"], "ipa": ["/b/", "/ɜːd/"], "say": ["buh", "erd"]}
         },
         {
           "word": "fish",
@@ -313,7 +323,8 @@
           "cn": "鱼",
           "letters": [["f", "/f/"], ["i", "/ɪ/"], ["sh", "/ʃ/"] ],
           "example": "I like fish.",
-          "exampleCn": "我喜欢鱼。"
+          "exampleCn": "我喜欢鱼。",
+          "parts": {"t": ["f", "ish"], "ipa": ["/f/", "/ɪʃ/"], "say": ["fuh", "ish"]}
         },
         {
           "word": "panda",
@@ -437,7 +448,8 @@
           "cn": "葡萄",
           "letters": [["g", "/ɡ/"], ["r", "/r/"], ["a", "/eɪ/"], ["p", "/p/"], ["e", ""] ],
           "example": "The grapes are purple.",
-          "exampleCn": "这些葡萄是紫色的。"
+          "exampleCn": "这些葡萄是紫色的。",
+          "parts": {"t": ["gr", "ape"], "ipa": ["/ɡr/", "/eɪp/"], "say": ["gruh", "ape"]}
         },
         {
           "word": "flower",
@@ -459,7 +471,8 @@
           "cn": "树",
           "letters": [["t", "/t/"], ["r", "/r/"], ["ee", "/iː/"] ],
           "example": "Birds sing in the tree.",
-          "exampleCn": "鸟儿在树上唱歌。"
+          "exampleCn": "鸟儿在树上唱歌。",
+          "parts": {"t": ["tr", "ee"], "ipa": ["/tr/", "/iː/"], "say": ["truh", "ee"]}
         },
         {
           "word": "grass",
@@ -469,7 +482,8 @@
           "cn": "草；草地",
           "letters": [["g", "/ɡ/"], ["r", "/r/"], ["a", "/ɑː/"], ["ss", "/s/"] ],
           "example": "The grass is green.",
-          "exampleCn": "草是绿色的。"
+          "exampleCn": "草是绿色的。",
+          "parts": {"t": ["gr", "ass"], "ipa": ["/ɡr/", "/ɑːs/"], "say": ["gruh", "ahss"]}
         },
         {
           "word": "garden",
@@ -503,7 +517,8 @@
           "cn": "太阳",
           "letters": [["s", "/s/"], ["u", "/ʌ/"], ["n", "/n/"] ],
           "example": "The sun is hot.",
-          "exampleCn": "太阳很热。"
+          "exampleCn": "太阳很热。",
+          "parts": {"t": ["s", "un"], "ipa": ["/s/", "/ʌn/"], "say": ["suh", "un"]}
         }
       ]
     },
@@ -531,7 +546,8 @@
           "cn": "红色（的）",
           "letters": [["r", "/r/"], ["e", "/e/"], ["d", "/d/"] ],
           "example": "The apple is red.",
-          "exampleCn": "这个苹果是红色的。"
+          "exampleCn": "这个苹果是红色的。",
+          "parts": {"t": ["r", "ed"], "ipa": ["/r/", "/ed/"], "say": ["ruh", "ed"]}
         },
         {
           "word": "green",
@@ -541,7 +557,8 @@
           "cn": "绿色（的）",
           "letters": [["g", "/ɡ/"], ["r", "/r/"], ["ee", "/iː/"], ["n", "/n/"] ],
           "example": "The tree is green.",
-          "exampleCn": "树是绿色的。"
+          "exampleCn": "树是绿色的。",
+          "parts": {"t": ["gr", "een"], "ipa": ["/ɡr/", "/iːn/"], "say": ["gruh", "een"]}
         },
         {
           "word": "blue",
@@ -551,7 +568,8 @@
           "cn": "蓝色（的）",
           "letters": [["b", "/b/"], ["l", "/l/"], ["ue", "/uː/"] ],
           "example": "The sea is blue.",
-          "exampleCn": "大海是蓝色的。"
+          "exampleCn": "大海是蓝色的。",
+          "parts": {"t": ["bl", "ue"], "ipa": ["/bl/", "/uː/"], "say": ["bluh", "oo"]}
         },
         {
           "word": "yellow",
@@ -585,7 +603,8 @@
           "cn": "棕色（的）",
           "letters": [["b", "/b/"], ["r", "/r/"], ["ow", "/aʊ/"], ["n", "/n/"] ],
           "example": "The bear is brown.",
-          "exampleCn": "这只熊是棕色的。"
+          "exampleCn": "这只熊是棕色的。",
+          "parts": {"t": ["br", "own"], "ipa": ["/br/", "/aʊn/"], "say": ["bruh", "own"]}
         },
         {
           "word": "pink",
@@ -595,7 +614,8 @@
           "cn": "粉色（的）",
           "letters": [["p", "/p/"], ["i", "/ɪ/"], ["n", "/ŋ/"], ["k", "/k/"] ],
           "example": "Her dress is pink.",
-          "exampleCn": "她的裙子是粉色的。"
+          "exampleCn": "她的裙子是粉色的。",
+          "parts": {"t": ["p", "ink"], "ipa": ["/p/", "/ɪŋk/"], "say": ["puh", "ink"]}
         },
         {
           "word": "white",
@@ -605,7 +625,8 @@
           "cn": "白色（的）",
           "letters": [["wh", "/w/"], ["i", "/aɪ/"], ["t", "/t/"], ["e", ""] ],
           "example": "The cloud is white.",
-          "exampleCn": "云是白色的。"
+          "exampleCn": "云是白色的。",
+          "parts": {"t": ["wh", "ite"], "ipa": ["/w/", "/aɪt/"], "say": ["wuh", "ite"]}
         },
         {
           "word": "black",
@@ -615,7 +636,8 @@
           "cn": "黑色（的）",
           "letters": [["b", "/b/"], ["l", "/l/"], ["a", "/æ/"], ["ck", "/k/"] ],
           "example": "My cat is black.",
-          "exampleCn": "我的猫是黑色的。"
+          "exampleCn": "我的猫是黑色的。",
+          "parts": {"t": ["bl", "ack"], "ipa": ["/bl/", "/æk/"], "say": ["bluh", "ack"]}
         }
       ]
     },
@@ -641,7 +663,8 @@
           "cn": "二",
           "letters": [["t", "/t/"], ["w", ""], ["o", "/uː/"] ],
           "example": "I have two hands.",
-          "exampleCn": "我有两只手。"
+          "exampleCn": "我有两只手。",
+          "parts": {"t": ["tw", "o"], "ipa": ["/t/", "/uː/"], "say": ["tuh", "oo"]}
         },
         {
           "word": "three",
@@ -651,7 +674,8 @@
           "cn": "三",
           "letters": [["th", "/θ/"], ["r", "/r/"], ["ee", "/iː/"] ],
           "example": "I have three books.",
-          "exampleCn": "我有三本书。"
+          "exampleCn": "我有三本书。",
+          "parts": {"t": ["thr", "ee"], "ipa": ["/θr/", "/iː/"], "say": ["thruh", "ee"]}
         },
         {
           "word": "four",
@@ -661,7 +685,8 @@
           "cn": "四",
           "letters": [["f", "/f/"], ["our", "/ɔː/"] ],
           "example": "A dog has four legs.",
-          "exampleCn": "狗有四条腿。"
+          "exampleCn": "狗有四条腿。",
+          "parts": {"t": ["f", "our"], "ipa": ["/f/", "/ɔː(r)/"], "say": ["fuh", "or"]}
         },
         {
           "word": "five",
@@ -671,7 +696,8 @@
           "cn": "五",
           "letters": [["f", "/f/"], ["i", "/aɪ/"], ["v", "/v/"], ["e", ""] ],
           "example": "I am five.",
-          "exampleCn": "我五岁了。"
+          "exampleCn": "我五岁了。",
+          "parts": {"t": ["f", "ive"], "ipa": ["/f/", "/aɪv/"], "say": ["fuh", "ive"]}
         },
         {
           "word": "six",
@@ -681,7 +707,8 @@
           "cn": "六",
           "letters": [["s", "/s/"], ["i", "/ɪ/"], ["x", "/ks/"] ],
           "example": "It's six o'clock.",
-          "exampleCn": "现在六点钟。"
+          "exampleCn": "现在六点钟。",
+          "parts": {"t": ["s", "ix"], "ipa": ["/s/", "/ɪks/"], "say": ["suh", "ix"]}
         },
         {
           "word": "seven",
@@ -713,7 +740,8 @@
           "cn": "九",
           "letters": [["n", "/n/"], ["i", "/aɪ/"], ["n", "/n/"], ["e", ""] ],
           "example": "I go to bed at nine.",
-          "exampleCn": "我九点睡觉。"
+          "exampleCn": "我九点睡觉。",
+          "parts": {"t": ["n", "ine"], "ipa": ["/n/", "/aɪn/"], "say": ["nuh", "ine"]}
         },
         {
           "word": "ten",
@@ -723,7 +751,8 @@
           "cn": "十",
           "letters": [["t", "/t/"], ["e", "/e/"], ["n", "/n/"] ],
           "example": "I have ten fingers.",
-          "exampleCn": "我有十根手指。"
+          "exampleCn": "我有十根手指。",
+          "parts": {"t": ["t", "en"], "ipa": ["/t/", "/en/"], "say": ["tuh", "en"]}
         },
         {
           "word": "cake",
@@ -733,7 +762,8 @@
           "cn": "蛋糕",
           "letters": [["c", "/k/"], ["a", "/eɪ/"], ["k", "/k/"], ["e", ""] ],
           "example": "Let's eat the cake.",
-          "exampleCn": "我们来吃蛋糕吧。"
+          "exampleCn": "我们来吃蛋糕吧。",
+          "parts": {"t": ["c", "ake"], "ipa": ["/k/", "/eɪk/"], "say": ["kuh", "ache"]}
         }
       ]
     }
