@@ -167,3 +167,4 @@ main{max-width:900px;margin:0 auto;padding:16px 14px 110px}
   .rule-note{font-size:16px}
   .ipa-row{flex-wrap:wrap}
 }
+.blendbtn.busy{opacity:.6}

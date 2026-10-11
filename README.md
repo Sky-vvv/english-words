@@ -4,13 +4,13 @@
 
 - 不用安装，不用注册，没有后台，打开网页就能用，用的时候也不需要联网。
 - 每个孩子的进度、收藏和默认年级分开保存，**只存在这台设备的浏览器里**，换一台设备或者清除浏览器数据，进度就没了。
-- 朗读用的是浏览器自带的英语语音（美式发音）。
+- 拼读时每个音标用**真人录的音素短音频**（`audio/phonemes/` 文件夹，共 46 个，合计约 110 KB）；整个单词和例句用浏览器自带的英语语音（美式发音）。
 
 ## 功能
 
 | 模式 | 做什么 |
 |---|---|
-| 学习 | 单词按**自然拼读**拆成彩色小块（辅音深蓝、元音红、元音组合和 r 控制元音绿、magic e 紫、不发音的灰）。点一块就读这一块的音，下面的规则框会显示它的读音和中文拼读规则，例外的拼写会标“⚠ 例外”。点「🔤 拼读」会一块一块读，最后读整个单词。🔊 读整个词，例句旁的 🔊 读例句。底部有 上一个 / 收藏 / 已掌握 / 下一个。 |
+| 学习 | 单词按**自然拼读**拆成彩色小块（辅音深蓝、元音红、元音组合和 r 控制元音绿、magic e 紫、不发音的灰）。点一块就按音标播放这一块的音素（比如 fr 播 /f/ 再播 /r/，不发音的字母不出声），下面的规则框会显示它的读音和中文拼读规则，例外的拼写会标“⚠ 例外”。点「🔤 拼读」会一块一块按音标读（读到哪块哪块高亮），停一下，再读整个单词。🔊 读整个词，例句旁的 🔊 读例句。底部有 上一个 / 收藏 / 已掌握 / 下一个。 |
 | 拼写 | 听单词、看中文，点打乱的字母把单词拼出来，也可以用键盘直接打字。拼不出来可以点“提示”。 |
 | 听选 | 听单词，从 4 个中文意思里选出正确的。 |
 | 复习 | 只练还没掌握的词，到了复习时间的词排在前面（间隔 1、2、4、7、15 天），拼写题和听选题交替出。 |
@@ -87,7 +87,7 @@
 | `pos` | 词性，比如 n. v. adj. | 可以不写 |
 | `letters` | 字母块和它下面的发音，`["e", ""]` 表示这个字母不发音 | 可以不写，不写就只显示字母 |
 | `example` / `exampleCn` | 例句和翻译 | 可以不写 |
-| `phonics` | 自然拼读拆分，每一块是 `{"t": 字母, "ipa": 读音, "type": 类型, "note": 中文规则, "tag": 小标签, "say": 点它时读出来的英文, "ex": true 表示例外, "link": true 表示 magic e 的两头}` | 可以不写，不写就按 `letters` 显示（没有规则说明）；所有块拼起来必须正好等于单词，不然网页会忽略它 |
+| `phonics` | 自然拼读拆分，每一块是 `{"t": 字母, "ipa": 读音, "type": 类型, "note": 中文规则, "tag": 小标签, "say": 备用——只有这块的音素音频缺失时才用浏览器语音读它, "ex": true 表示例外, "link": true 表示 magic e 的两头}` | 可以不写，不写就按 `letters` 显示（没有规则说明）；所有块拼起来必须正好等于单词，不然网页会忽略它 |
 
 `type` 可以填：`cons` 辅音、`blend` 辅音组合、`digraph` 字母组合（sh/ch/th/ck…）、`vowel` 元音、`team` 元音组合（ee/ea/ai…）、`r` r 控制元音（ar/er/ir…）、`magic` magic e 前面的元音、`silent` 不发音、`suffix` 词尾（-le/-ing/-tion/-ed…）。不同类型显示不同颜色。
 
@@ -123,8 +123,70 @@
 
 注意：网站是公开的，任何人知道网址都能打开，不过里面只有单词，孩子的学习进度只存在各自设备的浏览器里，不会上传。
 
+
+## 音标音频的来源和许可
+
+`audio/phonemes/` 里的音频都来自 Wikimedia Commons，下载原始录音后用 ffmpeg 做了这些处理：截取出单个音素（原录音多数是 [pa apa] 这种带元音的形式）、去掉首尾静音、统一音量、加很短的淡入淡出，转成 22 kHz 单声道 48 kbps 的 mp3（iPad/iPhone 的 Safari 能直接播）。音标和文件的对应关系在 `audio/phonemes/phonemes.json`，可以改。
+
+按 CC BY-SA 3.0 的要求：这些裁剪过的音频是原作品的修改版，**同样以 CC BY-SA 3.0 发布**；CC0 / 公有领域的那几个没有限制。网页代码和单词数据不受这个影响。
+
+| 音标 | 原文件（Wikimedia Commons） | 作者 | 许可 |
+|---|---|---|---|
+| /p/ | [Voiceless bilabial plosive.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_bilabial_plosive.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /b/ | [Voiced bilabial plosive.ogg](https://commons.wikimedia.org/wiki/File:Voiced_bilabial_plosive.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /t/ | [Voiceless alveolar plosive.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_alveolar_plosive.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /d/ | [Voiced alveolar plosive.ogg](https://commons.wikimedia.org/wiki/File:Voiced_alveolar_plosive.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /k/ | [Voiceless velar plosive.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_velar_plosive.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /ɡ/ | [Voiced velar plosive.ogg](https://commons.wikimedia.org/wiki/File:Voiced_velar_plosive.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /f/ | [Voiceless labiodental fricative.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_labiodental_fricative.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /v/ | [Voiced labiodental fricative.ogg](https://commons.wikimedia.org/wiki/File:Voiced_labiodental_fricative.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /θ/ | [Voiceless dental fricative.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_dental_fricative.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /ð/ | [Voiced dental fricative.ogg](https://commons.wikimedia.org/wiki/File:Voiced_dental_fricative.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /s/ | [Voiceless alveolar sibilant.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_alveolar_sibilant.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /z/ | [Voiced alveolar sibilant.ogg](https://commons.wikimedia.org/wiki/File:Voiced_alveolar_sibilant.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /ʃ/ | [Voiceless palato-alveolar sibilant.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_palato-alveolar_sibilant.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /ʒ/ | [Voiced palato-alveolar sibilant.ogg](https://commons.wikimedia.org/wiki/File:Voiced_palato-alveolar_sibilant.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /h/ | [Voiceless glottal fricative.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_glottal_fricative.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /tʃ/ | [Voiceless palato-alveolar affricate.ogg](https://commons.wikimedia.org/wiki/File:Voiceless_palato-alveolar_affricate.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /dʒ/ | [Voiced palato-alveolar affricate.ogg](https://commons.wikimedia.org/wiki/File:Voiced_palato-alveolar_affricate.ogg) | Octane (English Wikipedia) | Public domain |
+| /m/ | [Bilabial nasal.ogg](https://commons.wikimedia.org/wiki/File:Bilabial_nasal.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /n/ | [Alveolar nasal.ogg](https://commons.wikimedia.org/wiki/File:Alveolar_nasal.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /ŋ/ | [Velar nasal.ogg](https://commons.wikimedia.org/wiki/File:Velar_nasal.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /l/ | [Alveolar lateral approximant.ogg](https://commons.wikimedia.org/wiki/File:Alveolar_lateral_approximant.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /r/ | [Alveolar approximant.ogg](https://commons.wikimedia.org/wiki/File:Alveolar_approximant.ogg) | Erutuon | CC BY-SA 3.0 |
+| /w/ | [Voiced labio-velar approximant.ogg](https://commons.wikimedia.org/wiki/File:Voiced_labio-velar_approximant.ogg) | Peter Isotalo | CC BY-SA 3.0 |
+| /j/ | [Palatal approximant.ogg](https://commons.wikimedia.org/wiki/File:Palatal_approximant.ogg) | Peter Isotalo (User:Karmosin) | CC BY-SA 3.0 |
+| /ɪ/ | [Near-close near-front unrounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Near-close_near-front_unrounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /e/ | [Open-mid front unrounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Open-mid_front_unrounded_vowel.ogg) | Terfili | CC BY-SA 3.0 |
+| /æ/ | [Near-open front unrounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Near-open_front_unrounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /ʌ/ | [Near-open central vowel.ogg](https://commons.wikimedia.org/wiki/File:Near-open_central_vowel.ogg) | Denelson83（Commons 页面注明：无机读作者信息，推定为 Denelson83） | CC BY-SA 3.0 |
+| /ɒ/ | [Open back rounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Open_back_rounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /ʊ/ | [Near-close near-back rounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Near-close_near-back_rounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /ə/ | [Mid-central vowel.ogg](https://commons.wikimedia.org/wiki/File:Mid-central_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /i/ /iː/ | [Close front unrounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Close_front_unrounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /u/ /uː/ | [Close back rounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Close_back_rounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /ɑː/ | [Open back unrounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Open_back_unrounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /ɔː/ | [Open-mid back rounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Open-mid_back_rounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /ɜː/ | [Open-mid central unrounded vowel.ogg](https://commons.wikimedia.org/wiki/File:Open-mid_central_unrounded_vowel.ogg) | Denelson83 | CC BY-SA 3.0 |
+| /aʊ/ | [LL-Q1860 (eng)-Pvanp7-aʊ (diphthong).wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-a%CA%8A_%28diphthong%29.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /eə/ | [LL-Q1860 (eng)-Pvanp7-ɛə (diphthong).wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-%C9%9B%C9%99_%28diphthong%29.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /ʊə/ | [LL-Q1860 (eng)-Pvanp7-ʊə (diphthong).wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-%CA%8A%C9%99_%28diphthong%29.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /eɪ/ | [LL-Q1860 (eng)-Pvanp7-bay.wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-bay.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /aɪ/ | [LL-Q1860 (eng)-Pvanp7-by.wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-by.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /ɔɪ/ | [LL-Q1860 (eng)-Pvanp7-boy.wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-boy.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /əʊ/ | [LL-Q1860 (eng)-Pvanp7-beau.wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-beau.wav) | Pvanp7 (Lingua Libre) | CC0 |
+| /ɪə/ | [LL-Q1860 (eng)-Pvanp7-beer.wav](https://commons.wikimedia.org/wiki/File:LL-Q1860_%28eng%29-Pvanp7-beer.wav) | Pvanp7 (Lingua Libre) | CC0 |
+
+说明：
+- 元音和辅音是语音学家录的“标准音”（IPA 示范录音，录音人不是英国人），音色和英国人说话时的元音不完全一样，例如 /e/ 用的是 [ɛ]、/ʌ/ 用的是 [ɐ]、/ɜː/ /ɔː/ 等长元音用的是对应的标准元音。长元音的音频比短元音长一些。
+- 8 个双元音来自同一位英语母语者（Lingua Libre 用户 Pvanp7，CC0）的录音：/aʊ/ /eə/ /ʊə/ 是他单独录的双元音；/eɪ/ /aɪ/ /ɔɪ/ /əʊ/ /ɪə/ 是从 bay、by、boy、beau、beer 这几个词里去掉开头的 b 截出来的。录音人口音没有注明（从资料看可能是澳大利亚英语），不是严格的英式 RP。
+- /i/（happy 词尾）和 /u/ 用的是 /iː/ /uː/ 的缩短版。
+- 爆破音 /p/ /b/ /t/ /d/ /k/ /ɡ/ 单独发很难听清，音频里带了极短的一点气流/元音尾巴。
+
 ## 已知限制
 
 - 朗读的声音取决于设备：iPad、iPhone 的 Safari 和 Mac 上的效果最好；有的安卓浏览器或电脑浏览器没有英语语音，网页顶部会出现提示。
-- 点单个音节或字母时，读出来的是近似音（浏览器语音本来是读整词的），整词和例句是准的。
+- 点拼读块时播放的是录好的音素音频；点音节（「音节：」那一行）时还是用浏览器语音读近似音。
+- 如果某个音素的音频缺失或加载失败，那一块会自动改用浏览器语音读近似音。
+- iPhone / iPad 开着静音键时：iOS 16.4 以上会尽量照常出声；更老的系统需要关掉静音键才能听到音素音频。第一次进入后先点一下屏幕任意位置，声音才会被“解锁”。
 - 进度不能在设备之间同步。
