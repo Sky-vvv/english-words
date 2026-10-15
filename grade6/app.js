@@ -18,10 +18,18 @@ function home(){app.innerHTML=`<div class="grid">
 <div class="card muted">每答对一题得 1 颗星⭐。错题会自动进错题本，再做对就自动移出。<br>写作小贴士：写景点时用 because（因为）、and（和）、but（但是）把句子连起来，每句开头大写、结尾加句号。</div>`}
 let fi=0,fl;
 function flash(){fl=shuf(VERBS);fi=0;card()}
+let useNative=false;
 function card(){const v=fl[fi%fl.length];app.innerHTML=`${back}<div class="card"><div class="muted">第 ${fi+1} 个 · 点 🔊 听发音</div>
 <div class="big">${v[0]} <button onclick="say('${v[0]}')">🔊</button></div><div style="text-align:center">${v[2]}</div>
-<p>写出过去式：</p><input id="in" type="text" inputmode="latin" lang="en" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"><div class="fb" id="fb"></div>
-<button class="main" onclick="chk()">检查</button><button onclick="fi++;card()">下一个</button></div>`;const I=$("#in");I.focus();let comp=false;I.addEventListener("compositionstart",()=>comp=true);I.addEventListener("compositionend",()=>setTimeout(()=>comp=false,0));I.onkeydown=e=>{if(e.key=="Enter"&&!comp&&!e.isComposing&&e.keyCode!==229)chk()}}
+<p>写出过去式：</p><input id="in" type="text" lang="en" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" ${useNative?'inputmode="latin"':'readonly inputmode="none"'}>
+<div class="fb" id="fb"></div>
+<div id="kb">${["qwertyuiop","asdfghjkl","zxcvbnm"].map(r=>`<div class="kr">${[...r].map(c=>`<button class="k" data-k="${c}">${c}</button>`).join("")}</div>`).join("")}
+<div class="kr"><button class="k w" data-k="del">⌫ 删除</button><button class="k w" data-k="clr">清空</button><button class="k w main" data-k="ok">提交</button></div></div>
+<button onclick="fi++;card()">下一个</button><button onclick="useNative=!useNative;card()">${useNative?"用屏幕键盘":"用手机键盘"}</button></div>`;
+const I=$("#in");$("#kb").style.display=useNative?"none":"";
+$("#kb").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=b.dataset.k;
+if(k==="del")I.value=I.value.slice(0,-1);else if(k==="clr")I.value="";else if(k==="ok")chk();else I.value+=k});
+if(useNative){I.focus();I.addEventListener("keyup",e=>{if(e.key==="Enter"&&!e.isComposing)chk()})}}
 const half=t=>t.replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g," ");
 function chk(){const v=fl[fi%fl.length],a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
 if(a===v[1]||(v[1]==="learned"&&a==="learnt")){$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>";wrong("过去式",q,v[1])}say(v[1])}
