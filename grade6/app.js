@@ -20,9 +20,10 @@ let fi=0,fl;
 function flash(){fl=shuf(VERBS);fi=0;card()}
 function card(){const v=fl[fi%fl.length];app.innerHTML=`${back}<div class="card"><div class="muted">第 ${fi+1} 个 · 点 🔊 听发音</div>
 <div class="big">${v[0]} <button onclick="say('${v[0]}')">🔊</button></div><div style="text-align:center">${v[2]}</div>
-<p>写出过去式：</p><input id="in" autocomplete="off" autocapitalize="off"><div class="fb" id="fb"></div>
-<button class="main" onclick="chk()">检查</button><button onclick="fi++;card()">下一个</button></div>`;$("#in").focus();$("#in").onkeydown=e=>e.key=="Enter"&&chk()}
-function chk(){const v=fl[fi%fl.length],a=$("#in").value.trim().toLowerCase(),q=`${v[0]} 的过去式`;
+<p>写出过去式：</p><input id="in" type="text" inputmode="latin" lang="en" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"><div class="fb" id="fb"></div>
+<button class="main" onclick="chk()">检查</button><button onclick="fi++;card()">下一个</button></div>`;const I=$("#in");I.focus();let comp=false;I.addEventListener("compositionstart",()=>comp=true);I.addEventListener("compositionend",()=>setTimeout(()=>comp=false,0));I.onkeydown=e=>{if(e.key=="Enter"&&!comp&&!e.isComposing&&e.keyCode!==229)chk()}}
+const half=t=>t.replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g," ");
+function chk(){const v=fl[fi%fl.length],a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
 if(a===v[1]||(v[1]==="learned"&&a==="learnt")){$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>";wrong("过去式",q,v[1])}say(v[1])}
 function qa(){const q=pick(QA,1)[0],opts=shuf([q[1],...pick(QA.filter(x=>x!==q),3).map(x=>x[1])]);
 app.innerHTML=`${back}<div class="card"><p>选出正确的回答：</p><div class="big" style="font-size:22px">${q[0]} <button onclick="say(\`${q[0]}\`)">🔊</button></div>
