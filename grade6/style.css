@@ -1,0 +1,12 @@
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f3f7ff;color:#223}
+header{background:#4a7dff;color:#fff;padding:12px 16px;position:sticky;top:0}h1{margin:0;font-size:20px;cursor:pointer}
+main{max-width:640px;margin:0 auto;padding:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 8px #0001;margin-bottom:12px}
+.mod{font-size:18px;text-align:center;cursor:pointer}.mod small{display:block;color:#888;font-size:13px;margin-top:4px}
+button{font-size:17px;padding:10px 14px;border:0;border-radius:10px;background:#e8eeff;margin:4px;cursor:pointer}
+button.main{background:#4a7dff;color:#fff}button.ok{background:#3cc47c;color:#fff}button.bad{background:#ff6b6b;color:#fff}
+input{font-size:20px;padding:10px;width:100%;border:2px solid #ccd;border-radius:10px}
+.big{font-size:30px;font-weight:bold;text-align:center;margin:10px 0}.fb{min-height:24px;font-weight:bold;margin:8px 0}
+.row{display:flex;flex-wrap:wrap;justify-content:center}.slot{min-height:50px;border:2px dashed #aab;border-radius:10px;padding:4px;margin:8px 0}
+.passage{line-height:2;font-size:17px}.passage select{font-size:16px}.muted{color:#888;font-size:14px}
