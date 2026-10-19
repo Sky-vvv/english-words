@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英语练习 · 选一选是谁</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f6f3ff;color:#223}
+h1{text-align:center;font-size:24px;margin:28px 12px 6px}p.sub{text-align:center;color:#888;margin:0 0 18px}
+main{max-width:520px;margin:0 auto;padding:0 16px 30px}
+a.kid{display:flex;align-items:center;gap:16px;text-decoration:none;color:#223;background:#fff;border-radius:20px;padding:20px;margin:14px 0;box-shadow:0 3px 12px #0001;border:3px solid transparent}
+a.kid:active{transform:scale(.98)}a.jf{border-color:#ff8a4c}a.mz{border-color:#4a7dff}
+.emo{font-size:64px}.name{font-size:28px;font-weight:bold}.info{color:#666;font-size:15px;margin-top:4px}.st{font-size:14px;color:#c78a00;margin-top:4px}
+.foot{text-align:center;font-size:14px;color:#888;margin-top:24px}.foot a{color:#2bb3a3}
+</style></head>
+<body><main>
+<h1>👋 今天谁来练英语？</h1><p class="sub">点自己的名字进去</p>
+<a class="kid jf" href="../grade3/"><span class="emo">👧</span><div><div class="name">景菲</div><div class="info">三年级 · Unit 2 家人 family</div><div class="st" id="jf"></div></div></a>
+<a class="kid mz" href="../grade6/"><span class="emo">👦</span><div><div class="name">明泽</div><div class="info">六年级 · Summer Holiday 过去式</div><div class="st" id="mz"></div></div></a>
+<div class="foot">每个人的星星和错题本分开保存在这台手机/电脑的浏览器里。<br><a href="../">📗 背单词（全部年级）</a></div>
+</main>
+<script>
+function info(k,id){try{const s=JSON.parse(localStorage.getItem(k)||"null");if(s)document.getElementById(id).textContent="⭐ "+(s.stars||0)+" 颗星 · 错题 "+((s.wrong||[]).length)+" 道"}catch(e){}}
+info("jf3","jf");info("mz6","mz");
+</script>
+</body></html>
