@@ -2,17 +2,42 @@ const $=s=>document.querySelector(s),app=$("#app");
 const S=JSON.parse(localStorage.getItem("mz6")||'{"stars":0,"wrong":[]}');
 function save(){localStorage.setItem("mz6",JSON.stringify(S));$("#stars").textContent=S.stars}
 function star(n=1){S.stars+=n;save()}
-function wrong(type,q,a){if(!S.wrong.some(w=>w.q===q))S.wrong.push({type,q,a});save()}
-function right(q){S.wrong=S.wrong.filter(w=>w.q!==q);save()}
+// 单元：1 = 原来的暑假内容 + 第 1 单元。旧错题（mz6）不带单元，照常显示。
+let U=1;const PRE=()=>U==1?"":"["+(U==="all"?"全部":"Unit "+U)+"] ";
+function wrong(type,q,a){q=PRE()+q;if(!S.wrong.some(w=>w.q===q))S.wrong.push({type,q,a});save()}
+function right(q){q=PRE()+q;S.wrong=S.wrong.filter(w=>w.q!==q);save()}
+const U1={QA,LISTEN,PASSAGES,SENTS},UK=[1,2,3,4,5,6];let WL=[];
+const ALLQA=[...QA,...UK.flatMap(k=>UNITS6[k].qa.filter(x=>!QA.some(y=>y[0]===x[0])))];
+function setUnit(u){U=u;S.u=u;const us=u==="all"?UK:[u];WL=us.flatMap(k=>UNITS6[k].words.map(x=>[...x,k]));
+const one=WL.filter(x=>/^[a-z]+$/.test(x[0])).map(x=>x[0]);
+if(u==1){({QA,LISTEN,PASSAGES,SENTS}=U1);QA=[...U1.QA,...UNITS6[1].qa.filter(x=>!U1.QA.some(y=>y[0]===x[0]))];LISTEN=[...U1.LISTEN,...one.filter(w=>!U1.LISTEN.includes(w))];SENTS=[...U1.SENTS,...UNITS6[1].sents.filter(s=>!U1.SENTS.includes(s))]}
+else if(u==="all"){QA=ALLQA;LISTEN=[...new Set([...U1.LISTEN,...one])];PASSAGES=U1.PASSAGES;SENTS=[...new Set([...U1.SENTS,...UK.flatMap(k=>UNITS6[k].sents)])]}
+else{QA=UNITS6[u].qa;LISTEN=[...new Set(one)];PASSAGES=[];SENTS=UNITS6[u].sents}save()}
+function unitBar(){return `<div class="row units">${[...UK,"all"].map(k=>`<button class="ub${k==U?" main":""}" onclick="setUnit(${k==="all"?"'all'":k});home()">${k==="all"?"🔀 全部":"U"+k}</button>`).join("")}</div>
+<div class="card muted">📘 现在练：<b>${U==="all"?"全部单元（混合）":"Unit "+U+" "+UNITS6[U].t+" · "+UNITS6[U].cn}</b></div>`}
+/* 单词卡 + 单词拼写 */
+function words(){app.innerHTML=`${back}<div class="card"><p>点单词听发音：</p>${WL.map(x=>`<button class="wd" onclick="say(this.dataset.w)" data-w="${x[0].replace(/"/g,"")}"><b>${x[0]}</b><br><small>${x[1]}</small></button>`).join("")}</div>`}
+let sp=[],si=0;
+function spell(){sp=shuf(WL.filter(x=>/^[a-z ]+$/.test(x[0])));si=0;scard()}
+function scard(){const v=sp[si%sp.length];window.cur=v;app.innerHTML=`${back}<div class="card"><div class="muted">第 ${si+1} 个 · 看中文写英文（词组中间用空格键）</div>
+<div class="big" style="font-size:24px">${v[1]} <button onclick="say(window.cur[0])">🔊</button></div><input id="in" type="text" readonly inputmode="none" autocomplete="off" autocapitalize="none" spellcheck="false">
+<div class="fb" id="fb"></div><div id="kb">${["qwertyuiop","asdfghjkl","zxcvbnm"].map(r=>`<div class="kr">${[...r].map(c=>`<button class="k" data-k="${c}">${c}</button>`).join("")}</div>`).join("")}
+<div class="kr"><button class="k w" data-k=" ">空格</button><button class="k w" data-k="del">⌫ 删除</button><button class="k w" data-k="clr">清空</button><button class="k w main" data-k="ok">提交</button></div></div>
+<button onclick="si++;scard()">下一个</button></div>`;const I=$("#in");
+$("#kb").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=b.dataset.k;if(k==="del")I.value=I.value.slice(0,-1);else if(k==="clr")I.value="";else if(k==="ok")schk();else I.value+=k})}
+function schk(){const v=window.cur,a=$("#in").value.replace(/\s+/g," ").trim().toLowerCase(),q="拼写："+v[1];
+if(a===v[0]){$("#fb").innerHTML="✅ 对了！"+v[0];star();right(q)}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[0]+"</b>";wrong("拼写",q,v[0])}say(v[0])}
 function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
 const shuf=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
 const pick=(a,n)=>shuf(a).slice(0,n);
 const back='<button onclick="home()">← 返回</button>';
-function home(){app.innerHTML=`<div class="grid">
+function home(){app.innerHTML=`${unitBar()}<div class="grid">
+<div class="card mod" onclick="words()">🗂️ 单元单词卡<small>点一点听发音</small></div>
+<div class="card mod" onclick="spell()">✏️ 单词拼写<small>看中文写英文</small></div>
 <div class="card mod" onclick="flash()">📇 过去式闯关<small>记单词+拼写</small></div>
-<div class="card mod" onclick="qa()">💬 问答配对<small>How/What/Did/Where</small></div>
-<div class="card mod" onclick="listen()">🎧 听音选词<small>听过去式</small></div>
-<div class="card mod" onclick="cloze()">📝 短文填空<small>选词填空</small></div>
+${QA.length?`<div class="card mod" onclick="qa()">💬 问答配对<small>How/What/Did/Where</small></div>`:""}
+<div class="card mod" onclick="listen()">🎧 听音选词<small>听单词，选出来</small></div>
+${PASSAGES.length?`<div class="card mod" onclick="cloze()">📝 短文填空<small>选词填空</small></div>`:""}
 <div class="card mod" onclick="order()">🧩 造句练习<small>连词成句</small></div>
 <div class="card mod" onclick="book()">📕 错题本<small>${S.wrong.length} 题待复习</small></div></div>
 <div class="card muted">每答对一题得 1 颗星⭐。错题会自动进错题本，再做对就自动移出。<br>写作小贴士：写景点时用 because（因为）、and（和）、but（但是）把句子连起来，每句开头大写、结尾加句号。</div>`}
@@ -33,12 +58,12 @@ if(useNative){I.focus();I.addEventListener("keyup",e=>{if(e.key==="Enter"&&!e.is
 const half=t=>t.replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g," ");
 function chk(){const v=fl[fi%fl.length],a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
 if(a===v[1]||(v[1]==="learned"&&a==="learnt")){$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>";wrong("过去式",q,v[1])}say(v[1])}
-function qa(){const q=pick(QA,1)[0],opts=shuf([q[1],...pick(QA.filter(x=>x!==q),3).map(x=>x[1])]);
+function qa(){const q=pick(QA,1)[0],opts=shuf([q[1],...pick([...new Set(ALLQA.filter(x=>x[1]!==q[1]).map(x=>x[1]))],3)]);
 app.innerHTML=`${back}<div class="card"><p>选出正确的回答：</p><div class="big" style="font-size:22px">${q[0]} <button onclick="say(\`${q[0]}\`)">🔊</button></div>
 ${opts.map(o=>`<button style="display:block;width:100%;text-align:left" onclick="ans(this,${o===q[1]})">${o}</button>`).join("")}<div class="fb" id="fb"></div><button class="main" onclick="qa()">下一题</button></div>`;window.cur=q}
 function ans(b,ok){const q=window.cur;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 正确答案："+q[1];ok?(star(),right(q[0])):wrong("问答",q[0],q[1]);say(q[1])}
 function listen(){const w=pick(LISTEN,1)[0],opts=shuf([w,...pick(LISTEN.filter(x=>x!==w),3)]);window.cur=w;
-app.innerHTML=`${back}<div class="card"><p>听一听，选出你听到的单词：</p><div class="big"><button class="main" onclick="say('${w}')">🔊 再听一遍</button></div>
+app.innerHTML=`${back}<div class="card"><p>听一听，选出你听到的单词：</p><div class="big"><button class="main" onclick="say(window.cur)">🔊 再听一遍</button></div>
 <div class="row">${opts.map(o=>`<button onclick="lans(this,'${o}')">${o}</button>`).join("")}</div><div class="fb" id="fb"></div><button class="main" onclick="listen()">下一题</button></div>`;setTimeout(()=>say(w),300)}
 function lans(b,o){const w=window.cur,ok=o===w;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 听到的是 "+w;ok?(star(),right("听音："+w)):wrong("听音","听音："+w,w)}
 let pi=0;
@@ -56,4 +81,4 @@ function put(b){$("#slot").appendChild(b);b.onclick=()=>{$("#pool").appendChild(
 function ochk(){const a=[...$("#slot").children].map(b=>b.textContent).join(" "),s=window.cur,ok=a===s;
 $("#fb").textContent=ok?"✅ 对了！":"❌ 正确："+s;ok?(star(),right(s)):wrong("造句",s,s);say(s)}
 function book(){app.innerHTML=`${back}<div class="card"><h3>📕 错题本（${S.wrong.length}）</h3>${S.wrong.length?S.wrong.map((w,i)=>`<p>【${w.type}】${w.q}<br>👉 <b>${w.a}</b> <button onclick="say(\`${w.a.replace(/`/g,"")}\`)">🔊</button> <button onclick="S.wrong.splice(${i},1);save();book()">已掌握</button></p>`).join(""):"<p>没有错题，真棒！</p>"}</div>`}
-save();home();
+setUnit(S.u||1);home();

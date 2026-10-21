@@ -1,6 +1,6 @@
 // 景菲 · 三年级上册 Unit 2 家人（根据 2026-10 单元练习的错题整理）
 // g = 同一类（例如 father 和 dad 是同一个人），出干扰项时不会把同类放在一起
-const WORDS=[
+var WORDS=[
  {w:"grandpa",e:"👴",c:"爷爷 / 外公",s:"This is my grandpa.",g:"grandpa"},
  {w:"grandma",e:"👵",c:"奶奶 / 外婆",s:"This is my grandma.",g:"grandma"},
  {w:"father",e:"👨",c:"爸爸",s:"This is my father.",g:"dad"},
@@ -14,9 +14,11 @@ const WORDS=[
  {w:"cousin",e:"🧒",c:"堂/表兄弟姐妹",s:"No, it's my cousin.",g:"cousin"},
  {w:"baby",e:"👶",c:"婴儿，小宝宝",s:"Look at the baby.",g:"baby"},
  {w:"me",e:"🙋‍♀️",c:"我",s:"My father, my mother and me.",g:"me"},
- {w:"family",e:"👨‍👩‍👧‍👦",c:"家，家人",s:"I love my family.",g:"family"}
+ {w:"family",e:"👨‍👩‍👧‍👦",c:"家，家人",s:"I love my family.",g:"family"},
+ {w:"grandfather",e:"👴",c:"祖父；爷爷 / 外公",s:"grandfather",g:"grandpa",np:1},{w:"grandmother",e:"👵",c:"祖母；奶奶 / 外婆",s:"grandmother",g:"grandma",np:1},
+ {w:"have",e:"🤲",c:"有",s:"I have two cousins.",g:"have",np:1},{w:"big",e:"🐘",c:"大的",s:"My family is big.",g:"big",np:1},{w:"small",e:"🐜",c:"小的",s:"My family is small.",g:"small",np:1}
 ];
-const ACTS=[
+var ACTS=[
  {w:"share",e:"🍪",c:"分享",s:"We share.",g:"share"},
  {w:"help",e:"🤝",c:"帮助",s:"He helps.",g:"help"},
  {w:"smile",e:"😊",c:"微笑",s:"We smile at home.",g:"smile"},
@@ -24,7 +26,7 @@ const ACTS=[
  {w:"listen",e:"👂",c:"听",s:"I listen to Grandma.",g:"listen"}
 ];
 // 听句子选图：sentence -> 对应的词（WORDS/ACTS 里的 w）
-const LSENT=[
+var LSENT=[
  ["This is my grandpa.","grandpa"],["This is my grandma.","grandma"],["This is my father.","father"],
  ["This is my mother.","mother"],["Is this your brother?","brother"],["Look at my sister.","sister"],
  ["This is my uncle.","uncle"],["She's my aunt.","aunt"],["No, it's my cousin.","cousin"],
@@ -33,7 +35,7 @@ const LSENT=[
  ["We play together.","play"],["Grandpa listens to me.","listen"]
 ];
 // 首字母：试卷上错的 h/g/f、f-i-sh、e-lephant 都在里面
-const PHON=[
+var PHON=[
  {w:"good",e:"👍"},{w:"fish",e:"🐟"},{w:"girl",e:"👧"},{w:"hot",e:"🥵"},{w:"elephant",e:"🐘"},
  {w:"hat",e:"👒"},{w:"bag",e:"👜"},{w:"egg",e:"🥚"},{w:"pig",e:"🐷"},{w:"nest",e:"🪺"},
  {w:"bee",e:"🐝"},{w:"dog",e:"🐶"},{w:"cat",e:"🐱"},{w:"apple",e:"🍎"},{w:"face",e:"🙂"},
@@ -42,7 +44,7 @@ const PHON=[
 ];
 const CONF={h:"gf",g:"hfj",f:"htv",e:"ai",a:"eo",b:"dp",d:"bp",p:"bq",t:"fd",n:"mh",c:"ks",s:"cz",u:"an",m:"nw"};
 // 补全字母：_ 是要填的字母；全部是 _ 就是听写整个单词。只能写小写。
-const FILL=[
+var FILL=[
  {w:"nest",e:"🪺",c:"鸟窝",p:"n_st"},{w:"bee",e:"🐝",c:"蜜蜂",p:"b_e"},{w:"egg",e:"🥚",c:"鸡蛋",p:"e_g"},
  {w:"pig",e:"🐷",c:"猪",p:"p_g"},{w:"hat",e:"👒",c:"帽子",p:"h_t"},{w:"fish",e:"🐟",c:"鱼",p:"f_sh"},
  {w:"bag",e:"👜",c:"包",p:"b_g"},{w:"hot",e:"🥵",c:"热",p:"_ot"},{w:"girl",e:"👧",c:"女孩",p:"g_rl"},
@@ -55,7 +57,7 @@ const FILL=[
  {w:"grandma",e:"👵",c:"奶奶",p:"gr_ndma"},{w:"grandpa",e:"👴",c:"爷爷",p:"grand__"}
 ];
 // 读短文：q=问题, o=选项, a=正确选项下标
-const READ=[
+var READ=[
  {t:"Hello, I'm Mia. I have a big family. I have Grandpa, Grandma, Dad, Mum and 2 brothers.",
   q:[{q:"Mia 的家大还是小？",o:["🏠 大 big","🛖 小 small"],a:0},{q:"Mia 有几个 brother（哥哥/弟弟）？",o:["1 个","2 个","3 个"],a:1},{q:"grandma 是谁？",o:["👵 奶奶","👩 妈妈","👧 姐姐"],a:0}]},
  {t:"Hi, I'm Linda. My family is small. This is my dad. This is my mum. And this is my baby brother. We are a happy family.",
@@ -70,14 +72,14 @@ const READ=[
   q:[{q:"aunt 是谁？",o:["👩‍🦰 姑姑（爸爸的姐妹）","👵 奶奶","👩 妈妈"],a:0},{q:"cousin 是谁？",o:["🧒 表/堂兄弟姐妹","👦 亲哥哥","👶 小宝宝"],a:0},{q:"他们一起做什么？",o:["🍪 分享 share","😊 微笑 smile","🤝 帮助 help"],a:0}]}
 ];
 // 打勾表（试卷第五题的样子）：读/听短文，在表格里打勾
-const TABLE=[
+var TABLE=[
  {t:"This is Linda's family. Grandma shares the cake with me. Grandma listens to me. Father helps me. Father plays with me. My sister smiles at me.",
   rows:["grandma","father","sister"],ans:{grandma:["share","listen"],father:["help","play"],sister:["smile"]}},
  {t:"This is Sam's family. Grandpa smiles at me. Mother helps me. Mother listens to me. My brother shares his toys. My brother plays with me.",
   rows:["grandpa","mother","brother"],ans:{grandpa:["smile"],mother:["help","listen"],brother:["share","play"]}}
 ];
 // 对话：情景 ctx（中文）、听到的话 hear（可没有）、正确 a、干扰 x
-const DIA=[
+var DIA=[
  {ctx:"🌅 早上见到爷爷奶奶，你说：",a:"Good morning, Grandpa and Grandma.",x:["Goodbye, Grandpa.","Thanks."]},
  {ctx:"朋友指着照片里的男孩问你。照片里是你的表哥 🧒",hear:"Is this your brother?",a:"No, it's my cousin.",x:["Yes, it is.","Nice to meet you."]},
  {ctx:"朋友指着照片问你。照片里真的是你哥哥 👦",hear:"Is this your brother?",a:"Yes, it is.",x:["No, it's my cousin.","Good morning."]},
