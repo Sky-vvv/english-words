@@ -83,7 +83,9 @@ ok?(star(),right("P:"+it.w)):wrong("phon","P:"+it.w,"首字母："+it.e+" "+it.w
 /* 4 补全字母（屏幕键盘，和明泽那边一样的键盘） */
 const KB=`<div id="kb">${["qwertyuiop","asdfghjkl","zxcvbnm"].map(r=>`<div class="kr">${[...r].map(c=>`<button class="k" data-k="${c}">${c}</button>`).join("")}</div>`).join("")}
 <div class="kr"><button class="k w" data-k="del">⌫ 删除</button><button class="k w" data-k="clr">清空</button><button class="k w main" data-k="ok">提交</button></div></div>`;
-function fill(id){const it=id?FILL.find(x=>"F:"+x.p+":"+x.w===id):pick(FILL,1)[0];
+let RQ=[];// 做错的题：过两题再考一次
+function fill(id){let it=id?FILL.find(x=>"F:"+x.p+":"+x.w===id):null;
+if(!it){RQ.forEach(r=>r.wait--);const due=RQ.findIndex(r=>r.wait<=0);if(due>=0&&FILL.includes(RQ[due].it))it=RQ.splice(due,1)[0].it;else{RQ=RQ.filter(r=>r.wait>0||!FILL.includes(r.it));it=pick(FILL,1)[0]}}
 cur={it,typed:[],done:false,key:fkey};
 const all=!/[a-z]/.test(it.p);
 app.innerHTML=`${back}<div class="card"><p>✏️ 听一听，${all?"写出整个单词":"补全缺少的字母"}（用<b>小写字母</b>）：</p>
@@ -99,10 +101,13 @@ else if(/^[A-Z]$/.test(k)){$("#fb").innerHTML="⚠️ 要写<b>小写</b>字母�
 else if(/^[a-z]$/.test(k)){if(cur.typed.length<blanks())cur.typed.push(k)}
 $("#fb").textContent="";draw()}
 function fchk(){const it=cur.it;if(cur.typed.length<blanks()){$("#fb").textContent="还有空没写完哦";return}
-let i=0;const got=[...it.p].map(c=>c==="_"?cur.typed[i++]:c).join(""),ok=got===it.w,id="F:"+it.p+":"+it.w;cur.done=true;
-$("#fb").innerHTML=ok?"✅ 对了！<b>"+it.w+"</b>":"❌ 正确是 <b>"+it.w+"</b>，你写的是 "+esc(got);
-document.querySelectorAll(".sl.blank").forEach(s=>s.classList.add(ok?"good":"wrongl"));
-ok?(star(),right(id)):wrong("fill",id,"补全字母："+it.e+" "+it.p.replace(/_/g," _ "),it.w);say(it.w)}
+let i=0;const got=[...it.p].map(c=>c==="_"?cur.typed[i++]:c).join(""),ok=got===it.w,id="F:"+it.p+":"+it.w;
+document.querySelectorAll(".sl.blank").forEach(s=>s.classList.add(ok?"good":"wrongl"));say(it.w);
+if(ok){cur.done=true;if(cur.missed){$("#fb").innerHTML="✅ 改对了！<b>"+it.w+"</b> 等一下还会再考你一次哦";return}
+$("#fb").innerHTML="✅ 对了！<b>"+it.w+"</b>";star();right(id);return}
+// 做错：不锁住，可以用 ⌫ 删除 / 清空 改了再提交；进错题本，并且过两题再考一次
+$("#fb").innerHTML="❌ 正确是 <b>"+it.w+"</b>，你写的是 "+esc(got)+"<br>用 ⌫ 删除 或 清空 改一改，再按提交";
+if(!cur.missed){cur.missed=true;wrong("fill",id,"补全字母："+it.e+" "+it.p.replace(/_/g," _ "),it.w);if(!RQ.some(r=>r.it===it))RQ.push({it,wait:2})}}
 // 电脑上的实体键盘也能用（没有输入框，不会触发手机输入法）
 document.addEventListener("keydown",e=>{if(!cur||cur.key!==fkey||e.ctrlKey||e.metaKey||e.altKey)return;
 if(e.key==="Backspace"){e.preventDefault();fkey("del")}else if(e.key==="Enter"){e.preventDefault();fkey("ok")}else if(/^[a-zA-Z]$/.test(e.key))fkey(e.key)});

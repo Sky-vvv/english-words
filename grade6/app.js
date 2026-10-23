@@ -26,7 +26,7 @@ function scard(){const v=sp[si%sp.length];window.cur=v;app.innerHTML=`${back}<di
 <button onclick="si++;scard()">下一个</button></div>`;const I=$("#in");
 $("#kb").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=b.dataset.k;if(k==="del")I.value=I.value.slice(0,-1);else if(k==="clr")I.value="";else if(k==="ok")schk();else I.value+=k})}
 function schk(){const v=window.cur,a=$("#in").value.replace(/\s+/g," ").trim().toLowerCase(),q="拼写："+v[1];
-if(a===v[0]){$("#fb").innerHTML="✅ 对了！"+v[0];star();right(q)}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[0]+"</b>";wrong("拼写",q,v[0])}say(v[0])}
+if(a===v[0]){if(v.miss)$("#fb").innerHTML="✅ 改对了！"+v[0]+" 等一下还会再考一次";else{$("#fb").innerHTML="✅ 对了！"+v[0];star();right(q)}}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[0]+"</b>，用 ⌫ 删除 或 清空 改一改再提交";if(!v.miss){v.miss=1;wrong("拼写",q,v[0]);sp.splice(si+3,0,v.slice(0,3))}}say(v[0])}
 function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
 const shuf=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
 const pick=(a,n)=>shuf(a).slice(0,n);
@@ -56,8 +56,8 @@ $("#kb").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b
 if(k==="del")I.value=I.value.slice(0,-1);else if(k==="clr")I.value="";else if(k==="ok")chk();else I.value+=k});
 if(useNative){I.focus();I.addEventListener("keyup",e=>{if(e.key==="Enter"&&!e.isComposing)chk()})}}
 const half=t=>t.replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g," ");
-function chk(){const v=fl[fi%fl.length],a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
-if(a===v[1]||(v[1]==="learned"&&a==="learnt")){$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>";wrong("过去式",q,v[1])}say(v[1])}
+function chk(){const v=fl[fi%fl.length];if(v.miss===undefined)v.miss=0;const a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
+if(a===v[1]||(v[1]==="learned"&&a==="learnt")){if(v.miss)$("#fb").innerHTML="✅ 改对了！"+v[0]+" → "+v[1]+" 等一下还会再考一次";else{$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>，用 ⌫ 删除 或 清空 改一改再提交";if(!v.miss){v.miss=1;wrong("过去式",q,v[1]);fl.splice(fi%fl.length+3,0,v.slice(0,3))}}say(v[1])}
 function qa(){const q=pick(QA,1)[0],opts=shuf([q[1],...pick([...new Set(ALLQA.filter(x=>x[1]!==q[1]).map(x=>x[1]))],3)]);
 app.innerHTML=`${back}<div class="card"><p>选出正确的回答：</p><div class="big" style="font-size:22px">${q[0]} <button onclick="say(\`${q[0]}\`)">🔊</button></div>
 ${opts.map(o=>`<button style="display:block;width:100%;text-align:left" onclick="ans(this,${o===q[1]})">${o}</button>`).join("")}<div class="fb" id="fb"></div><button class="main" onclick="qa()">下一题</button></div>`;window.cur=q}
