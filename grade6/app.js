@@ -58,21 +58,29 @@ if(useNative){I.focus();I.addEventListener("keyup",e=>{if(e.key==="Enter"&&!e.is
 const half=t=>t.replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g," ");
 function chk(){const v=fl[fi%fl.length];if(v.miss===undefined)v.miss=0;const a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
 if(a===v[1]||(v[1]==="learned"&&a==="learnt")){if(v.miss)$("#fb").innerHTML="✅ 改对了！"+v[0]+" → "+v[1]+" 等一下还会再考一次";else{$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>，用 ⌫ 删除 或 清空 改一改再提交";if(!v.miss){v.miss=1;wrong("过去式",q,v[1]);fl.splice(fi%fl.length+3,0,v.slice(0,3))}}say(v[1])}
-function qa(){const q=pick(QA,1)[0],opts=shuf([q[1],...pick([...new Set(ALLQA.filter(x=>x[1]!==q[1]).map(x=>x[1]))],3)]);
-app.innerHTML=`${back}<div class="card"><p>选出正确的回答：</p><div class="big" style="font-size:22px">${q[0]} <button onclick="say(\`${q[0]}\`)">🔊</button></div>
-${opts.map(o=>`<button style="display:block;width:100%;text-align:left" onclick="ans(this,${o===q[1]})">${o}</button>`).join("")}<div class="fb" id="fb"></div><button class="main" onclick="qa()">下一题</button></div>`;window.cur=q}
-function ans(b,ok){const q=window.cur;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 正确答案："+q[1];ok?(star(),right(q[0])):wrong("问答",q[0],q[1]);say(q[1])}
+// 问答：看/听回答，选出对应的问题（同一个回答的问题不会当干扰项）
+function qa(){const q=pick(QA,1)[0],opts=shuf([q[0],...pick([...new Set(ALLQA.filter(x=>x[1]!==q[1]&&x[0]!==q[0]).map(x=>x[0]))],3)]);window.cur=q;window.qdone=0;
+app.innerHTML=`${back}<div class="card"><p>这是回答，选出正确的<b>问题</b>：</p><div class="big" style="font-size:22px">${q[1]} <button onclick="say(window.cur[1])">🔊</button></div>
+${opts.map(o=>`<button class="qo" style="display:block;width:100%;text-align:left" onclick="ans(this,${o===q[0]})">${o}</button>`).join("")}<div class="fb" id="fb"></div><button class="main" onclick="qa()">下一题</button></div>`;setTimeout(()=>say(q[1]),300)}
+function ans(b,ok){const q=window.cur;if(window.qdone)return;window.qdone=1;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 正确的问题："+q[0];const id="选问题："+q[1];ok?(star(),right(id)):wrong("问答",id,q[0]);say(q[0])}
 function listen(){const w=pick(LISTEN,1)[0],opts=shuf([w,...pick(LISTEN.filter(x=>x!==w),3)]);window.cur=w;
 app.innerHTML=`${back}<div class="card"><p>听一听，选出你听到的单词：</p><div class="big"><button class="main" onclick="say(window.cur)">🔊 再听一遍</button></div>
 <div class="row">${opts.map(o=>`<button onclick="lans(this,'${o}')">${o}</button>`).join("")}</div><div class="fb" id="fb"></div><button class="main" onclick="listen()">下一题</button></div>`;setTimeout(()=>say(w),300)}
 function lans(b,o){const w=window.cur,ok=o===w;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 听到的是 "+w;ok?(star(),right("听音："+w)):wrong("听音","听音："+w,w)}
-let pi=0;
-function cloze(){const p=PASSAGES[pi%PASSAGES.length];let n=0;
-const html=p.text.replace(/\{(\w+)\}/g,(m,w)=>`<select data-a="${w}"><option value="">___</option>${p.words.map(x=>`<option>${x}</option>`).join("")}</select>`);
-app.innerHTML=`${back}<div class="card"><p>从方框中选词填空（每词用一次）：<br><b>${p.words.join(" / ")}</b></p><div class="passage">${html}</div>
-<div class="fb" id="fb"></div><button class="main" onclick="cchk()">检查</button><button onclick="say(PASSAGES[pi%PASSAGES.length].text.replace(/[{}]/g,''))">🔊 朗读</button><button onclick="pi++;cloze()">换一篇</button></div>`}
-function cchk(){let c=0,t=0;document.querySelectorAll(".passage select").forEach(s=>{t++;const ok=s.value===s.dataset.a;s.style.background=ok?"#c8f5da":"#ffd0d0";if(ok)c++;else wrong("短文填空","短文填空："+s.dataset.a+"（"+(s.parentNode.textContent.slice(0,30))+"…）",s.dataset.a)});
-$("#fb").textContent=`对了 ${c}/${t}`+(c===t?" 🎉 太棒了！":"，红色的再想想");if(c===t)star(2)}
+let pi=0,CQ=[],cb=null;// CQ：做错的短文，过一篇再考一次
+function cloze(){const p=PASSAGES[pi%PASSAGES.length];
+app.innerHTML=`${back}<div class="card"><p>读短文，<b>自己写</b>出空里的单词（先点一个空，再用下面的键盘写）：<br><span class="muted">提示词：${p.words.join(" / ")}</span></p><div class="passage">${p.text.replace(/\{(\w+)\}/g,(m,w)=>`<span class="blk" data-a="${w}" onclick="cpick(this)"></span>`)}</div>
+<div class="fb" id="fb"></div><div id="kb">${["qwertyuiop","asdfghjkl","zxcvbnm"].map(r=>`<div class="kr">${[...r].map(c=>`<button class="k" data-k="${c}">${c}</button>`).join("")}</div>`).join("")}
+<div class="kr"><button class="k w" data-k="del">⌫ 删除</button><button class="k w" data-k="clr">清空</button><button class="k w main" data-k="ok">检查</button></div></div>
+<button onclick="say(PASSAGES[pi%PASSAGES.length].text.replace(/[{}]/g,''))">🔊 朗读</button><button onclick="cnext()">换一篇</button></div>`;
+cpick(document.querySelector(".blk"));$("#kb").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b||!cb)return;const k=b.dataset.k;
+if(k==="ok")return cchk();if(k==="del")cb.textContent=cb.textContent.slice(0,-1);else if(k==="clr")cb.textContent="";else cb.textContent+=k;cb.classList.remove("good","bad")})}
+function cpick(s){document.querySelectorAll(".blk").forEach(x=>x.classList.remove("cur"));cb=s;s.classList.add("cur")}
+function cnext(){CQ.forEach(x=>x.w--);const d=CQ.findIndex(x=>x.w<=0);if(d>=0)pi=CQ.splice(d,1)[0].i;else pi++;cloze()}
+function cchk(){let c=0,t=0,first=null;const n=pi%PASSAGES.length;document.querySelectorAll(".passage .blk").forEach(s=>{t++;const v=s.textContent.trim().toLowerCase(),ok=v===s.dataset.a;
+s.classList.toggle("good",ok);s.classList.toggle("bad",!ok);if(ok)c++;else{if(!first)first=s;if(v&&!s.dataset.miss){s.dataset.miss=1;wrong("短文填空","短文填空："+s.dataset.a+"（"+PASSAGES[n].text.replace(/[{}]/g,"").slice(0,30)+"…）",s.dataset.a)}}});
+if(c===t){$("#fb").textContent="🎉 全对了！";if(!document.querySelector(".blk[data-miss]"))star(2);else $("#fb").textContent="✅ 改对了！这篇等一下还会再考一次";return}
+$("#fb").textContent=`对了 ${c}/${t}，红色的用 ⌫ 删除 或 清空 改一改，再按检查`;if(first)cpick(first);if(document.querySelector(".blk[data-miss]")&&!CQ.some(x=>x.i===n))CQ.push({i:n,w:2})}
 function order(){const s=pick(SENTS,1)[0];window.cur=s;window.built=[];const ws=s.split(" ");
 app.innerHTML=`${back}<div class="card"><p>点单词，连成正确的句子：</p><div class="slot row" id="slot"></div><div class="row" id="pool">${shuf(ws.map((w,i)=>[w,i])).map(([w,i])=>`<button data-i="${i}" onclick="put(this)">${w}</button>`).join("")}</div>
 <div class="fb" id="fb"></div><button class="main" onclick="ochk()">检查</button><button onclick="order()">下一题</button><button onclick="order2()">重来</button></div>`}

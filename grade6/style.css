@@ -15,3 +15,4 @@ input{font-size:20px;padding:10px;width:100%;border:2px solid #ccd;border-radius
 .k.w{max-width:none;font-size:16px}.k.main{background:#4a7dff;color:#fff}
 .who{color:#fff;text-decoration:none;background:#fff3;padding:6px 10px;border-radius:16px;font-size:15px;white-space:nowrap}
 .units button{flex:1;min-width:50px;padding:8px 4px}.wd{margin:4px;padding:6px 10px;text-align:center}
+.blk{display:inline-block;min-width:70px;border-bottom:2px solid #4a7dff;padding:0 4px;margin:0 2px;line-height:1.5;text-align:center;color:#1a3fb0;font-weight:bold;cursor:pointer}.blk.cur{background:#e3ebff}.blk.good{background:#c8f5da}.blk.bad{background:#ffd0d0}
