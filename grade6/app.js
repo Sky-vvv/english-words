@@ -69,7 +69,7 @@ app.innerHTML=`${back}<div class="card"><p>听一听，选出你听到的单词�
 function lans(b,o){const w=window.cur,ok=o===w;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 听到的是 "+w;ok?(star(),right("听音："+w)):wrong("听音","听音："+w,w)}
 let pi=0,CQ=[],cb=null;// CQ：做错的短文，过一篇再考一次
 function cloze(){const p=PASSAGES[pi%PASSAGES.length];
-app.innerHTML=`${back}<div class="card"><p>读短文，<b>自己写</b>出空里的单词（先点一个空，再用下面的键盘写）：<br><span class="muted">提示词：${p.words.join(" / ")}</span></p><div class="passage">${p.text.replace(/\{(\w+)\}/g,(m,w)=>`<span class="blk" data-a="${w}" onclick="cpick(this)"></span>`)}</div>
+app.innerHTML=`${back}<div class="card"><p>读短文，<b>自己写</b>出空里的单词（先点一个空，再用下面的键盘写）：<br><span class="muted">错2次会给提示</span></p><div class="passage">${p.text.replace(/\{(\w+)\}/g,(m,w)=>`<span class="blk" data-a="${w}" onclick="cpick(this)"></span>`)}</div>
 <div class="fb" id="fb"></div><div id="kb">${["qwertyuiop","asdfghjkl","zxcvbnm"].map(r=>`<div class="kr">${[...r].map(c=>`<button class="k" data-k="${c}">${c}</button>`).join("")}</div>`).join("")}
 <div class="kr"><button class="k w" data-k="del">⌫ 删除</button><button class="k w" data-k="clr">清空</button><button class="k w main" data-k="ok">检查</button></div></div>
 <button onclick="say(PASSAGES[pi%PASSAGES.length].text.replace(/[{}]/g,''))">🔊 朗读</button><button onclick="cnext()">换一篇</button></div>`;
@@ -78,7 +78,7 @@ if(k==="ok")return cchk();if(k==="del")cb.textContent=cb.textContent.slice(0,-1)
 function cpick(s){document.querySelectorAll(".blk").forEach(x=>x.classList.remove("cur"));cb=s;s.classList.add("cur")}
 function cnext(){CQ.forEach(x=>x.w--);const d=CQ.findIndex(x=>x.w<=0);if(d>=0)pi=CQ.splice(d,1)[0].i;else pi++;cloze()}
 function cchk(){let c=0,t=0,first=null;const n=pi%PASSAGES.length;document.querySelectorAll(".passage .blk").forEach(s=>{t++;const v=s.textContent.trim().toLowerCase(),ok=v===s.dataset.a;
-s.classList.toggle("good",ok);s.classList.toggle("bad",!ok);if(ok)c++;else{if(!first)first=s;if(v&&!s.dataset.miss){s.dataset.miss=1;wrong("短文填空","短文填空："+s.dataset.a+"（"+PASSAGES[n].text.replace(/[{}]/g,"").slice(0,30)+"…）",s.dataset.a)}}});
+s.classList.toggle("good",ok);s.classList.toggle("bad",!ok);if(ok)c++;else{if(!first)first=s;if(v){s.dataset.n=(+s.dataset.n||0)+1;if(s.dataset.n>=2&&!(s.nextElementSibling&&s.nextElementSibling.classList.contains("hint")))s.insertAdjacentHTML("afterend",`<small class="hint">（提示：${s.dataset.a}）</small>`)}if(v&&!s.dataset.miss){s.dataset.miss=1;wrong("短文填空","短文填空："+s.dataset.a+"（"+PASSAGES[n].text.replace(/[{}]/g,"").slice(0,30)+"…）",s.dataset.a)}}});
 if(c===t){$("#fb").textContent="🎉 全对了！";if(!document.querySelector(".blk[data-miss]"))star(2);else $("#fb").textContent="✅ 改对了！这篇等一下还会再考一次";return}
 $("#fb").textContent=`对了 ${c}/${t}，红色的用 ⌫ 删除 或 清空 改一改，再按检查`;if(first)cpick(first);if(document.querySelector(".blk[data-miss]")&&!CQ.some(x=>x.i===n))CQ.push({i:n,w:2})}
 function order(){const s=pick(SENTS,1)[0];window.cur=s;window.built=[];const ws=s.split(" ");
