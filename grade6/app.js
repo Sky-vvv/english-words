@@ -58,8 +58,8 @@ if(useNative){I.focus();I.addEventListener("keyup",e=>{if(e.key==="Enter"&&!e.is
 const half=t=>t.replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g," ");
 function chk(){const v=fl[fi%fl.length];if(v.miss===undefined)v.miss=0;const a=half($("#in").value).replace(/\s+/g," ").trim().toLowerCase(),q=`${v[0]} 的过去式`;
 if(a===v[1]||(v[1]==="learned"&&a==="learnt")){if(v.miss)$("#fb").innerHTML="✅ 改对了！"+v[0]+" → "+v[1]+" 等一下还会再考一次";else{$("#fb").innerHTML="✅ 对了！"+v[0]+" → "+v[1];star();right(q)}}else{$("#fb").innerHTML="❌ 正确是 <b>"+v[1]+"</b>，用 ⌫ 删除 或 清空 改一改再提交";if(!v.miss){v.miss=1;wrong("过去式",q,v[1]);fl.splice(fi%fl.length+3,0,v.slice(0,3))}}say(v[1])}
-// 问答：看/听回答，选出对应的问题（同一个回答的问题不会当干扰项）
-function qa(){const q=pick(QA,1)[0],opts=shuf([q[0],...pick([...new Set(ALLQA.filter(x=>x[1]!==q[1]&&x[0]!==q[0]).map(x=>x[0]))],3)]);window.cur=q;window.qdone=0;
+// 问答：看/听回答，选出对应的问题（优先用本单元当干扰项；同一回答的问题不当干扰）
+function qa(){const q=pick(QA,1)[0],ok=x=>x[1]!==q[1]&&x[0]!==q[0],loc=[...new Set(QA.filter(ok).map(x=>x[0]))],glb=[...new Set(ALLQA.filter(ok).map(x=>x[0]).filter(x=>!loc.includes(x)))],opts=shuf([q[0],...pick([...loc,...glb],3)]);window.cur=q;window.qdone=0;
 app.innerHTML=`${back}<div class="card"><p>这是回答，选出正确的<b>问题</b>：</p><div class="big" style="font-size:22px">${q[1]} <button onclick="say(window.cur[1])">🔊</button></div>
 ${opts.map(o=>`<button class="qo" style="display:block;width:100%;text-align:left" onclick="ans(this,${o===q[0]})">${o}</button>`).join("")}<div class="fb" id="fb"></div><button class="main" onclick="qa()">下一题</button></div>`;setTimeout(()=>say(q[1]),300)}
 function ans(b,ok){const q=window.cur;if(window.qdone)return;window.qdone=1;b.className=ok?"ok":"bad";$("#fb").textContent=ok?"✅ 对了！":"❌ 正确的问题："+q[0];const id="选问题："+q[1];ok?(star(),right(id)):wrong("问答",id,q[0]);say(q[0])}
